@@ -35,7 +35,7 @@ def main():
             print("\n👋 Arrivederci!")
             break
         
-        # Genera consulenza asdasdasdas
+        # Genera consulenza
         response = system.consult(company_profile, question)
         
         print("\n" + "="*60)

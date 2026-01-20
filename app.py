@@ -36,7 +36,7 @@ with st.sidebar:
         if dim == 0:
             st.error("Il numero di dipendenti deve essere maggiore di 0.")  # Si poteva magari mettere anche default a 1, cosi' "forziamo"
                                                                             # l'utente a inserire il numero preciso.
-            st.session_state["profile_saved"] = False #asdoijasiodjas oidja
+            st.session_state["profile_saved"] = False
         elif not att or not att.strip():
             st.error("La descrizione dell'attività è obbligatoria.")
             st.session_state["profile_saved"] = False
