@@ -20,6 +20,15 @@ cd .\venv\Scripts\
 .\activate
 ```
 
+Create the knowledge base
+```bash
+python src/ingest.py
+```
+This will extract PDFs text and create chunks from them.
+
+Creazione embeddings e indexing (ChromaDB) 
+
+
 Then get back to the main folder and run the Streamlit application
 ```bash
 cd..
