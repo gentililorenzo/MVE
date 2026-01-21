@@ -20,13 +20,25 @@ cd .\venv\Scripts\
 .\activate
 ```
 
-Create the knowledge base
+1) Create the knowledge base
 ```bash
-python src/ingest.py
+python scripts/ingest_pdf.py
 ```
 This will extract PDFs text and create chunks from them.
 
-Creazione embeddings e indexing (ChromaDB) 
+2) Create the embeddings and Vector DB (ChromaDB) for indexing.
+```bash
+python scripts/create_embeddings.py
+```
+
+3) Test rag system (now with the sectorial hints added to the prompt's context)
+```bash
+python src/rag_system.py
+```
+
+```bash
+python src/prompt_hybrid.py
+```
 
 
 Then get back to the main folder and run the Streamlit application
