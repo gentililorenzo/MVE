@@ -23,7 +23,7 @@ Activate the virtual environment (venv)
 ```bash
 python scripts/ingest_pdf.py
 ```
-This will extract PDFs text and create chunks from them. Sample data for chunking is in data/chunks.json
+This will extract PDFs text and create chunks from them. Sample data for chunking is in `data/chunks.json`
 
 2) Create the embeddings and the vector DB (ChromaDB) for indexing.
 ```bash
@@ -31,7 +31,10 @@ python scripts/create_embeddings.py
 ```
 
 Then get back to the main folder and
+
 3) Run the Streamlit application
 ```bash
 streamlit run app.py
 ```
+
+The MVE application will start on localhost:8501
