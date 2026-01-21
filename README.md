@@ -16,34 +16,22 @@ pip install -r "requirements.txt"
 ## How to run
 Activate the virtual environment (venv) 
 ```bash
-cd .\venv\Scripts\
-.\activate
+.\venv\Scripts\activate
 ```
 
 1) Create the knowledge base
 ```bash
 python scripts/ingest_pdf.py
 ```
-This will extract PDFs text and create chunks from them.
+This will extract PDFs text and create chunks from them. Sample data for chunking is in data/chunks.json
 
-2) Create the embeddings and Vector DB (ChromaDB) for indexing.
+2) Create the embeddings and the vector DB (ChromaDB) for indexing.
 ```bash
 python scripts/create_embeddings.py
 ```
 
-3) Test rag system (now with the sectorial hints added to the prompt's context)
+Then get back to the main folder and
+3) Run the Streamlit application
 ```bash
-python src/rag_system.py
-```
-
-```bash
-python src/prompt_hybrid.py
-```
-
-
-Then get back to the main folder and run the Streamlit application
-```bash
-cd..
-cd..
 streamlit run app.py
 ```
