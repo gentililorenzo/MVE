@@ -107,7 +107,7 @@ with col1:
             st.session_state["history"].append({
                 "question": question,
                 "response": response,
-                "ts": datetime.now().isoformat()
+                "ts": datetime.strptime(datetime.now(), "%y/%m/%d - %H:%M")
             })
             st.success("Response generated ✅")
 
