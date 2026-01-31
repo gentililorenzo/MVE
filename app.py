@@ -1,128 +1,137 @@
 import streamlit as st
 from datetime import datetime
 
-# Crea l'istanza una sola volta e la riutilizza.
-# Usa @st.cache_resource per evitare di ricrearlo ad ogni rerun.
+# Create the instance only once and reuse it.
+# Use @st.cache_resource to avoid recreating it on every rerun.
 @st.cache_resource
 def create_system():
     try:
         from src.prompt_hybrid import HybridPromptSystem
     except Exception as e:
-        # Se import fallisce, mostriamo l'errore in UI invece di far crashare tutto.
-        st.error(f"Errore import src.prompt_hybrid: {e}")
+        # If the import fails, show the error in the UI instead of crashing everything.
+        st.error(f"Error importing src.prompt_hybrid: {e}")
         return None
     return HybridPromptSystem()
 
 system = create_system()
 
-# Inizializzazione session state
+# Initialize session state
 if "company_profile" not in st.session_state:
-    st.session_state["company_profile"] = {"dimensione": None, "attivita": ""}
+    st.session_state["company_profile"] = {"num_employees": None, "activity": ""}
 if "history" not in st.session_state:
-    st.session_state["history"] = []  # lista di dict: {"question":..., "response":..., "ts":...}
+    st.session_state["history"] = []  # list of dicts: {"question":..., "response":..., "ts":...}
 if "profile_saved" not in st.session_state:
     st.session_state["profile_saved"] = False
 
-st.set_page_config(page_title="Consulente Sostenibilità VSME", layout="wide")
+st.set_page_config(page_title="VSME Sustainability Consultant", layout="wide")
 
-# --- Sidebar: profilo azienda ---
+# --- Sidebar: company profile ---
 with st.sidebar:
-    st.title("Profilo azienda")
-    dim = st.number_input("Numero dipendenti", min_value=0, step=1, value=st.session_state["company_profile"]["dimensione"] or 0)
-    att = st.text_area("Descrizione attività", value=st.session_state["company_profile"]["attivita"], height="content")
-    save_profile = st.button("Salva profilo")
+    st.title("Company profile")
+    num_employees = st.number_input(
+        "Number of employees",
+        min_value=0,
+        step=1,
+        value=st.session_state["company_profile"]["num_employees"] or 0
+    )
+    activity_desc = st.text_area(
+        "Business description",
+        value=st.session_state["company_profile"]["activity"],
+        height="content"
+    )
+    save_profile = st.button("Save profile")
 
     if save_profile:
-        if dim == 0:
-            st.error("Il numero di dipendenti deve essere maggiore di 0.")  # Si poteva magari mettere anche default a 1, cosi' "forziamo"
-                                                                            # l'utente a inserire il numero preciso.
+        if num_employees == 0:
+            st.error("The number of employees must be greater than 0.")  # We could set default to 1 to force
+                                                                    # the user to enter an exact number.
             st.session_state["profile_saved"] = False
-        elif not att or not att.strip():
-            st.error("La descrizione dell'attività è obbligatoria.")
+        elif not activity_desc or not activity_desc.strip():
+            st.error("The business description is required.")
             st.session_state["profile_saved"] = False
         else:
-            st.session_state["company_profile"] = {"dimensione": int(dim), "attivita": att}
+            st.session_state["company_profile"] = {"num_employees": int(num_employees), "activity": activity_desc}
             st.session_state["profile_saved"] = True
-            st.success("Profilo salvato correttamente ✅")
+            st.success("Profile saved successfully ✅")
 
     st.markdown("---")
-    if st.button("Cancella cronologia"):
+    if st.button("Clear history"):
         st.session_state["history"] = []
-        st.info("Cronologia cancellata")
+        st.info("History cleared")
 
     st.markdown("---")
-    st.markdown("**Suggerimenti domande:**")
-    st.write("- `Quali pratiche ESG sono più importanti per una PMI di 10 dipendenti nel settore X?`")
-    st.write("- `Dammi un piano d'azione per stilare un reporting ambientale basilare.`")
+    st.markdown("**Suggested questions:**")
+    st.write("- `Which ESG practices are most important for a company like ours?`")
+    st.write("- `Give me an action plan to prepare a basic environmental report.`")
+    st.write("- `What sustainability plan or proposed sustainable practices can I present to the bank to obtain financing?`")
 
 # --- Main layout ---
-st.title("🟢 Sustainability assistant") # VSME") # il nostro MVE
-# st.caption("Interfaccia web con Streamlit — basata su `HybridPromptSystem`")
+st.title("🟢 Sustainability assistant")
 
 col1, col2 = st.columns([3, 1])
 
 with col1:
-    st.subheader("Fai una domanda")
-    # usiamo un form per evitare submit multipli accidentali
+    st.subheader("Ask a question")
+    # we use a form to avoid accidental multiple submits
     with st.form("ask_form", clear_on_submit=False):
-        question = st.text_area("La tua domanda", height=120)
-        submitted = st.form_submit_button("Invia domanda")  # se profilo non inserito/salvato blocco la richiesta domanda.
-                                                            # Sarebbe uno spreco, troppo poco contesto. 
+        question = st.text_area("Your question", height=120)
+        submitted = st.form_submit_button("Submit question")  # if profile not filled/saved block the request.
+                                                            # It would be wasteful, too little context.
 
     if submitted:
         if not st.session_state["profile_saved"]:
-            st.error("⚠️ Devi compilare e salvare il profilo aziendale (Sidebar) prima di procedere.")
+            st.error("⚠️ You must complete and save the company profile before proceeding.")
         elif not question or not question.strip():
-            st.warning("⚠️ Scrivi una domanda prima di inviare.")
+            st.warning("⚠️ Please ask a question to receive an answer.")
         elif system is None:
-            st.error("Il sistema non è inizializzato correttamente. Controlla i log.")
+            st.error("The system is not properly initialized. Check the logs.")
         else:
-            profile = st.session_state["company_profile"]   # mostra spinner mentre elabora
-            with st.spinner("Generazione risposta..."):
+            profile = st.session_state["company_profile"]   # show spinner while processing
+            with st.spinner("Generating response..."):
                 try:
                     response = system.consult(profile, question)
                 except Exception as e:
-                    st.error(f"Errore durante la consultazione: {e}")
-                    response = f"Errore interno: {e}"
+                    st.error(f"Error during consultation: {e}")
+                    response = f"Internal error: {e}"
 
-            # salva nella cronologia
+            # save to history
             st.session_state["history"].append({
                 "question": question,
                 "response": response,
                 "ts": datetime.utcnow().isoformat()
             })
-            st.success("Risposta generata ✅")
+            st.success("Response generated ✅")
 
-    # Mostra cronologia (nuova prima)
-    st.markdown("### Cronologia")
+    # Show history (newest first)
+    st.markdown("### History")
     if st.session_state["history"]:
         for item in reversed(st.session_state["history"]):
-            st.markdown(f"**Tu —** {item['question']}")
+            st.markdown(f"**You —** {item['question']}")
             st.markdown(f"> {item['response']}")
             st.caption(item["ts"])
             st.markdown("---")
     else:
-        st.info("Nessuna domanda ancora inviata.")
+        st.info("No questions submitted yet.")
 
 with col2:
-    st.subheader("Profilo attuale")
+    st.subheader("Current profile")
     prof = st.session_state["company_profile"]
-    st.write(f"- **Numero dipendenti:** {prof.get('dimensione')}")
-    st.write(f"- **Attività:** {prof.get('attivita') or '*non impostata*'}")
+    st.write(f"- **Number of employees:** {prof.get('num_employees')}")
+    st.write(f"- **Business activity:** {prof.get('activity') or '*not set*'}")
     st.markdown("---")
-    # Download della cronologia come testo
+    # Download history as text
     if st.session_state["history"]:
         transcript = ""
         for item in st.session_state["history"]:
-            transcript += f"[{item['ts']}] Domanda: {item['question']}\nRisposta: {item['response']}\n\n"
-        st.download_button("Scarica cronologia (.txt)", transcript, file_name="cronologia_consulenza.txt", mime="text/plain")
+            transcript += f"[{item['ts']}] Question: {item['question']}\nAnswer: {item['response']}\n\n"
+        st.download_button("Download history (.txt)", transcript, file_name="consultation_history.txt", mime="text/plain")
 
-# --- footer / note ---
+# --- footer / notes ---
 st.markdown("---")
-st.markdown("Se l'app si aggiornasse automaticamente quando modifichi file nel progetto, usa `R` nella UI di Streamlit o l'opzione 'Rerun'.")
+st.markdown("If the app does not update automatically when you modify project files, press `R` in the Streamlit UI or use the 'Rerun' option.")
 
 
-# OPTIONAL: CSS leggero per migliorare look (non obbligatorio)
+# OPTIONAL: light CSS to improve appearance (not mandatory)
 st.markdown(
     """
     <style>

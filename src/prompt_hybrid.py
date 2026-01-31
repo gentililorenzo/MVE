@@ -13,7 +13,7 @@ class HybridPromptSystem:
         
         # Classifica settore
         sector, hints = self.classifier.classify(
-            company_profile['attivita']
+            company_profile['activity']
         )
         
         # Costruisci contesto VSME
@@ -27,8 +27,8 @@ class HybridPromptSystem:
 
 PROFILO AZIENDA:
 - Settore: {sector}
-- Dimensione: {company_profile['dimensione']} dipendenti
-- Attività: {company_profile['attivita']}
+- Dimensione: {company_profile['num_employees']} dipendenti
+- Attività: {company_profile['activity']}
 
 {'SUGGERIMENTO SETTORIALE:' if hints else ''}
 {hints['hint'] if hints else ''}
@@ -58,23 +58,15 @@ RISPOSTA:"""
     
     def consult(self, company_profile, question):
         """Consulenza completa"""
-        print(f"\n{'='*60}")
-        print(f"🏢 Azienda: {company_profile['attivita']}")
-        print(f"👥 Dipendenti: {company_profile['dimensione']}")
-        print(f"❓ Domanda: {question}")
-        print(f"{'='*60}")
         
         # 1. Retrieval
-        print("\n📚 Ricerca informazioni VSME rilevanti...")
-        query_enriched = f"{company_profile['attivita']} {question}"
+        query_enriched = f"{company_profile['activity']} {question}"
         chunks, _ = self.rag.retrieve(query_enriched, n_results=5)
         
         # 2. Genera prompt ibrido
-        print("🎨 Generazione prompt settoriale...")
         prompt = self.generate_prompt(company_profile, question, chunks)
         
         # 3. LLM response
-        print("🤖 Elaborazione risposta...")
         import ollama
         response = ollama.chat(
             model='gemma3:4b',
@@ -91,15 +83,15 @@ if __name__ == "__main__":
     test_cases = [
         {
             'company': {
-                'dimensione': 15,
-                'attivita': 'Falegnameria artigianale che produce mobili su misura'
+                'num_employees': 15,
+                'activity': 'Falegnameria artigianale che produce mobili su misura'
             },
             'question': 'Come posso rendere più sostenibile la mia produzione?'
         },
         {
             'company': {
-                'dimensione': 20,
-                'attivita': 'Panificio con vendita diretta'
+                'num_employees': 20,
+                'activity': 'Panificio con vendita diretta'
             },
             'question': 'Quali metriche ambientali devo monitorare?'
         }
