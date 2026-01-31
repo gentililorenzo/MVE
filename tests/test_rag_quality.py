@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 # Mock import per dimostrazione (sostituisci con il tuo vero import)
 try:
     sys.path.append('..')
-    from src.prompt_hybrid import HybridPromptSystem
+    from sectoral_prompt import HybridPromptSystem
 except ImportError:
     logger.warning("Modulo src.prompt_hybrid non trovato. Assicurati del path.")
 

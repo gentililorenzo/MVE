@@ -1,15 +1,24 @@
 import streamlit as st
-from datetime import datetime
+
+import calendar
+from datetime import datetime, timedelta
+
+def utc_to_local(utc_dt):
+    # get integer timestamp to avoid precision lost
+    timestamp = calendar.timegm(utc_dt.timetuple())
+    local_dt = datetime.fromtimestamp(timestamp)
+    assert utc_dt.resolution >= timedelta(microseconds=1)
+    return local_dt.replace(microsecond=utc_dt.microsecond)
 
 # Create the instance only once and reuse it.
 # Use @st.cache_resource to avoid recreating it on every rerun.
 @st.cache_resource
 def create_system():
     try:
-        from src.prompt_hybrid import HybridPromptSystem
+        from src.sectoral_prompt import HybridPromptSystem
     except Exception as e:
         # If the import fails, show the error in the UI instead of crashing everything.
-        st.error(f"Error importing src.prompt_hybrid: {e}")
+        st.error(f"Error importing src.sectoral_prompt: {e}")
         return None
     return HybridPromptSystem()
 
@@ -23,7 +32,7 @@ if "history" not in st.session_state:
 if "profile_saved" not in st.session_state:
     st.session_state["profile_saved"] = False
 
-st.set_page_config(page_title="VSME Sustainability Consultant", layout="wide")
+st.set_page_config(page_title="Minimum Viable ESG", layout="wide")
 
 # --- Sidebar: company profile ---
 with st.sidebar:
@@ -98,7 +107,7 @@ with col1:
             st.session_state["history"].append({
                 "question": question,
                 "response": response,
-                "ts": datetime.utcnow().isoformat()
+                "ts": datetime.now().isoformat()
             })
             st.success("Response generated ✅")
 

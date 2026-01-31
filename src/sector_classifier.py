@@ -1,57 +1,62 @@
 # TODO qui ci si puo' lavorare molto
 
 class SectorClassifier:
-    """Classifica automaticamente il settore aziendale"""
+    """
+    Classify the sector of the company by matching top-k keywords
+    """
     
     def __init__(self):
         self.keywords = {
-            'manifatturiero': {
-                'keywords': ['produzione', 'fabbrica', 'artigianato', 'macchinari', 
-                           'legno', 'mobili', 'metallo', 'plastica', 'lavorazione'],
-                'metriche_focus': ['B3', 'B7', 'B9'],
-                'hint': 'Concentrati su efficienza energetica dei macchinari e gestione scarti produzione'
+            'manufacturing': {
+                'keywords': ['production', 'factory', 'craftsmanship', 'machinery', 
+                           'wood', 'furniture', 'metal', 'plastic', 'processing'],
+                'VSME_metrics': ['B3', 'B7', 'B9'],
+                'hint': 'Focus on the energy efficiency of machinery and the management of production waste'
             },
-            'alimentare': {
-                'keywords': ['cibo', 'ristorante', 'food', 'cucina', 'panificio', 
-                           'pasticceria', 'alimentari', 'ristorazione'],
-                'metriche_focus': ['B6', 'B7', 'B3', 'B9'],
-                'hint': 'Monitora consumo idrico, gestione rifiuti organici e sicurezza alimentare'
+            'food': {
+                'keywords': ['food', 'restaurant', 'food', 'cooking', 'bakery', 
+                           'pastry shop', 'groceries', 'catering'],
+                'VSME_metrics': ['B6', 'B7', 'B3', 'B9'],
+                'hint': 'Monitor water consumption, organic waste management, and food safety'
             },
-            'servizi': {
-                'keywords': ['software', 'consulenza', 'ufficio', 'IT', 'informatica',
-                           'contabilità', 'servizi', 'digitale'],
-                'metriche_focus': ['B3', 'B10', 'C9'],
-                'hint': 'Focus su efficienza energetica uffici e benessere lavoratori'
+            'services': {
+                'keywords': ['software', 'consulting', 'office', 'IT', 'computing',
+                           'accounting', 'services', 'digital'],
+                'VSME_metrics': ['B3', 'B10', 'C9'],
+                'hint': 'Focus on office energy efficiency and employee well-being'
             },
-            'costruzioni': {
-                'keywords': ['edilizia', 'cantiere', 'costruzioni', 'ristrutturazione',
-                           'immobiliare', 'muratura'],
-                'metriche_focus': ['B7', 'B3', 'B9', 'B5'],
-                'hint': 'Gestione materiali da costruzione, rifiuti edili e sicurezza cantiere'
+            'construction': {
+                'keywords': ['building', 'construction site', 'construction', 'renovation',
+                                    'real estate', 'masonry'],
+                'VSME_metrics': ['B7', 'B3', 'B9', 'B5'],
+                            'hint': 'Management of construction materials, construction waste, and construction site safety'
             },
-            'commercio': {
-                'keywords': ['negozio', 'vendita', 'retail', 'commercio', 'distribuzione'],
-                'metriche_focus': ['B3', 'B7'],
-                'hint': 'Efficienza energetica punto vendita e gestione imballaggi'
+            'commerce': {
+                'keywords': ['shop', 'sales', 'retail', 'commerce', 'distribution'],
+                'VSME_metrics': ['B3', 'B7'],
+                'hint': 'Point of sale energy efficiency and packaging management'
             }
         }
     
     def classify(self, company_description):
-        """Classifica il settore dalla descrizione"""
+        """
+        Detect the sector of the company from the description by keywords counting.
+        Check if sectoral-keywords appear in the company's description
+        """
         description_lower = company_description.lower()
         
-        # Conta match per settore
+        # Match count by sector
         scores = {}
         for sector, data in self.keywords.items():
             score = sum(1 for kw in data['keywords'] if kw in description_lower)
             scores[sector] = score
         
-        # Settore con score più alto
+        # Sector with the highest score
         best_sector = max(scores, key=scores.get)
         
-        # Se nessun match, generico
+        # generic if no match detected
         if scores[best_sector] == 0:
-            return 'generico', None
+            return 'generic', None
         
         return best_sector, self.keywords[best_sector]
 
@@ -60,14 +65,14 @@ if __name__ == "__main__":
     classifier = SectorClassifier()
     
     tests = [
-        "Siamo una falegnameria che produce mobili su misura",
-        "Gestiamo un ristorante italiano con 20 coperti",
-        "Software house che sviluppa app mobile"
+        "We are a carpentry workshop that produces custom-made furniture",
+        "We run an Italian restaurant with 20 seats",
+        "Software house that develops mobile apps"
     ]
     
     for test in tests:
         sector, hints = classifier.classify(test)
-        print(f"\nDescrizione: {test}")
-        print(f"Settore: {sector}")
+        print(f"\nDescription: {test}")
+        print(f"Sector: {sector}")
         if hints:
             print(f"Hint: {hints['hint']}")
