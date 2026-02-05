@@ -3,13 +3,6 @@ import streamlit as st
 import calendar
 from datetime import datetime, timedelta
 
-def utc_to_local(utc_dt):
-    # get integer timestamp to avoid precision lost
-    timestamp = calendar.timegm(utc_dt.timetuple())
-    local_dt = datetime.fromtimestamp(timestamp)
-    assert utc_dt.resolution >= timedelta(microseconds=1)
-    return local_dt.replace(microsecond=utc_dt.microsecond)
-
 # Create the instance only once and reuse it.
 # Use @st.cache_resource to avoid recreating it on every rerun.
 @st.cache_resource
@@ -84,8 +77,8 @@ with col1:
     # we use a form to avoid accidental multiple submits
     with st.form("ask_form", clear_on_submit=False):
         question = st.text_area("Your question", height=120)
-        submitted = st.form_submit_button("Submit question")  # if profile not filled/saved block the request.
-                                                            # It would be wasteful, too little context.
+        submitted = st.form_submit_button("Submit") # if profile not filled/saved block the request.
+                                                    # It would be wasteful, too little context.
 
     if submitted:
         if not st.session_state["profile_saved"]:
@@ -107,7 +100,7 @@ with col1:
             st.session_state["history"].append({
                 "question": question,
                 "response": response,
-                "ts": datetime.strptime(datetime.now(), "%y/%m/%d - %H:%M")
+                "ts": datetime.now().strftime("%Y/%m/%d - %H:%M")
             })
             st.success("Response generated ✅")
 
@@ -138,14 +131,3 @@ with col2:
 # --- footer / notes ---
 st.markdown("---")
 st.markdown("If the app does not update automatically when you modify project files, press `R` in the Streamlit UI or use the 'Rerun' option.")
-
-
-# OPTIONAL: light CSS to improve appearance (not mandatory)
-st.markdown(
-    """
-    <style>
-    .stDownloadButton > button { border-radius: 8px; padding: 8px 12px; }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)

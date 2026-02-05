@@ -1,0 +1,28 @@
+A selection of what need to be used as knowledge base. The selected files will be processed to create embeddings (that will be
+fed into LLM's prompt)
+
+EFRAG DOCMENTS RELATED TO VSME:
+    - VSME Standard
+    - VSME - Basis for Conclusions
+    - EFRAG - Cover Letter & Cost‑Benefit Analysis on VSME
+    - EUROPEAN COMMISSION - Questions and answers on the Recommendation on a voluntary sustainability reporting standard for small and medium-sized undertakings
+
+VSME documents that can be included:
+    - https://api.knowledgehub.efrag.org/dev-doc-attachment/vsme-c2-examples-final.html
+    - The 5 use cases of VSME
+
+Politically-oriented documents (that gives VSME contextualization): Recommendations and annexes
+    - European Commission — Recommendation on a voluntary sustainability reporting standard for SMEs
+
+Not-related (or potentially-related) documents
+    - Commission press release on VSME
+    - OECD — Guidance Note on fostering convergence in SME sustainability reporting
+    - OECD — Background study 'Fostering convergence in SME sustainability reporting'
+    - IFC — Sustainable MSME Finance Reference Guide
+    - UN Guiding Principles on Business and Human Rights
+    - ILO — Core Labour Standards / Guide
+    - UNIDO — Practical Guide for MSMEs
+    - GRI — 'Business Reporting on the SDGs' analysis
+    - Commission Recommendation 2003/361/EC — Definition of micro/small/medium enterprises
+
+VSME - Supporting Guide on Disclosure C2 (example of supporting guides)

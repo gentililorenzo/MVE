@@ -30,7 +30,7 @@ class VSMERagSystem:
         # Query embedding
         query_embedding = self.embedding_model.encode([query]).tolist()
         
-        # Database search
+        # Database search - get the n_results nearest neighbor embeddings for provided query_embeddings
         results = self.collection.query(
             query_embeddings=query_embedding,
             n_results=n_results

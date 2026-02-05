@@ -60,7 +60,7 @@ ANSWER:"""
         
         # 1. Retrieval
         query_enriched = f"{company_profile['activity']} {question}"
-        chunks, _ = self.rag.retrieve(query_enriched, n_results=5)
+        chunks, _ = self.rag.retrieve(query_enriched, n_results=50)  # TODO 5 chunks as default
         
         # 2. Augmentation (prompting) + Retrieval
         prompt = self.generate_prompt(company_profile, question, chunks)
