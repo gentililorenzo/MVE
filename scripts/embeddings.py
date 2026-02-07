@@ -1,13 +1,22 @@
+import os
 from sentence_transformers import SentenceTransformer
 import chromadb
 from chromadb.config import Settings
 import json
 from tqdm import tqdm
 import sys
+import torch  # Importante per la gestione della memoria GPU se necessario
+
 sys.path.append('..')
 
 # Importa la funzione aggiornata
 from scripts.chunking import extract_all_pdfs, chunk_documents
+
+################
+# --- 1. FORZA MODALITÀ OFFLINE ---
+# Queste variabili impediscono qualsiasi tentativo di connessione a Hugging Face
+os.environ["HF_DATASETS_OFFLINE"] = "1"
+os.environ["TRANSFORMERS_OFFLINE"] = "1"
 
 # Funzioni helper
 def classify_vsme_section(text):
@@ -70,9 +79,30 @@ def get_document_type(filename):
         return "other"
 
 
-print("🧠 Caricamento modello embedding...")
-embedding_model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
-print("✅ Modello caricato")
+# --- CONFIGURAZIONE MODELLO OFFLINE ---
+print("🧠 Caricamento modello embedding (Locale - Stella v5)...")
+
+# Percorso locale dove hai scaricato il modello nella Fase 1
+local_model_path = "./models/stella_en_400M_v5"
+
+# Verifica che il modello esista
+if not os.path.exists(local_model_path):
+    raise FileNotFoundError(f"❌ Modello non trovato in {local_model_path}. Esegui prima lo script di download online.")
+
+model_kwargs = {
+    "device_map": "auto",
+    "load_in_8bit": True
+}
+
+# NOTA: Passiamo il path locale invece del repo ID
+embedding_model = SentenceTransformer(
+    local_model_path,       
+    trust_remote_code=True, # Necessario anche offline per eseguire il codice custom locale
+    model_kwargs=model_kwargs,
+    local_files_only=True   # Ulteriore sicurezza per evitare chiamate di rete
+)
+print("✅ Modello caricato in modalità OFFLINE")
+# -----------------------------------------
 
 # Estrai TUTTI i PDF
 print("\n📂 Caricamento documenti...")
@@ -90,7 +120,7 @@ for doc in documents:
 print("\n🗄️  Inizializzazione ChromaDB...")
 client = chromadb.PersistentClient(path="../database/chroma_db")
 
-# Elimina collezione esistente se presente (fresh start)
+# Elimina collezione esistente se presente (fresh start) 
 try:
     client.delete_collection("vsme_standard")
     print("   🗑️  Collezione esistente eliminata")
@@ -98,15 +128,18 @@ except:
     pass
 
 # Crea nuova collezione
+# Nota: Stella v5 ha dimensioni diverse (1024) rispetto a MiniLM (384).
+# ChromaDB rileverà automaticamente la dimensione al primo inserimento.
 collection = client.create_collection(
     name="vsme_standard",
-    metadata={"description": "EFRAG VSME Standard - Multipli documenti"}
+    metadata={"description": "EFRAG VSME Standard - Stella v5 Embeddings"}
 )
 
 print(f"\n⚙️  Generazione embeddings per {len(chunks)} chunks...")
 
 # Genera embeddings in batch
-batch_size = 32
+# Ridotto batch_size se necessario per la memoria GPU con il modello più grande
+batch_size = 32 
 for i in tqdm(range(0, len(chunks), batch_size)):
     batch_chunks = chunks[i:i+batch_size]
     
@@ -114,6 +147,8 @@ for i in tqdm(range(0, len(chunks), batch_size)):
     batch_texts = [c['text'] for c in batch_chunks]
     
     # Genera embeddings
+    # Stella v5 non richiede prompt specifici per l'indicizzazione dei passaggi
+    # (per le query si usa solitamente "s2p_query")
     embeddings = embedding_model.encode(batch_texts).tolist()
     
     # IDs univoci
@@ -159,6 +194,7 @@ print(f"📍 Path: ../database/chroma_db")
 # Salva statistiche database
 db_stats = {
     'total_chunks': collection.count(),
+    'model': 'NovaSearch/stella_en_400M_v5',
     'sources': {}
 }
 

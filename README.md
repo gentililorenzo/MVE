@@ -9,7 +9,7 @@ First, download [Ollama](https://ollama.com/download) model gemma3:4b.
 
 In the project folder, create the virtual environment and install the libraries needed.
 ```bash
-python venv venv
+py -3.10 -m venv venv
 pip install -r "requirements.txt"
 ```
 

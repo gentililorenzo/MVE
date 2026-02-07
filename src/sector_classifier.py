@@ -1,4 +1,4 @@
-# TODO qui ci si puo' lavorare molto
+# TODO qui ci si puo' lavorare molto --> applicare re-ranking al posto di contare le keywords
 
 class SectorClassifier:
     """

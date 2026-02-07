@@ -1,0 +1,21 @@
+{
+  "total_documents": 3,
+  "total_chunks": 14896,
+  "documents": [
+    {
+      "filename": "cover_letter_and_cost_benefit_analysis_on_vsme.pdf",
+      "pages": 60,
+      "chunks": 7260
+    },
+    {
+      "filename": "vsme-questions-answers_en_eu_recommendation-.pdf",
+      "pages": 2,
+      "chunks": 10
+    },
+    {
+      "filename": "vsme_standard.pdf",
+      "pages": 66,
+      "chunks": 7626
+    }
+  ]
+}

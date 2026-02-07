@@ -1,0 +1,11 @@
+2026-02-07 17:25:59,991 - INFO - ============================================================
+2026-02-07 17:25:59,992 - INFO - VSME EMBEDDINGS GENERATOR - OFFLINE MODE
+2026-02-07 17:25:59,992 - INFO - ============================================================
+2026-02-07 17:25:59,998 - INFO - Use pytorch device_name: cpu
+2026-02-07 17:25:59,998 - INFO - Load pretrained SentenceTransformer: ./models/stella_en_400M_v5
+2026-02-07 17:26:00,101 - WARNING - WARNING[XFORMERS]: xFormers can't load C++/CUDA extensions. xFormers was built for:
+    PyTorch 2.10.0+cu128 with CUDA 1208 (you have 2.10.0+cpu)
+    Python  3.10.11 (you have 3.13.5)
+  Please reinstall xformers (see https://github.com/facebookresearch/xformers#installing-xformers)
+  Memory-efficient attention, SwiGLU, sparse and more won't be available.
+  Set XFORMERS_MORE_DETAILS=1 for more details
