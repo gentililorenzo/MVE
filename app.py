@@ -1,19 +1,18 @@
 import streamlit as st
 
-import calendar
-from datetime import datetime, timedelta
+from datetime import datetime
 
 # Create the instance only once and reuse it.
 # Use @st.cache_resource to avoid recreating it on every rerun.
 @st.cache_resource
 def create_system():
     try:
-        from src.sectoral_prompt import HybridPromptSystem
+        from RAG.RAG import rag
     except Exception as e:
         # If the import fails, show the error in the UI instead of crashing everything.
-        st.error(f"Error importing src.sectoral_prompt: {e}")
+        st.error(f"Error importing RAG.sectoral_prompt: {e}")
         return None
-    return HybridPromptSystem()
+    return rag()
 
 system = create_system()
 

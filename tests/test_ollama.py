@@ -1,7 +1,7 @@
 import ollama
 
 response = ollama.chat(
-    model='gemma3:4b',
+    model='Qwen2.5:7b',
     messages=[
         {'role': 'user', 'content': 'Who are you? Give greetings'}
     ]

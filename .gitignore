@@ -5,3 +5,5 @@
 /database
 /scripts/models
 /venv
+/ingestion/models
+/database

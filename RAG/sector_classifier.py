@@ -1,4 +1,5 @@
-# TODO qui ci si puo' lavorare molto --> applicare re-ranking al posto di contare le keywords
+# TODO qui ci si puo' lavorare molto --> applicare re-ranking al posto di contare le keywords. 
+# Poi questo considera solo il VSME quindi solo la richiesta dell'utente per stilare un report
 
 class SectorClassifier:
     """

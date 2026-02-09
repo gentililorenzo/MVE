@@ -5,9 +5,9 @@ Company's data will maintain privacy by the offline usage. (TODO aggiungere inse
 TODO(?) Utente aggiunge normative di riferimento o news settoriali (ad esempio un pacchetto di PDF, news/studi accademici, su come risparmiare energia?? O magari una nuova versione legislativa, Omnibus I o II?)
 
 ## Requirements 
-First, download [Ollama](https://ollama.com/download) model gemma3:4b.
+First, download [Ollama](https://ollama.com/download) model Qwen2.5:7b.
 
-In the project folder, create the virtual environment and install the libraries needed.
+In the project folder, create the virtual environment (python version 3.10) and install the libraries needed.
 ```bash
 py -3.10 -m venv venv
 pip install -r "requirements.txt"
@@ -19,7 +19,7 @@ Activate the virtual environment (venv)
 .\venv\Scripts\activate
 ```
 
-1) Create the knowledge base
+1) Create the knowledge base by chunking PDFs documents (in `data` folder)
 ```bash
 python scripts/ingest_pdf.py
 ```
