@@ -1,17 +1,12 @@
 import streamlit as st
 
 from datetime import datetime
+from RAG.RAG import rag
 
 # Create the instance only once and reuse it.
 # Use @st.cache_resource to avoid recreating it on every rerun.
 @st.cache_resource
 def create_system():
-    try:
-        from RAG.RAG import rag
-    except Exception as e:
-        # If the import fails, show the error in the UI instead of crashing everything.
-        st.error(f"Error importing RAG.sectoral_prompt: {e}")
-        return None
     return rag()
 
 system = create_system()
@@ -72,6 +67,13 @@ st.title("🟢 Sustainability assistant")
 col1, col2 = st.columns([3, 1])
 
 with col1:
+    
+    st.write('What would you like to do today? Help me give you the best answer.')
+    VSME_oriented = st.checkbox('Advise me on how to create sustainability reports') # VSME-oriented
+    ESG_oriented = st.checkbox('Tell me how I can be more sustainable') # ESG-oriented
+    SFDR_oriented = st.checkbox('(beta) How to align my sustainability with finance') # SFDR-oriented ???????
+    # TODO if VSME_oriented: passare al prompt (anche più di una checkbox, sfruttiamo la context window di Qwen con più chunks)     
+    
     st.subheader("Ask a question")
     # we use a form to avoid accidental multiple submits
     with st.form("ask_form", clear_on_submit=False):
@@ -90,7 +92,11 @@ with col1:
             profile = st.session_state["company_profile"]   # show spinner while processing
             with st.spinner("Generating response..."):
                 try:
-                    response = system.consult(profile, question)
+                    selected_options = []
+                    if VSME_oriented: selected_options.append("VSME oriented")
+                    if ESG_oriented: selected_options.append("ESG oriented")
+                    if SFDR_oriented: selected_options.append("SFDR oriented")
+                    response = system.consult(profile, question, scope=selected_options)
                 except Exception as e:
                     st.error(f"Error during consultation: {e}")
                     response = f"Internal error: {e}"

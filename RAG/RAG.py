@@ -11,13 +11,15 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.append(str(ROOT))
 
 from config import mve_config
-from sector_classifier import SectorClassifier #RAG.sector_classifier
+from RAG.sector_classifier import SectorClassifier
 
 EMBEDDING_MODEL = mve_config.embedding_model
 DB_PATH = mve_config.db_path()
 COLLECTION = mve_config.collection
 DEVICE = mve_config.device
 LLM_MODEL = mve_config.llm_model
+CHUNKS_IN_PROMPT = mve_config.chunks_in_prompt
+LOG_PATH = mve_config.log_path()
 
 logging.basicConfig(
     level=logging.INFO,
@@ -65,15 +67,15 @@ class rag:
         
         return results['documents'][0], results['metadatas'][0]
     
-    def consult(self, company_profile, question):
-        """ Chat with prompted Ollama to obtain a complete consultation """
+    def consult(self, company_profile, question, scope):
+        """ Chat with prompted LLM to obtain a complete consultation """
         
         # 1. Retrieval
         query_enriched = f"{company_profile['activity']} {question}"
-        chunks, _ = self.retrieve(query_enriched, n_results=2)  # 5 chunks as default
+        chunks, _ = self.retrieve(query_enriched, n_results=CHUNKS_IN_PROMPT)  # 5 chunks as default
         
         # 2. Augmentation (prompting)
-        prompt = self.generate_prompt(company_profile, question, chunks)
+        prompt = self.generate_prompt(company_profile, question, chunks, scope)
         
         # 3. Generation - LLM response
         response = ollama.chat(
@@ -83,26 +85,42 @@ class rag:
         
         return response['message']['content']
     
-    def generate_prompt(self, company_profile, question, context_chunks):
-        
+    def generate_prompt(self, company_profile, question, context_chunks, scope):
+        """
+        Specialize LLM in answering the request of the user 
+        :param company_profile: Description of the undertaking
+        :param question: Question asked by the user
+        :param context_chunks: Chunks retrieved from the DB by the embedding model
+        :param scope: Scope of the answer (ESG-, FINANCIAL-, REPORTING- oriented)
+        """
+        # TODO se utente non seleziona nessuna checkbox (scope) noi comunque facciamo retrieval dal DB vettorizzato su VSME (?)
+                
         # Classify the sector based on the keywords encountered
         sector, hints = self.classifier.classify(
             company_profile['activity']
         )
         
-        # Construct the context TODO qui aggiornare pesantemente
+        # Construct the context TODO qui aggiornare pesantemente se implementiamo procedura di Q&A (consulenza completa con più domande e risposte) 
         context = "\n\n".join([
             f"[reference #{i+1}]\n{chunk}"
             for i, chunk in enumerate(context_chunks)
         ])
         
-        # Prompt with secotral hint # TODO attenzione a VSME_metrics in sector_classifier.py
-        prompt = f"""You are a sustainability consultant with expertise in the EFRAG VSME standard for micro and SMEs.
+        # TODO rimuovere
+        logging.info(scope)
+        
+        # Prompt with secotral hint
+        prompt = f"""You are a sustainability consultant for micro and SMEs.
 
 COMPANY PROFILE:
 - Sector: {sector}
 - Size: {company_profile['num_employees']} employees
 - Activity: {company_profile['activity']}
+
+{'You are specialized in:' if scope else ''}
+{'- the EFRAG VSME standard' if 'VSME oriented' in scope else ''}
+{'- the domain of sustainability practices and ESG domain' if 'ESG oriented' in scope else ''}
+{'- the financial-related ESG domain' if 'SFDR oriented' in scope else ''}
 
 {'SECTOR TIP:' if hints else ''}
 {hints['hint'] if hints else ''}
@@ -110,7 +128,7 @@ COMPANY PROFILE:
 {'PRIORITY METRICS FOR THIS SECTOR:' if hints else ''}
 {', '.join(hints['VSME_metrics']) if hints else ''}
 
-RELEVANT VSME STANDARDS:
+RELEVANT VSME STANDARDS REFERENCES:
 {context}
 
 QUESTION:
@@ -127,10 +145,21 @@ STRUCTURE:
 Be specific for the {sector} sector. Do not be generic.
 
 ANSWER:"""
-        
-        return prompt # TODO salvare il prompt in ../prompt_logs/ per vedere cosa viene fuori
+        log_prompt(prompt)
+        return prompt
     
-    # Test
+def log_prompt(prompt):
+    try:
+        LOG_PATH.mkdir(exist_ok=True, parents=True)
+        with open(LOG_PATH / "prompt_log.txt", "a", encoding="utf-8") as f:
+            f.write(f"\n\n\nPrompt with {CHUNKS_IN_PROMPT} chunks\n")
+            f.write("="*60 + "\n")
+            f.write(prompt)
+                
+    except IOError as e:
+        logger.error(f"❌ Error saving the .txt log file: {e}")
+
+# Test
 if __name__ == "__main__":
     system = rag()
     

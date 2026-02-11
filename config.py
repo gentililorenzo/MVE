@@ -8,6 +8,7 @@ class MVEConfigs():
     batch_size: int = 16
     device: str = "cpu"
     llm_model: str = "Qwen2.5:7b"
+    chunks_in_prompt: int = 5 # 5 as default
 
     # return directly the "Path" object
     @staticmethod
@@ -17,5 +18,9 @@ class MVEConfigs():
     @staticmethod
     def db_path():
         return Path("C:/Users/39389/Desktop/Tesi/provaTesiLLM/database/chromadb")
+    
+    @staticmethod
+    def log_path():
+        return Path("C:/Users/39389/Desktop/Tesi/provaTesiLLM/log/")
     
 mve_config = MVEConfigs()

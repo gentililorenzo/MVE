@@ -15,7 +15,7 @@ class SectorClassifier:
                 'hint': 'Focus on the energy efficiency of machinery and the management of production waste'
             },
             'food': {
-                'keywords': ['food', 'restaurant', 'food', 'cooking', 'bakery', 
+                'keywords': ['food', 'restaurant', 'food', 'cooking', 'bakery', 'bar',
                            'pastry shop', 'groceries', 'catering'],
                 'VSME_metrics': ['B6', 'B7', 'B3', 'B9'],
                 'hint': 'Monitor water consumption, organic waste management, and food safety'

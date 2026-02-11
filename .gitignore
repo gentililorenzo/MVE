@@ -7,3 +7,6 @@
 /venv
 /ingestion/models
 /database
+/RAG/__pycache__
+/database/chroma_db
+/database
