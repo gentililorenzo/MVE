@@ -67,17 +67,28 @@ class rag:
         
         return results['documents'][0], results['metadatas'][0]
     
-    def consult(self, company_profile, question, scope):
-        """ Chat with prompted LLM to obtain a complete consultation """
+    def consult(self, company_profile, question, scope, interview_history=None):
+        """ 
+        Chat with prompted LLM. 
+        If interview_history is present, it enriches the context.
+        """
         
-        # 1. Retrieval
-        query_enriched = f"{company_profile['activity']} {question}"
-        chunks, _ = self.retrieve(query_enriched, n_results=CHUNKS_IN_PROMPT)  # 5 chunks as default
+        # 1. Retrieval enrichment
+        # Se c'è una storia di intervista, usiamola per cercare chunk più specifici
+        interview_text = ""
+        if interview_history:
+            interview_text = " ".join([f"Q: {q} A: {a}" for q, a in interview_history])
+        
+        # Query arricchita: Attività + Domanda utente + Dettagli emersi nell'intervista
+        query_enriched = f"{company_profile['activity']} {question} {interview_text}"
+        
+        # Retrieval
+        chunks, _ = self.retrieve(query_enriched, n_results=CHUNKS_IN_PROMPT)
         
         # 2. Augmentation (prompting)
-        prompt = self.generate_prompt(company_profile, question, chunks, scope)
+        prompt = self.generate_prompt(company_profile, question, chunks, scope, interview_history)
         
-        # 3. Generation - LLM response
+        # 3. Generation
         response = ollama.chat(
             model=LLM_MODEL,
             messages=[{'role': 'user', 'content': prompt}]
@@ -85,34 +96,30 @@ class rag:
         
         return response['message']['content']
     
-    def generate_prompt(self, company_profile, question, context_chunks, scope):
-        """
-        Specialize LLM in answering the request of the user 
-        :param company_profile: Description of the undertaking
-        :param question: Question asked by the user
-        :param context_chunks: Chunks retrieved from the DB by the embedding model
-        :param scope: Scope of the answer (ESG-, FINANCIAL-, REPORTING- oriented)
-        """
-        # TODO se utente non seleziona nessuna checkbox (scope) noi comunque facciamo retrieval dal DB vettorizzato su VSME (?)
-                
-        # Classify the sector based on the keywords encountered
-        sector, hints = self.classifier.classify(
-            company_profile['activity']
-        )
+    def generate_prompt(self, company_profile, question, context_chunks, scope, interview_history=None):
         
-        # Construct the context TODO qui aggiornare pesantemente se implementiamo procedura di Q&A (consulenza completa con più domande e risposte) 
-        context = "\n\n".join([
-            f"[reference #{i+1}]\n{chunk}"
-            for i, chunk in enumerate(context_chunks)
-        ])
+        sector, hints = self.classifier.classify(company_profile['activity'])
         
-        # Prompt with secotral hint
+        context = "\n\n".join([f"[reference #{i+1}]\n{chunk}" for i, chunk in enumerate(context_chunks)])
+        
+        # Formattazione dell'intervista per il prompt
+        interview_section = ""
+        if interview_history:
+            interview_str = "\n".join([f"- Q: {item[0]}\n  A: {item[1]}" for item in interview_history])
+            interview_section = f"""
+COMPANY DEEP-DIVE (INTERVIEW DATA):
+The user has provided specific details about their operations:
+{interview_str}
+"""
+
         prompt = f"""You are a sustainability consultant for micro and SMEs.
 
 COMPANY PROFILE:
 - Sector: {sector}
 - Size: {company_profile['num_employees']} employees
 - Activity: {company_profile['activity']}
+
+{interview_section}
 
 {'You are specialized in:' if scope else ''}
 {'- the EFRAG VSME standard' if 'VSME oriented' in scope else ''}
@@ -122,24 +129,21 @@ COMPANY PROFILE:
 {'SECTOR TIP:' if hints else ''}
 {hints['hint'] if hints else ''}
 
-{'PRIORITY METRICS FOR THIS SECTOR:' if hints else ''}
-{', '.join(hints['VSME_metrics']) if hints else ''}
-
 RELEVANT VSME STANDARDS REFERENCES:
 {context}
 
-QUESTION:
+USER REQUEST:
 {question}
 
-Provide a PRACTICAL and CONCRETE answer based on the VSME standard.
+Based on the COMPANY PROFILE and the INTERVIEW DATA provided above, provide a tailored answer.
 
 STRUCTURE:
-1. 🎯 IMMEDIATE PRIORITIES (Quick wins)
-2. 📊 VSME METRICS TO MONITOR (with codes, e.g., B3, B7)
-3. 📝 CONCRETE ACTIONS (step by step)
-4. 📄 NECESSARY DOCUMENTS
+1. 🎯 DIAGNOSIS (Based on interview answers)
+2. 📊 METRICS TO MONITOR
+3. 📝 ACTION PLAN
+4. 📄 DOCUMENTATION NEEDED
 
-Be specific for the {sector} sector. Do not be generic.
+Be specific for the {sector} sector.
 
 ANSWER:"""
         log_prompt(prompt)
