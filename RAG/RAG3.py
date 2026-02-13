@@ -5,13 +5,13 @@ import sys
 import chromadb
 import ollama
 from sentence_transformers import SentenceTransformer
- 
-# root
+
+# root setup (invariato)
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.append(str(ROOT))
 
 from config import mve_config
-from RAG.sector_classifier import SectorClassifier
+from RAG.sector_classifier2 import SectorClassifier
 
 EMBEDDING_MODEL = mve_config.embedding_model
 DB_PATH = mve_config.db_path()
@@ -21,28 +21,21 @@ LLM_MODEL = mve_config.llm_model
 CHUNKS_IN_PROMPT = mve_config.chunks_in_prompt
 LOG_PATH = mve_config.log_path()
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-    datefmt="%H:%M:%S"
-)
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
 class rag:    
     def __init__(self):
-                
-        # Load embedding model
+        # 1. Load Embedding Model
         logger.info(f"Loading: {EMBEDDING_MODEL}")
-        self.embedding_model = SentenceTransformer(
-            EMBEDDING_MODEL,
-            device=DEVICE
-        )
+        self.embedding_model = SentenceTransformer(EMBEDDING_MODEL, device=DEVICE)
         
-        # Load vectorial database
-        # Nota: CONFIG['DB_PATH'] è ora un oggetto Path corretto grazie a load_config()
+        # 2. Init Classifier (passando il modello per risparmiare memoria)
+        self.classifier = SectorClassifier(embedding_model=self.embedding_model)
+        
+        # 3. Load Vector DB
         logger.info(f"Connecting at DB in: {DB_PATH}")
         self.client = chromadb.PersistentClient(path=str(DB_PATH))
-        
         try:
             self.collection = self.client.get_collection(COLLECTION)
         except chromadb.errors.NotFoundError as e:
@@ -50,102 +43,77 @@ class rag:
             raise e
         
         self.llm_model = LLM_MODEL
-        self.classifier = SectorClassifier()
     
     def retrieve(self, query, n_results=5):
-        """
-        Retrieve relevant chunks
-        """
-        # Query embedding
         query_embedding = self.embedding_model.encode([query]).tolist()
-        
-        # Database search - get the n_results nearest neighbor embeddings for provided query_embeddings
-        results = self.collection.query(
-            query_embeddings=query_embedding,
-            n_results=n_results
-        )
-        
+        results = self.collection.query(query_embeddings=query_embedding, n_results=n_results)
         return results['documents'][0], results['metadatas'][0]
     
     def consult(self, company_profile, question, scope, interview_history=None):
-        """ 
-        Chat with prompted LLM. 
-        If interview_history is present, it enriches the context.
-        """
-        
-        # 1. Retrieval enrichment
-        # Se c'è una storia di intervista, usiamola per cercare chunk più specifici
+        # 1. Recupero contesto intervista
         interview_text = ""
         if interview_history:
             interview_text = " ".join([f"Q: {q} A: {a}" for q, a in interview_history])
         
-        # Query arricchita: Attività + Domanda utente + Dettagli emersi nell'intervista
-        query_enriched = f"{company_profile['activity']} {question} {interview_text}"
+        # 2. Classificazione Settoriale (Prima del retrieval, utile per filtrare o arricchire)
+        sector_name, sector_profile = self.classifier.classify(company_profile['activity'])
         
-        # Retrieval
+        # 3. Retrieval
+        # Arricchiamo la query con il nome del settore VSME identificato
+        query_enriched = f"{company_profile['activity']} ({sector_name}) {question} {interview_text}"
         chunks, _ = self.retrieve(query_enriched, n_results=CHUNKS_IN_PROMPT)
         
-        # 2. Augmentation (prompting)
-        prompt = self.generate_prompt(company_profile, question, chunks, scope, interview_history)
+        # 4. Prompt Generation
+        prompt = self.generate_prompt(company_profile, question, chunks, scope, 
+                                      sector_name, sector_profile, interview_history)
         
-        # 3. Generation
-        response = ollama.chat(
-            model=LLM_MODEL,
-            messages=[{'role': 'user', 'content': prompt}]
-        )
-        
+        # 5. Generation
+        response = ollama.chat(model=LLM_MODEL, messages=[{'role': 'user', 'content': prompt}])
         return response['message']['content']
     
-    def generate_prompt(self, company_profile, question, context_chunks, scope, interview_history=None):
+    def generate_prompt(self, company_profile, question, context_chunks, scope, 
+                        sector_name, sector_profile, interview_history=None):
         
-        sector, hints = self.classifier.classify(company_profile['activity'])
+        context = "\n\n".join([f"[VSME Standard Ref #{i+1}]\n{chunk}" for i, chunk in enumerate(context_chunks)])
         
-        context = "\n\n".join([f"[reference #{i+1}]\n{chunk}" for i, chunk in enumerate(context_chunks)])
-        
-        # Formattazione dell'intervista per il prompt
         interview_section = ""
         if interview_history:
             interview_str = "\n".join([f"- Q: {item[0]}\n  A: {item[1]}" for item in interview_history])
-            interview_section = f"""
-COMPANY DEEP-DIVE (INTERVIEW DATA):
-The user has provided specific details about their operations:
-{interview_str}
+            interview_section = f"INTERVIEW DATA:\n{interview_str}\n"
+
+        # Costruzione dinamica della sezione VSME Guidance basata sul PDF
+        vsme_guidance = f"""
+VSME SECTOR CLASSIFICATION: {sector_name}
+- Type: {sector_profile['VSME_Sector_Type']}
+- Focus Modules: {', '.join(sector_profile['Priority_Modules'])}
+- Key VSME Metrics: {', '.join(sector_profile['Key_Metrics'])}
+- STRATEGIC HINT: {sector_profile['Hint']}
 """
 
-        prompt = f"""You are a sustainability consultant for micro and SMEs.
+        prompt = f"""You are an expert sustainability consultant specializing in the 'Voluntary Standard for non-listed SMEs' (VSME).
 
 COMPANY PROFILE:
-- Sector: {sector}
-- Size: {company_profile['num_employees']} employees
 - Activity: {company_profile['activity']}
+- Employees: {company_profile['num_employees']} (Determines Micro/Small/Medium status)
+{vsme_guidance}
 
 {interview_section}
 
-{'You are specialized in:' if scope else ''}
-{'- the EFRAG VSME standard' if 'VSME oriented' in scope else ''}
-{'- the domain of sustainability practices and ESG domain' if 'ESG oriented' in scope else ''}
-{'- the financial-related ESG domain' if 'SFDR oriented' in scope else ''}
-
-{'SECTOR TIP:' if hints else ''}
-{hints['hint'] if hints else ''}
-
-RELEVANT VSME STANDARDS REFERENCES:
+OFFICIAL VSME STANDARD CONTEXT:
 {context}
 
-USER REQUEST:
+USER QUESTION:
 {question}
 
-Based on the COMPANY PROFILE and the INTERVIEW DATA provided above, provide a tailored answer.
-
-STRUCTURE:
-1. 🔍 DIAGNOSIS (Based on interview answers)
-2. 📊 METRICS TO MONITOR
-3. 📝 ACTION PLAN
-4. 📄 DOCUMENTATION NEEDED
-
-Be specific for the {sector} sector.
+TASK:
+Provide a response strictly aligned with the VSME Standard.
+1. Identify if the company is Micro, Small, or Medium based on employee count (Micro < 10, Small < 50, Medium < 250).
+2. If the sector is 'Services/Office', explicitly mention that Pollution (B4) and Mass-flow (B7) metrics are likely not applicable unless specific circumstances apply.
+3. If 'High Climate Impact', emphasize the need for Transition Plans (C3).
+4. Provide a concrete Action Plan based on the 'Key VSME Metrics' identified above.
 
 ANSWER:"""
+        
         log_prompt(prompt)
         return prompt
     

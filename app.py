@@ -39,8 +39,7 @@ with st.sidebar:
 
     if save_profile:
         if num_employees == 0:
-            st.error("The number of employees must be greater than 0.")  # We could set default to 1 to force
-                                                                    # the user to enter an exact number.
+            st.error("The number of employees must be greater than 0.")
             st.session_state["profile_saved"] = False
         elif not activity_desc or not activity_desc.strip():
             st.error("The business description is required.")
@@ -72,7 +71,6 @@ with col1:
     VSME_oriented = st.checkbox('Advise me on how to create sustainability reports') # VSME-oriented
     ESG_oriented = st.checkbox('Tell me how I can be more sustainable') # ESG-oriented
     SFDR_oriented = st.checkbox('(beta) How to align my sustainability with finance') # SFDR-oriented ???????
-    # TODO if VSME_oriented: passare al prompt (anche più di una checkbox, sfruttiamo la context window di Qwen con più chunks)     
     
     st.subheader("Ask a question")
     # we use a form to avoid accidental multiple submits

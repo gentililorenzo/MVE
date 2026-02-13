@@ -1,6 +1,6 @@
 import streamlit as st
 from datetime import datetime
-from RAG.RAG2 import rag
+from RAG.RAG3 import rag
 
 # --- Setup e Cache (Invariato) ---
 @st.cache_resource
@@ -37,23 +37,37 @@ st.set_page_config(page_title="Minimum Viable ESG", layout="wide")
 # --- Sidebar (Invariato) ---
 with st.sidebar:
     st.title("Company profile")
-    # ... (Codice sidebar esistente per profilo e clear history) ...
-    # Assicurati di mantenere il codice esistente qui
     num_employees = st.number_input("Number of employees", min_value=0, value=st.session_state["company_profile"]["num_employees"] or 0)
     activity_desc = st.text_area("Business description", value=st.session_state["company_profile"]["activity"])
-    
-    if st.button("Save profile"):
-        st.session_state["company_profile"] = {"num_employees": int(num_employees), "activity": activity_desc}
-        st.session_state["profile_saved"] = True
-        st.success("Profile saved!")
+            
+    save_profile = st.button("Save profile")
+
+    if save_profile:
+        if num_employees == 0:
+            st.error("The number of employees must be greater than 0.")
+            st.session_state["profile_saved"] = False
+        elif not activity_desc or not activity_desc.strip():
+            st.error("The business description is required.")
+            st.session_state["profile_saved"] = False
+        else:
+            st.session_state["company_profile"] = {"num_employees": int(num_employees), "activity": activity_desc}
+            st.session_state["profile_saved"] = True
+            st.success("Profile saved successfully ✅")
         
     st.markdown("---")
-    # Tasto per resettare l'intervista
+    # Reset interview
     if st.button("Reset Consultation"):
         st.session_state["interview_mode"] = False
         st.session_state["interview_step"] = 0
         st.session_state["interview_answers"] = []
         st.rerun()
+        
+    st.markdown("---")
+    st.markdown("**Suggested questions:**")
+    st.write("- `Which ESG practices are most important for a company like ours?`")
+    st.write("- `Give me an action plan to prepare a basic environmental report.`")
+    st.write("- `What sustainability plan or proposed sustainable practices can I present to the bank to obtain financing?`")
+
 
 # --- Main Layout ---
 st.title("🟢 Sustainability Assistant")
@@ -61,11 +75,11 @@ st.title("🟢 Sustainability Assistant")
 col1, col2 = st.columns([3, 1])
 
 with col1:
-    # Selezione Modalità
-    mode = st.radio("Select Mode:", ["Quick Question", "Guided Consultation (Deep Dive)"], horizontal=True)
+    # Mode selection
+    mode = st.radio("Select Mode:", ["Quick Question", "Guided Consultation)"], horizontal=True)
 
     if mode == "Quick Question":
-        # --- LOGICA VECCHIA (One-shot) ---
+        # --- Single answer, oriented through checkbox (one-shot) ---
         st.session_state["interview_mode"] = False
         
         VSME_oriented = st.checkbox('Advise me on how to create sustainability reports')
@@ -91,12 +105,12 @@ with col1:
                     st.session_state["history"].append({
                         "question": question,
                         "response": response,
-                        "ts": datetime.now().strftime("%H:%M")
+                        "ts": datetime.now().strftime("%H:%M - %Y/%m/%d")
                     })
                     st.rerun()
 
     else:
-        # --- NUOVA LOGICA (Guided Interview) ---
+        # --- Consultation with user (guided interview to enrich the prompt at the best) ---
         st.session_state["interview_mode"] = True
         
         if not st.session_state["profile_saved"]:
@@ -184,3 +198,11 @@ with col2:
     if st.session_state["interview_answers"]:
         st.markdown("**Interview Progress:**")
         st.progress(len(st.session_state["interview_answers"]) / len(INTERVIEW_QUESTIONS))
+        
+    st.markdown("---")
+    # Download history as text
+    if st.session_state["history"]:
+        transcript = ""
+        for item in st.session_state["history"]:
+            transcript += f"[{item['ts']}] Question: {item['question']}\nAnswer: {item['response']}\n\n"
+        st.download_button("Download history (.txt)", transcript, file_name="consultation_history.txt", mime="text/plain")

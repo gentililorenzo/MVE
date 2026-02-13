@@ -8,7 +8,7 @@ class MVEConfigs():
     batch_size: int = 16
     device: str = "cpu"
     llm_model: str = "Qwen2.5:7b"
-    chunks_in_prompt: int = 20 # 5 as default
+    chunks_in_prompt: int = 5 # 5 as default --> 20 chunks VERY slow (response in >30 minutes)
 
     # return directly the "Path" object
     @staticmethod
