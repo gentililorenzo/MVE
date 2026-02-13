@@ -1,8 +1,7 @@
 import streamlit as st
 from datetime import datetime
-from RAG.RAG3 import rag
+from RAG.RAG2_hybrid import rag
 
-# --- Setup e Cache (Invariato) ---
 @st.cache_resource
 def create_system():
     return rag()
@@ -16,7 +15,7 @@ if "history" not in st.session_state:
 if "profile_saved" not in st.session_state:
     st.session_state["profile_saved"] = False
 
-# --- NUOVI STATI PER L'INTERVISTA ---
+# Interview states
 if "interview_mode" not in st.session_state:
     st.session_state["interview_mode"] = False
 if "interview_step" not in st.session_state:
@@ -24,7 +23,7 @@ if "interview_step" not in st.session_state:
 if "interview_answers" not in st.session_state:
     st.session_state["interview_answers"] = [] # Lista di tuple (Domanda, Risposta)
 
-# Domande statiche per l'intervista (possono essere rese dinamiche in futuro)
+# Static interview questions (COULD BE DYNAMIC) --- improvable
 INTERVIEW_QUESTIONS = [
     "What are the main raw materials or resources you use in your daily operations?",
     "Do you currently track your energy or water consumption? If yes, how?",
@@ -101,7 +100,6 @@ with col1:
                     if SFDR_oriented: selected_options.append("SFDR oriented")
                     
                     response = system.consult(st.session_state["company_profile"], question, selected_options)
-                    # TODO mettere bottone salva history come in app vecchio
                     st.session_state["history"].append({
                         "question": question,
                         "response": response,
@@ -118,15 +116,15 @@ with col1:
         else:
             current_step = st.session_state["interview_step"]
             
-            # Controllo se l'intervista è in corso o finita
+            # Check interview state
             if current_step < len(INTERVIEW_QUESTIONS):
                 st.subheader(f"Step {current_step + 1} of {len(INTERVIEW_QUESTIONS)}")
                 
-                # Mostra la domanda corrente
+                # Show actual question
                 question_text = INTERVIEW_QUESTIONS[current_step]
                 st.markdown(f"**{question_text}**")
                 
-                # Form per la risposta corrente
+                # Interview answer
                 with st.form(key=f"interview_form_{current_step}"):
                     user_answer = st.text_area("Your answer:", height=100)
                     next_btn = st.form_submit_button("Next")
@@ -135,16 +133,15 @@ with col1:
                         if not user_answer.strip():
                             st.error("Please provide an answer.")
                         else:
-                            # Salva la risposta
+                            # Save response and porceed with next step
                             st.session_state["interview_answers"].append((question_text, user_answer))
-                            # Avanza step
                             st.session_state["interview_step"] += 1
                             st.rerun()
             else:
-                # --- INTERVISTA COMPLETATA: GENERAZIONE REPORT ---
+                # --- INTERVIEW COMPLETED: Generating action plan ---
                 st.success("Interview completed! Generating your tailored Action Plan...")
                 
-                # Mostra riassunto
+                # Answers review
                 with st.expander("Review your answers"):
                     for q, a in st.session_state["interview_answers"]:
                         st.write(f"**Q:** {q}")
@@ -157,13 +154,14 @@ with col1:
                         interview_data = st.session_state["interview_answers"]
                         
                         # Definiamo una domanda "implicita" per il sistema basata sull'intervista
+                        # TODO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ottimo che action plan + riferimento report VSME ma lasciare l'opportunita
+                        # all'utente di chiedere una SUA domanda anche magari poco relativa(?) 
                         final_question = "Create a comprehensive ESG action plan and VSME report structure based on the interview details provided."
                         
-                        # Chiamata al sistema con interview_history
                         response = system.consult(
                             profile, 
                             final_question, 
-                            scope=["VSME oriented", "ESG oriented"], # Default scopes for full report
+                            scope=["VSME oriented", "ESG oriented"], # Default scopes for interview --> SFDR scope to be implemented
                             interview_history=interview_data
                         )
                         
@@ -173,13 +171,12 @@ with col1:
                             "ts": datetime.now().strftime("%H:%M")
                         })
                         
-                        # Reset intervista opzionale
                         st.session_state["interview_step"] = 0
                         st.session_state["interview_answers"] = []
                         st.session_state["interview_mode"] = False
                         st.rerun()
 
-    # --- Sezione History (Comune a entrambi) ---
+    # --- History ---
     st.markdown("### History")
     if st.session_state["history"]:
         for item in reversed(st.session_state["history"]):
@@ -188,7 +185,7 @@ with col1:
             st.caption(item["ts"])
             st.markdown("---")
 
-# --- Colonna 2 (Profilo) ---
+# --- Profile ---
 with col2:
     st.subheader("Current profile")
     prof = st.session_state["company_profile"]
