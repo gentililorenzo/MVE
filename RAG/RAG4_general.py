@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.append(str(ROOT))
 
 from config import mve_config
-from RAG.sector_classifier3 import SectorClassifier
+from RAG.sector_classifier2 import SectorClassifier
 
 # Embedding model offline usage
 os.environ['HF_HUB_OFFLINE'] = '1'
@@ -39,10 +39,13 @@ class rag:
                 
         # Load embedding model
         logger.info(f"Loading: {EMBEDDING_MODEL}")
+
         self.embedding_model = SentenceTransformer(
             EMBEDDING_MODEL,
             device=DEVICE,
             local_files_only=True
+            # tokenizer_kwargs={"fix_mistral_regex": True}
+            
         )
         
         # Load vectorial database
@@ -98,15 +101,10 @@ class rag:
         # 3. Generation
         response = ollama.chat(
             model=LLM_MODEL,
-            messages=[{'role': 'user', 'content': prompt}]
-            # stream=True
+            messages=[{'role': 'user', 'content': prompt}] # TODO streaming?
         )
         
         return response['message']['content']
-        # Stream response
-        # for chunk in response:
-        #     if 'message' in chunk and 'content' in chunk['message']:
-        #         yield chunk['message']['content']
     
     def generate_prompt(self, company_profile, question, context_chunks, scope, interview_history=None):
         
@@ -124,40 +122,66 @@ The user has provided specific details about their operations:
 {interview_str}
 """
 
-        prompt = f"""You are a sustainability consultant for micro and SMEs.
+        prompt = f"""# ROLE
+You are a senior Sustainability Consultant specializing in Micro and SMEs. You have deep expertise in three key areas:
+1. The EFRAG VSME standard (Voluntary Standard for non-listed SMEs).
+2. General sustainability practices and operational ESG improvements.
+3. Financial-related ESG alignment and funding eligibility.
 
-COMPANY PROFILE:
-- Sector: {sector}
-- Size: {company_profile['num_employees']} employees
-- Activity: {company_profile['activity']}
+Your tone is professional, encouraging, and highly specific to the user's industry.
 
+# INPUT DATA
+
+<company_profile>
+Sector: {sector}
+Size: {company_profile['num_employees']} employees
+Activity: {company_profile['activity']}
+</company_profile>
+
+<interview_context>
 {interview_section}
+</interview_context>
 
-{'You are specialized in:' if scope else ''}
-{'- the EFRAG VSME standard' if 'Advise me on how to create sustainability reports' in scope else ''}
-{'- the domain of sustainability practices and ESG domain' if 'Tell me how I can be more sustainable' in scope else ''}
-{'- the financial-related ESG domain' if 'How to align my sustainability with finance' in scope else ''}
+<sector_hints>
+{hints['Hint'] if hints else 'No specific sector hints provided.'}
+</sector_hints>
 
-{'SECTOR TIP:' if hints else ''}
-{hints['Hint'] if hints else ''}
-
-RELEVANT VSME STANDARDS REFERENCES:
+<vsme_standards_context>
 {context}
+</vsme_standards_context>
 
-USER REQUEST:
+<current_objective>
+The user is specifically looking for help with: "{scope}"
+</current_objective>
+
+<user_request>
 {question}
+</user_request>
 
-Based on the COMPANY PROFILE and the INTERVIEW DATA provided above, provide a tailored answer.
+# INSTRUCTIONS
+Analyze the provided data to answer the user request. You must align your advice with the <current_objective>.
 
-STRUCTURE:
-1. 🔍 DIAGNOSIS (Based on interview answers)
-2. 📝 ACTION PLAN
-3. 📊 METRICS TO MONITOR
-4. 📄 DOCUMENTATION NEEDED
+1. **Grounding:** Use the <vsme_standards_context> as your primary source of truth for compliance or reporting questions. If the user asks about something not in the standards, use general best practices for the {sector}.
+2. **personalization:** Do not give generic advice. Reference specific details from the <interview_context> to show you understand their business.
+3. **Gap Analysis:** Identify where their current activity (from the interview) fails to meet the standards or best practices.
 
-Be specific for the {sector} sector.
+# OUTPUT FORMAT
+Provide your response in the following structure:
 
-ANSWER:"""
+### 1. 🔍 DIAGNOSIS
+*Briefly summarize their current status based on the interview. Highlight 1-2 critical gaps related to the {sector}.*
+
+### 2. 📝 ACTION PLAN
+*Provide 3-5 concrete, step-by-step actions. Start each action with a verb. Mark actions that are specifically required by VSME standards with a [VSME] tag.*
+
+### 3. 📊 METRICS TO MONITOR
+*List 2-3 specific KPIs they should track. If available, cite the specific VSME metric ID/Name from the context.*
+
+### 4. 📄 DOCUMENTATION NEEDED
+*List the specific documents, policies, or data points they need to collect to achieve the goal.*
+
+---
+**Constraint:** Keep the response concise and strictly relevant to a company of {company_profile['num_employees']} employees (avoid enterprise-level complexity)."""
         log_prompt(prompt)
         return prompt
     

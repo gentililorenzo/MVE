@@ -1,6 +1,6 @@
 import streamlit as st
 from datetime import datetime
-from RAG.RAG2_hybrid import rag
+from RAG.RAG4_general import rag
 
 @st.cache_resource
 def create_system():
@@ -31,9 +31,25 @@ INTERVIEW_QUESTIONS = [
     "Are you currently asked for ESG data by banks or clients? If so, which data?"
 ]
 
+PROFILES = [
+    "Sustainability Reporting Advisor",
+    "ESG Integration Specialist",
+    "Green Finance Consultant"
+]
+
+# Put scope into prompt --- totally aligned with RAG script
+def profileToScope(profile):
+    if profile==PROFILES[0]:
+        return "REPORTING_COMPLIANCE"
+    if profile==PROFILES[1]:
+        return "GENERAL_ADVICE"
+    if profile==PROFILES[2]:
+        return "FINANCE_ALIGNMENT"
+    return
+
 st.set_page_config(page_title="Minimum Viable ESG", layout="wide")
 
-# --- Sidebar (Invariato) ---
+# --- Company profile ---
 with st.sidebar:
     st.title("Company profile")
     num_employees = st.number_input("Number of employees", min_value=0, value=st.session_state["company_profile"]["num_employees"] or 0)
@@ -75,15 +91,13 @@ col1, col2 = st.columns([3, 1])
 
 with col1:
     # Mode selection
-    mode = st.radio("Select Mode:", ["Quick Question", "Guided Consultation)"], horizontal=True)
-
+    mode = st.radio("Select Mode:", ["Quick Question", "Guided Consultation"], horizontal=True)
+    
+    # --- Single answer, oriented through checkbox (one-shot) ---
     if mode == "Quick Question":
-        # --- Single answer, oriented through checkbox (one-shot) ---
         st.session_state["interview_mode"] = False
         
-        VSME_oriented = st.checkbox('Advise me on how to create sustainability reports')
-        ESG_oriented = st.checkbox('Tell me how I can be more sustainable')
-        SFDR_oriented = st.checkbox('How to align my sustainability with finance')
+        profile = st.radio("Select Profile:", PROFILES, horizontal=False)
         
         with st.form("ask_form"):
             question = st.text_area("Your question", height=100)
@@ -94,21 +108,17 @@ with col1:
                 st.error("⚠️ Save company profile first.")
             else:
                 with st.spinner("Generating..."):
-                    selected_options = []
-                    if VSME_oriented: selected_options.append("VSME oriented")
-                    if ESG_oriented: selected_options.append("ESG oriented")
-                    if SFDR_oriented: selected_options.append("SFDR oriented")
-                    
-                    response = system.consult(st.session_state["company_profile"], question, selected_options)
+                                  
+                    response = system.consult(company_profile=st.session_state["company_profile"], question=question, scope=profileToScope(profile))
                     st.session_state["history"].append({
                         "question": question,
                         "response": response,
                         "ts": datetime.now().strftime("%H:%M - %Y/%m/%d")
                     })
                     st.rerun()
-
+    
+    # --- Consultation with user (guided interview to enrich the prompt at the best) ---
     else:
-        # --- Consultation with user (guided interview to enrich the prompt at the best) ---
         st.session_state["interview_mode"] = True
         
         if not st.session_state["profile_saved"]:
@@ -139,7 +149,7 @@ with col1:
                             st.rerun()
             else:
                 # --- INTERVIEW COMPLETED: Generating action plan ---
-                st.success("Interview completed! Generating your tailored Action Plan...")
+                st.success("Interview completed! This will help me better understand your context.") 
                 
                 # Answers review
                 with st.expander("Review your answers"):
@@ -148,27 +158,28 @@ with col1:
                         st.write(f"**A:** {a}")
                         st.write("---")
                 
-                if st.button("Generate response"):
+                profile = st.radio("Select Profile:", PROFILES, horizontal=False)
+                
+                with st.form("ask_form"):
+                    question = st.text_area("Your question", height=100)
+                    submitted = st.form_submit_button("Submit")
+                
+                if submitted:
                     with st.spinner("Analyzing your profile and answers..."):
                         profile = st.session_state["company_profile"]
                         interview_data = st.session_state["interview_answers"]
-                        
-                        # Definiamo una domanda "implicita" per il sistema basata sull'intervista
-                        # TODO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ottimo che action plan + riferimento report VSME ma lasciare l'opportunita
-                        # all'utente di chiedere una SUA domanda anche magari poco relativa(?) 
-                        final_question = "Create a comprehensive ESG action plan and VSME report structure based on the interview details provided."
-                        
+                                                
                         response = system.consult(
-                            profile, 
-                            final_question, 
-                            scope=["VSME oriented", "ESG oriented"], # Default scopes for interview --> SFDR scope to be implemented
+                            company_profile=profile, 
+                            question=question, 
+                            scope=profileToScope(profile),
                             interview_history=interview_data
                         )
                         
                         st.session_state["history"].append({
                             "question": "Guided Consultation Report",
                             "response": response,
-                            "ts": datetime.now().strftime("%H:%M")
+                            "ts": datetime.now().strftime("%H:%M - %Y/%m/%d")
                         })
                         
                         st.session_state["interview_step"] = 0

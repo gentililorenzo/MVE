@@ -16,7 +16,7 @@ from config import mve_config
 INPUT_FILE = mve_config.data_path() / "full_chunks.json"
 DB_PATH = mve_config.db_path()
 COLLECTION = mve_config.collection
-EMBEDDING_MODEL = mve_config.embedding_model
+EMBEDDING_MODEL = mve_config.embedding_model_path()
 BATCH_SIZE = mve_config.batch_size
 DEVICE = mve_config.device
 

@@ -1,7 +1,9 @@
 import json
 import logging
+import os
 from pathlib import Path
 import sys
+os.environ["ANONYMIZED_TELEMETRY"] = "False" # offline usage
 import chromadb
 import ollama
 from sentence_transformers import SentenceTransformer
@@ -13,7 +15,11 @@ sys.path.append(str(ROOT))
 from config import mve_config
 from RAG.sector_classifier2 import SectorClassifier
 
-EMBEDDING_MODEL = mve_config.embedding_model
+# Embedding model offline usage
+os.environ['HF_HUB_OFFLINE'] = '1'
+os.environ['TRANSFORMERS_OFFLINE'] = '1'
+
+EMBEDDING_MODEL = mve_config.embedding_model_path()
 DB_PATH = mve_config.db_path()
 COLLECTION = mve_config.collection
 DEVICE = mve_config.device
@@ -28,7 +34,7 @@ class rag:
     def __init__(self):
         # 1. Load Embedding Model
         logger.info(f"Loading: {EMBEDDING_MODEL}")
-        self.embedding_model = SentenceTransformer(EMBEDDING_MODEL, device=DEVICE)
+        self.embedding_model = SentenceTransformer(EMBEDDING_MODEL, device=DEVICE, local_files_only=True)
         
         # 2. Init Classifier (passando il modello per risparmiare memoria)
         self.classifier = SectorClassifier(embedding_model=self.embedding_model)

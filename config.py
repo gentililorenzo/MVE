@@ -14,6 +14,10 @@ class MVEConfigs():
     @staticmethod
     def data_path():
         return Path("C:/Users/39389/Desktop/Tesi/provaTesiLLM/data/")
+    
+    @staticmethod
+    def embedding_model_path():
+        return "C:/Users/39389/Desktop/Tesi/provaTesiLLM/ingestion/models/bge-m3"
 
     @staticmethod
     def db_path():

@@ -657,3 +657,646 @@ Provide a response strictly aligned with the VSME Standard.
 4. Provide a concrete Action Plan based on the 'Key VSME Metrics' identified above.
 
 ANSWER:
+
+
+Prompt with 5 chunks
+============================================================
+You are a sustainability consultant for micro and SMEs.
+
+COMPANY PROFILE:
+- Sector: manufacturing
+- Size: 8 employees
+- Activity: Artisanal carpentry workshop producing custom-made furniture
+
+
+
+You are specialized in:
+
+- the domain of sustainability practices and ESG domain
+
+
+SECTOR TIP:
+Focus on the energy efficiency of machinery and the management of production waste
+
+RELEVANT VSME STANDARDS REFERENCES:
+[reference #1]
+Reporting  encourages  SMEs  to  assess  their  ESG  performance,  leading  to  better  management practices. ESG reporting provides the company's decision -makers with valuable data and insights that can inform  strategic  planning  and  decision-making  processes.  By  analysing  ESG  metrics  and  performance indicators,  companies  can  identify opportunities  to  optimize  resource  allocation,  mitigate  risks,  and capitalize  on emerging  trends  related  to sustainability  and social  responsibility. By  identifying  areas  for improvement  in  these  domains, SMEs  can  implement more  sustainable and  responsible business strategies.  This  includes  actions  such as  reducing  waste  and  energy  consumption,  improving  labour practices and enhancing corporate governance structures.
+One  of  the  most  relevant  benefits  from  engaging  in  ESG  reporting  on  which interviewees generally concurred is the increased awareness of ESG aspects, a better understanding of the related  risks and their incorporation into  the decision-making  process. By  disclosing  information about  potential  risks, such as supply chain disruptions, regulatory non-compliance or reputational damage, SMEs can demonstrate their understanding of the subject and a likely commitment to a proactive  ESG risk management. This result is enhanced  by  the  involvement  of the  SME owners/top  management  into  the  disclosure  process,  which translates  into  stronger engagement  and propensity  to act.  This is one of the reasons why stakeholders reported  that  in  France  banks  are  finding  increasingly  effective  to  accompany  their  requests  for  ESG information with face-to-face interviews  with the top SME decision-makers.
+Finally  in  terms  of  positive  impacts  on  internal  organisation,  smaller  preparers  are  often not sufficiently structured to benefit from them, but the larger can experience  better intra-company cooperation, as a result of the horizontal nature of some of these  disclosures,  forcing internal cooperation  in data  gathering and analysis.
+73 Breuer, M. (2021), 'How Does Financial -Reporting Regulation Affect IndustryWide Resource Allocation?', Journal of Accounting Research, 59(1), pp. 59 -110, https://doi.org/10.1111/1475- 679X.12345.
+74 Allen,  A.,  LewisWestern,  M. and Valentine,  K. (2022), 'The Innovation  and  Reporting Consequences  of Financial Regulation for Young LifeCycle Firms', Journal of Accounting Research, 60(1), 4595, https://doi.org/10.1111/1475679X.12398.
+
+[reference #2]
+Spontaneous  preparers  are those SMEs which decide  to use the VSME not upon request  of third parties (banks, larger  customers), but for their  own business  reasons.  Their  choice is 'purely' voluntary,  and this means that they expect  to receive  net benefits  from their decision. In any case, no incremental regulatory costs can be attributed to voluntary decisions. 68
+As mentioned above,  companies that are likely  to reap the largest  benefits from voluntary disclosures are those that operate in green markets (public or private),  that need to build a stronger brand with consumers, or that sell products centred on sustainability  (e.g. advanced manufacturing). In addition,  some companies pay special attention to sustainability  for business reasons (e.g.  B-Corps).  For these companies,  the VSME is likely  to represent  a net benefit.  Hence,  they  are likely  to be  among the early adopters.
+Metanalyses  have  been  carried  out on the benefits  of ESG  reporting,  with the  main quantifiable  effects being related to the capital markets, through greater liquidity,  lower costs and better resource allocation 69 . Concurrently, other positive effects have also been reported on  SME  preparers concerning  the transparency and acceptability  of their operations.  This enhances their reputation  and brand image,  and thereby  increases their competitiveness  in the business environment.  In general,  however,  research 70 on the specific effects of ESG reporting on SMEs is lacking for the very simple reason that SMEs have not often engaged  in ESG reporting yet 71 and this literature  is only slowly  emerging.  This section will summarize the main findings from the  targeted  consultation and the literature  review  as regards: (i) competitiveness;  (ii) management,  reputation and  improved internal  organisation; and  (iii) increased  transparency  and accountability.
+
+[reference #3]
+- The ESG information is relevant  (i) for the reporting  entity  itself,  (ii) for its  value  chain and (iii)  for financial institutions  was largely  converging; 4 this  would  allow  designing 'core SME' disclosures , limited in number and fit for purpose.
+- SME sustainability  reporting  requirements  should not  merely  be a simplified  version of those for large reporting  entities.  These  would likely  not be fit for purpose and prove difficult and costly to produce. Instead, SME-specific sustainability  reporting standards should be designed  for SMEs on a  standalone  basis  ('think small  first')  while  ensuring  that  sustainability  information  provided  by SMEs using such standards remains relevant  for larger stakeholders.
+- The new standard should address the lack of a dedicated  ESG standard for SMEs and the fact that prevailing  ones are considered as a potential administrative  burden for them. 5
+- Size  does not necessarily best reflect an SME's sustainability  footprint and profile either,  and so the business  activity/sector and  its  associated risk  profile should  also  be a  primary  driver for determining  sustainability  reporting requirements.  Therefore,  the report suggested  considering a sector-specific approach towards sustainability reporting requirements for SMEs, which would lead
+1  Communication from the Commission, SME Relief Package, COM/2023/535 final.
+2 'Consistent with the 'think small first' approach, the standard -setter would develop a simplified standard for voluntary use by SMEs who are not under the scope of the NFRD. The simplified nature of this standard would reflect the fact that SMEs often do not have the technical expertise nor resources necessary  to prepare reports in accordance with stateof-theart,  sophisticated  standards.'  Commission  Staff Working  Document  Impact  Assessment  Accompanying  the Proposal  for  a  Directive of  the European  Parliament  and  of the Council  amending Directive 2013/34/EU,  Directive 2004/109/EC, Directive 2006/43/EC and Regulation (EU) No 537/2014, as regards corporate sustainability reporting. 3 https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAssets%2FEFRAG%2520PTF-NFRS_MAIN_REPORT.pdf
+
+[reference #4]
+While the various activities  are the same for all SMEs using the VSME, the process is likely to be different for smaller and preparers. Based  on the qualitative  elements  emerging during the  targeted  consultation, two groups of companies can be distinguished 76 :
+- Smaller preparers : micro companies and small companies with up to 20 employees.  These entities often  lack  internal  people  dealing with  sustainability  matter  and  have  a  higher  tendency  to outsource the work to their accountant or may resort to platform solutions. They are more likely to use  the  basic  module  only  (about  70%)  and  tend  to  prefer  simpler  but  cheaper  compliance solutions, having a limited  budget available.
+- Larger preparers : small companies with 20 employees  or more and medium  companies. These entities  may already  have people  and functions which, at least on a part-time  basis, deal with ESG matters and related  certification issues, which means they are more likely to use internal resources. In terms of outsourcing, they may prefer to resort to more expensive  specialised  ESG consultants -as  opposed as to accountants  and platform solutions. They are more  likely to use  the comprehensive module too (about 70%).
+
+[reference #5]
+ESG reporting can demonstrate  SME commitment to supporting local communities, over and above  their more traditional contribution to economic growth and job creation or to sourcing goods and services from local  suppliers  and investing  in local  infrastructure and  facilities.  ESG  reporting  can better  frame  these contributions,  showcasing SMEs' role  in minimizing  their environmental  impact,  with related  benefits  for local ecosystems and natural resources. By disclosing information about their efforts to reduce  emissions, waste and water consumption, and mitigate pollution, SMEs  demonstrate their  commitment  to environmental stewardship and sustainability, contributing to the health and resilience of local environments.  Finally, ESG  reporting  promotes  social  inclusion  and  diversity within  SMEs  and  their surrounding communities.  By disclosing  information about  their efforts to promote  diversity,  equity,  and inclusion in the workplace,  SMEs demonstrate  their  commitment to  equity  and  inclusivity,  although it  is acknowledged  that family businesses have more constraints in this.  By disclosing information about their efforts  to  provide  safe  working  conditions,  promote  employee  wellness,  and  minimize  environmental
+hazards,  SMEs contribute  to healthier  and  more resilient  communities.  Table  10 below  summarises  the analysis of these benefits.
+Table 10. Voluntary preparers: benefits
+
+USER REQUEST:
+Which ESG practices are most important for a company like ours?
+
+Based on the COMPANY PROFILE and the INTERVIEW DATA provided above, provide a tailored answer.
+
+STRUCTURE:
+1. 🔍 DIAGNOSIS (Based on interview answers)
+2. 📊 METRICS TO MONITOR
+3. 📝 ACTION PLAN
+4. 📄 DOCUMENTATION NEEDED
+
+Be specific for the manufacturing sector.
+
+ANSWER:
+
+
+Prompt with 5 chunks
+============================================================
+You are a sustainability consultant for micro and SMEs.
+
+COMPANY PROFILE:
+- Sector: manufacturing
+- Size: 8 employees
+- Activity: Artisanal carpentry workshop producing custom-made furniture
+
+
+COMPANY DEEP-DIVE (INTERVIEW DATA):
+The user has provided specific details about their operations:
+- Q: What are the main raw materials or resources you use in your daily operations?
+  A: Oak wood, glue, paint, nails
+- Q: Do you currently track your energy or water consumption? If yes, how?
+  A: No
+- Q: Do you own your facilities/vehicles or do you lease them?
+  A: I lease them very rarely
+- Q: Are you currently asked for ESG data by banks or clients? If so, which data?
+  A: No
+
+
+You are specialized in:
+- the EFRAG VSME standard
+- the domain of sustainability practices and ESG domain
+
+
+SECTOR TIP:
+Focus on the energy efficiency of machinery and the management of production waste
+
+RELEVANT VSME STANDARDS REFERENCES:
+[reference #1]
+EFRAG  developed  the  VSME  following  a  rigorous  due  process  which  included  a  public consultation  and  field-testing  of  the  draft  standard  by  SMEs.  SMEs  themselves  and  the intended users of the reported information have expressed support for the VSME standard as  a  simplified  reporting  tool  that  is  a  credible  replacement  for  a  substantial  portion  of information requests that banks and large undertakings often send to SMEs in their value chains. EFRAG delivered the VSME standard to the Commission in December 2024.
+5. Are there additional support materials available to SMEs who wish to report sustainability information voluntarily in accordance with the  VSME recommendation?
+Yes. EFRAG has established a dedicated VSME Ecosystem which groups various SME and financial  sector  stakeholders  together  to  discuss  the  implementation  of  the  VSME standard.  On  EFRAG's website, companies  can  find educational videos in various languages, as well as other support material, such as a digital XBRL template and links to external guidance and methodology materials.
+
+[reference #2]
+14   Examples  include initiatives  to  improve  working  conditions  and  equal  treatment  in  the  workplace,  sustainability training  for  the  undertaking's  workforce,  collaboration  with  universities  related  to  sustainability  projects,  efforts  to reduce the undertaking 's water and electricity consumption or to prevent pollution, and initiatives to improve product safety.
+15     The VSME requires location-based Scope 2 Emissions.  This approach  calculates  emissions based on the average emissions intensity of the electricity generated within the geographic location where the electricity is consumed. It takes into account the emissions associated  with the average electricity mix in the area where the energy is consumed and allows  for straightforward  reporting. It  differs from  market-based scope  2 in  that the  latter account  for the specific environmental  attributes  of  the  electricity  they  purchase  and  reflects  the  environmental  benefits  of  purchasing renewable energy and incentivizes companies to invest in clean energy sources.
+16   Application requirements simply note that SMEs active in manufacturing, construction and packaging are likely to have significant scope 3 emissions.
+17  GHG intensity is envisaged to be calculated automatically, in a future online tool version of VSME.
+18   This  is,  actually,  one  of  the few  remaining instances  of  a  synergy with  the  original  idea  of exploiting  SME ESG certification schemes as one of the bases for VSME reporting.
+in or near biodiversity  sensitive  areas must be reported.  In addition,  broader  details  can be  reported on the total use of land,  indicating the part in sealed areas 19 and in total  nature-oriented  areas on-site (roofs, façades, etc.) and off-site.
+
+[reference #3]
+The analysis used both primary and secondary sources, including :
+- Interview  programme .  The  study team conducted an interview  programme involving  preparers, service  and IT  providers,  and users to collect  primary data from stakeholders  directly  involved  in the adoption of the standards. The interview programme was divided  into heads-up exchanges and targeted  consultations aimed at gathering various forms of evidence  from stakeholders,  including data  and  parameters to  quantify costs  and  benefits, market  acceptance  of  the  standards, information on populations  covered  by the  disclosure  requirements,  as well  as feedback  on the most challenging  or costly aspects. The interview  programme was shared with the analysis of the LSME; some stakeholders  were asked questions on only one draft standard,  some questions (e.g small banks, consultants) were asked  questions on both draft standards.
+- Public consultation  and field test on  LSME and VSME  Exposure Drafts .  EFRAG carried  out a public consultation and field test  exercise  on the LSME and VSME Exposure Drafts. The field  test involved  SMEs and users evaluating  the Exposure Drafts, providing  information on their feasibility, costs, challenges,  benefits,  and usefulness.  This report  incorporates  the analysis  of the field  test results, as well as the findings from the public consultation.
+- Participation  into  EFRAG VSME  Consultation  Activities after  Public Consultation  and Field Test. To better  follow developments  and related  cost assessment  considerations  the study team attended  several  EFRAG  SRB and SR TEG online  meetings  in July,  September  and October.  The team  also specifically  attended  the  VSME Bank  Workshop on September  16 th , which specifically reviewed  DR relevance and usefulness from a user's perspective.
+- SME survey. In a recent  study for the  European Commission, the Study Team conducted a survey on SMEs regarding their ESG reporting practices, covering 13 Member States and more than 4,400 companies.  The  survey  includes  estimates  relevant  to  the  analysis  of  current  ESG  costs  and practices.
+- Literature review. Several  studies  have estimated  costs and benefits  related  to the scope of this study and have been used to validate  the estimates or fill data gaps.
+In the following sections, all the data collection processes will be described  in greater detail.
+
+[reference #4]
+Based  on the findings from the  targeted  consultation, it is assumed  a scenario where only a minority  (at most 10% of larger preparers) will carry out this process wholly or mostly internally, at least in the first year; only larger preparers that are already structured in terms of sustainability reporting requirements may be able to familiarise with the standard and set-up the internal  process required.
+Most of the smaller preparers will, at least in the first place, ask the support of their accountants; a minority of them will use online platforms, either spontaneously or based on the indications of banks and suppliers. Following the revision of the ED and the simplification and streamlining of the text, it is considered that the final version of the VSME is conducive to a wider usage of online solutions, which are typically  cheaper.
+As for larger  preparers,  they  may outsource to specialised  ESG consultants but most of them, especially small companies, may still resort to their accountants our use online platforms. The share of larger preparers which are expected  to prepare the VSME report internally is expected  to grow in the subsequent years. The parameters describing outsourcing and the modalities of compliance, based on the findings of the targeted consultation, are shown in Table  13 overleaf.
+76  These categories are not mentioned, used or referred in the VSME.
+The decision to outsource  the preparation  of the VSME  report is determined by two  main drivers . First,  stakeholders  concur that, especially  for micro enterprises  but not only, most SMEs would not have the expertise and resources to understand and manage the process internally irrespective  of the extent to which the language of the VSME standard is simplified  and made accessible. However,  this is not only a matter  of  simplification. SMEs  are  likely  to  hire  external  support  for  ESG  reporting  and  use  their resources for their core activities , as it is already  the case for financial accounts, labour consultants, safety managers, etc. It is important to note that in this context, outsourcing does not mean that  the SME needs not to spend  internal resources on this activity:  as a minimum, it  should collect data  for the accountant, consultant or online platform, and it should verify and review the analysis and the report.
+
+[reference #5]
+173. The annual mass-flow is an indicator aligned with the EMAS requirements on efficiency of material consumption, and it illustrates an undertaking's dependency on specific materials in its operations (e.g. wood and steel for the construction industry). The undertaking is here required to provide information on the materials it uses, including both the materials acquired from suppliers and those sourced internally from production. To compute the annual mass-flow of the relevant materials it has used, the undertaking will need to first identify the specific key materials on which its operations are dependent and for which material efficiency needs to be evaluated (e.g. material efficiency of wood). If different types of materials are used, the undertaking will need to provide separately the annual mass-flow (i.e. total weight for each relevant material used, e.g. tonnes of wood purchased) for each key material in an appropriate manner, for example by breaking it down by the use to which they are put (EMAS, 2023). The mass flow of relevant materials used will result from the sum of the weight of all used materials, including raw materials, auxiliary materials, input materials, semi-finished products or others (excluding energy sources and water) and provide the total weight for  each  relevant  material  used  (e.g.  tonnes  of  wood  purchased).  The  mass  flow  of  relevant materials used will result from the sum of the weight of all used materials, including raw materials, auxiliary materials, input materials, semi-finished products, or others (excluding energy sources and water).This indicator is to be preferably expressed in units of weight (e.g. kilograms or tonnes), volume (e.g. m³) or other metric units commonly used in the sector.
+
+USER REQUEST:
+Create a comprehensive ESG action plan and VSME report structure based on the interview details provided.
+
+Based on the COMPANY PROFILE and the INTERVIEW DATA provided above, provide a tailored answer.
+
+STRUCTURE:
+1. 🔍 DIAGNOSIS (Based on interview answers)
+2. 📊 METRICS TO MONITOR
+3. 📝 ACTION PLAN
+4. 📄 DOCUMENTATION NEEDED
+
+Be specific for the manufacturing sector.
+
+ANSWER:
+
+
+Prompt with 5 chunks
+============================================================
+You are a sustainability consultant for micro and SMEs.
+
+COMPANY PROFILE:
+- Sector: manufacturing
+- Size: 8 employees
+- Activity: Artisanal carpentry workshop producing custom-made furniture
+
+
+COMPANY DEEP-DIVE (INTERVIEW DATA):
+The user has provided specific details about their operations:
+- Q: What are the main raw materials or resources you use in your daily operations?
+  A: Oak wood, vynil glue, nails, paint
+- Q: Do you currently track your energy or water consumption? If yes, how?
+  A: No, I only read water and energy bills
+- Q: Do you own your facilities/vehicles or do you lease them?
+  A: Our undertaking does not have any vehicle and often we lease a car to ship products to our clients
+- Q: Are you currently asked for ESG data by banks or clients? If so, which data?
+  A: No
+
+
+You are specialized in:
+- the EFRAG VSME standard
+- the domain of sustainability practices and ESG domain
+
+
+SECTOR TIP:
+Focus on the energy efficiency of machinery and the management of production waste
+
+RELEVANT VSME STANDARDS REFERENCES:
+[reference #1]
+EFRAG  developed  the  VSME  following  a  rigorous  due  process  which  included  a  public consultation  and  field-testing  of  the  draft  standard  by  SMEs.  SMEs  themselves  and  the intended users of the reported information have expressed support for the VSME standard as  a  simplified  reporting  tool  that  is  a  credible  replacement  for  a  substantial  portion  of information requests that banks and large undertakings often send to SMEs in their value chains. EFRAG delivered the VSME standard to the Commission in December 2024.
+5. Are there additional support materials available to SMEs who wish to report sustainability information voluntarily in accordance with the  VSME recommendation?
+Yes. EFRAG has established a dedicated VSME Ecosystem which groups various SME and financial  sector  stakeholders  together  to  discuss  the  implementation  of  the  VSME standard.  On  EFRAG's website, companies  can  find educational videos in various languages, as well as other support material, such as a digital XBRL template and links to external guidance and methodology materials.
+
+[reference #2]
+14   Examples  include initiatives  to  improve  working  conditions  and  equal  treatment  in  the  workplace,  sustainability training  for  the  undertaking's  workforce,  collaboration  with  universities  related  to  sustainability  projects,  efforts  to reduce the undertaking 's water and electricity consumption or to prevent pollution, and initiatives to improve product safety.
+15     The VSME requires location-based Scope 2 Emissions.  This approach  calculates  emissions based on the average emissions intensity of the electricity generated within the geographic location where the electricity is consumed. It takes into account the emissions associated  with the average electricity mix in the area where the energy is consumed and allows  for straightforward  reporting. It  differs from  market-based scope  2 in  that the  latter account  for the specific environmental  attributes  of  the  electricity  they  purchase  and  reflects  the  environmental  benefits  of  purchasing renewable energy and incentivizes companies to invest in clean energy sources.
+16   Application requirements simply note that SMEs active in manufacturing, construction and packaging are likely to have significant scope 3 emissions.
+17  GHG intensity is envisaged to be calculated automatically, in a future online tool version of VSME.
+18   This  is,  actually,  one  of  the few  remaining instances  of  a  synergy with  the  original  idea  of exploiting  SME ESG certification schemes as one of the bases for VSME reporting.
+in or near biodiversity  sensitive  areas must be reported.  In addition,  broader  details  can be  reported on the total use of land,  indicating the part in sealed areas 19 and in total  nature-oriented  areas on-site (roofs, façades, etc.) and off-site.
+
+[reference #3]
+The analysis used both primary and secondary sources, including :
+- Interview  programme .  The  study team conducted an interview  programme involving  preparers, service  and IT  providers,  and users to collect  primary data from stakeholders  directly  involved  in the adoption of the standards. The interview programme was divided  into heads-up exchanges and targeted  consultations aimed at gathering various forms of evidence  from stakeholders,  including data  and  parameters to  quantify costs  and  benefits, market  acceptance  of  the  standards, information on populations  covered  by the  disclosure  requirements,  as well  as feedback  on the most challenging  or costly aspects. The interview  programme was shared with the analysis of the LSME; some stakeholders  were asked questions on only one draft standard,  some questions (e.g small banks, consultants) were asked  questions on both draft standards.
+- Public consultation  and field test on  LSME and VSME  Exposure Drafts .  EFRAG carried  out a public consultation and field test  exercise  on the LSME and VSME Exposure Drafts. The field  test involved  SMEs and users evaluating  the Exposure Drafts, providing  information on their feasibility, costs, challenges,  benefits,  and usefulness.  This report  incorporates  the analysis  of the field  test results, as well as the findings from the public consultation.
+- Participation  into  EFRAG VSME  Consultation  Activities after  Public Consultation  and Field Test. To better  follow developments  and related  cost assessment  considerations  the study team attended  several  EFRAG  SRB and SR TEG online  meetings  in July,  September  and October.  The team  also specifically  attended  the  VSME Bank  Workshop on September  16 th , which specifically reviewed  DR relevance and usefulness from a user's perspective.
+- SME survey. In a recent  study for the  European Commission, the Study Team conducted a survey on SMEs regarding their ESG reporting practices, covering 13 Member States and more than 4,400 companies.  The  survey  includes  estimates  relevant  to  the  analysis  of  current  ESG  costs  and practices.
+- Literature review. Several  studies  have estimated  costs and benefits  related  to the scope of this study and have been used to validate  the estimates or fill data gaps.
+In the following sections, all the data collection processes will be described  in greater detail.
+
+[reference #4]
+Based  on the findings from the  targeted  consultation, it is assumed  a scenario where only a minority  (at most 10% of larger preparers) will carry out this process wholly or mostly internally, at least in the first year; only larger preparers that are already structured in terms of sustainability reporting requirements may be able to familiarise with the standard and set-up the internal  process required.
+Most of the smaller preparers will, at least in the first place, ask the support of their accountants; a minority of them will use online platforms, either spontaneously or based on the indications of banks and suppliers. Following the revision of the ED and the simplification and streamlining of the text, it is considered that the final version of the VSME is conducive to a wider usage of online solutions, which are typically  cheaper.
+As for larger  preparers,  they  may outsource to specialised  ESG consultants but most of them, especially small companies, may still resort to their accountants our use online platforms. The share of larger preparers which are expected  to prepare the VSME report internally is expected  to grow in the subsequent years. The parameters describing outsourcing and the modalities of compliance, based on the findings of the targeted consultation, are shown in Table  13 overleaf.
+76  These categories are not mentioned, used or referred in the VSME.
+The decision to outsource  the preparation  of the VSME  report is determined by two  main drivers . First,  stakeholders  concur that, especially  for micro enterprises  but not only, most SMEs would not have the expertise and resources to understand and manage the process internally irrespective  of the extent to which the language of the VSME standard is simplified  and made accessible. However,  this is not only a matter  of  simplification. SMEs  are  likely  to  hire  external  support  for  ESG  reporting  and  use  their resources for their core activities , as it is already  the case for financial accounts, labour consultants, safety managers, etc. It is important to note that in this context, outsourcing does not mean that  the SME needs not to spend  internal resources on this activity:  as a minimum, it  should collect data  for the accountant, consultant or online platform, and it should verify and review the analysis and the report.
+
+[reference #5]
+173. The annual mass-flow is an indicator aligned with the EMAS requirements on efficiency of material consumption, and it illustrates an undertaking's dependency on specific materials in its operations (e.g. wood and steel for the construction industry). The undertaking is here required to provide information on the materials it uses, including both the materials acquired from suppliers and those sourced internally from production. To compute the annual mass-flow of the relevant materials it has used, the undertaking will need to first identify the specific key materials on which its operations are dependent and for which material efficiency needs to be evaluated (e.g. material efficiency of wood). If different types of materials are used, the undertaking will need to provide separately the annual mass-flow (i.e. total weight for each relevant material used, e.g. tonnes of wood purchased) for each key material in an appropriate manner, for example by breaking it down by the use to which they are put (EMAS, 2023). The mass flow of relevant materials used will result from the sum of the weight of all used materials, including raw materials, auxiliary materials, input materials, semi-finished products or others (excluding energy sources and water) and provide the total weight for  each  relevant  material  used  (e.g.  tonnes  of  wood  purchased).  The  mass  flow  of  relevant materials used will result from the sum of the weight of all used materials, including raw materials, auxiliary materials, input materials, semi-finished products, or others (excluding energy sources and water).This indicator is to be preferably expressed in units of weight (e.g. kilograms or tonnes), volume (e.g. m³) or other metric units commonly used in the sector.
+
+USER REQUEST:
+Create a comprehensive ESG action plan and VSME report structure based on the interview details provided.
+
+Based on the COMPANY PROFILE and the INTERVIEW DATA provided above, provide a tailored answer.
+
+STRUCTURE:
+1. 🔍 DIAGNOSIS (Based on interview answers)
+2. 📊 METRICS TO MONITOR
+3. 📝 ACTION PLAN
+4. 📄 DOCUMENTATION NEEDED
+
+Be specific for the manufacturing sector.
+
+ANSWER:
+
+
+Prompt with 5 chunks
+============================================================
+You are a sustainability consultant for micro and SMEs.
+
+COMPANY PROFILE:
+- Sector: manufacturing
+- Size: 8 employees
+- Activity: Artisanal carpentry workshop producing custom-made furniture
+
+
+
+You are specialized in:
+
+- the domain of sustainability practices and ESG domain
+
+
+SECTOR TIP:
+Focus on the energy efficiency of machinery and the management of production waste
+
+RELEVANT VSME STANDARDS REFERENCES:
+[reference #1]
+Reporting  encourages  SMEs  to  assess  their  ESG  performance,  leading  to  better  management practices. ESG reporting provides the company's decision -makers with valuable data and insights that can inform  strategic  planning  and  decision-making  processes.  By  analysing  ESG  metrics  and  performance indicators,  companies  can  identify opportunities  to  optimize  resource  allocation,  mitigate  risks,  and capitalize  on emerging  trends  related  to sustainability  and social  responsibility. By  identifying  areas  for improvement  in  these  domains, SMEs  can  implement more  sustainable and  responsible business strategies.  This  includes  actions  such as  reducing  waste  and  energy  consumption,  improving  labour practices and enhancing corporate governance structures.
+One  of  the  most  relevant  benefits  from  engaging  in  ESG  reporting  on  which interviewees generally concurred is the increased awareness of ESG aspects, a better understanding of the related  risks and their incorporation into  the decision-making  process. By  disclosing  information about  potential  risks, such as supply chain disruptions, regulatory non-compliance or reputational damage, SMEs can demonstrate their understanding of the subject and a likely commitment to a proactive  ESG risk management. This result is enhanced  by  the  involvement  of the  SME owners/top  management  into  the  disclosure  process,  which translates  into  stronger engagement  and propensity  to act.  This is one of the reasons why stakeholders reported  that  in  France  banks  are  finding  increasingly  effective  to  accompany  their  requests  for  ESG information with face-to-face interviews  with the top SME decision-makers.
+Finally  in  terms  of  positive  impacts  on  internal  organisation,  smaller  preparers  are  often not sufficiently structured to benefit from them, but the larger can experience  better intra-company cooperation, as a result of the horizontal nature of some of these  disclosures,  forcing internal cooperation  in data  gathering and analysis.
+73 Breuer, M. (2021), 'How Does Financial -Reporting Regulation Affect IndustryWide Resource Allocation?', Journal of Accounting Research, 59(1), pp. 59 -110, https://doi.org/10.1111/1475- 679X.12345.
+74 Allen,  A.,  LewisWestern,  M. and Valentine,  K. (2022), 'The Innovation  and  Reporting Consequences  of Financial Regulation for Young LifeCycle Firms', Journal of Accounting Research, 60(1), 4595, https://doi.org/10.1111/1475679X.12398.
+
+[reference #2]
+Spontaneous  preparers  are those SMEs which decide  to use the VSME not upon request  of third parties (banks, larger  customers), but for their  own business  reasons.  Their  choice is 'purely' voluntary,  and this means that they expect  to receive  net benefits  from their decision. In any case, no incremental regulatory costs can be attributed to voluntary decisions. 68
+As mentioned above,  companies that are likely  to reap the largest  benefits from voluntary disclosures are those that operate in green markets (public or private),  that need to build a stronger brand with consumers, or that sell products centred on sustainability  (e.g. advanced manufacturing). In addition,  some companies pay special attention to sustainability  for business reasons (e.g.  B-Corps).  For these companies,  the VSME is likely  to represent  a net benefit.  Hence,  they  are likely  to be  among the early adopters.
+Metanalyses  have  been  carried  out on the benefits  of ESG  reporting,  with the  main quantifiable  effects being related to the capital markets, through greater liquidity,  lower costs and better resource allocation 69 . Concurrently, other positive effects have also been reported on  SME  preparers concerning  the transparency and acceptability  of their operations.  This enhances their reputation  and brand image,  and thereby  increases their competitiveness  in the business environment.  In general,  however,  research 70 on the specific effects of ESG reporting on SMEs is lacking for the very simple reason that SMEs have not often engaged  in ESG reporting yet 71 and this literature  is only slowly  emerging.  This section will summarize the main findings from the  targeted  consultation and the literature  review  as regards: (i) competitiveness;  (ii) management,  reputation and  improved internal  organisation; and  (iii) increased  transparency  and accountability.
+
+[reference #3]
+- The ESG information is relevant  (i) for the reporting  entity  itself,  (ii) for its  value  chain and (iii)  for financial institutions  was largely  converging; 4 this  would  allow  designing 'core SME' disclosures , limited in number and fit for purpose.
+- SME sustainability  reporting  requirements  should not  merely  be a simplified  version of those for large reporting  entities.  These  would likely  not be fit for purpose and prove difficult and costly to produce. Instead, SME-specific sustainability  reporting standards should be designed  for SMEs on a  standalone  basis  ('think small  first')  while  ensuring  that  sustainability  information  provided  by SMEs using such standards remains relevant  for larger stakeholders.
+- The new standard should address the lack of a dedicated  ESG standard for SMEs and the fact that prevailing  ones are considered as a potential administrative  burden for them. 5
+- Size  does not necessarily best reflect an SME's sustainability  footprint and profile either,  and so the business  activity/sector and  its  associated risk  profile should  also  be a  primary  driver for determining  sustainability  reporting requirements.  Therefore,  the report suggested  considering a sector-specific approach towards sustainability reporting requirements for SMEs, which would lead
+1  Communication from the Commission, SME Relief Package, COM/2023/535 final.
+2 'Consistent with the 'think small first' approach, the standard -setter would develop a simplified standard for voluntary use by SMEs who are not under the scope of the NFRD. The simplified nature of this standard would reflect the fact that SMEs often do not have the technical expertise nor resources necessary  to prepare reports in accordance with stateof-theart,  sophisticated  standards.'  Commission  Staff Working  Document  Impact  Assessment  Accompanying  the Proposal  for  a  Directive of  the European  Parliament  and  of the Council  amending Directive 2013/34/EU,  Directive 2004/109/EC, Directive 2006/43/EC and Regulation (EU) No 537/2014, as regards corporate sustainability reporting. 3 https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAssets%2FEFRAG%2520PTF-NFRS_MAIN_REPORT.pdf
+
+[reference #4]
+While the various activities  are the same for all SMEs using the VSME, the process is likely to be different for smaller and preparers. Based  on the qualitative  elements  emerging during the  targeted  consultation, two groups of companies can be distinguished 76 :
+- Smaller preparers : micro companies and small companies with up to 20 employees.  These entities often  lack  internal  people  dealing with  sustainability  matter  and  have  a  higher  tendency  to outsource the work to their accountant or may resort to platform solutions. They are more likely to use  the  basic  module  only  (about  70%)  and  tend  to  prefer  simpler  but  cheaper  compliance solutions, having a limited  budget available.
+- Larger preparers : small companies with 20 employees  or more and medium  companies. These entities  may already  have people  and functions which, at least on a part-time  basis, deal with ESG matters and related  certification issues, which means they are more likely to use internal resources. In terms of outsourcing, they may prefer to resort to more expensive  specialised  ESG consultants -as  opposed as to accountants  and platform solutions. They are more  likely to use  the comprehensive module too (about 70%).
+
+[reference #5]
+ESG reporting can demonstrate  SME commitment to supporting local communities, over and above  their more traditional contribution to economic growth and job creation or to sourcing goods and services from local  suppliers  and investing  in local  infrastructure and  facilities.  ESG  reporting  can better  frame  these contributions,  showcasing SMEs' role  in minimizing  their environmental  impact,  with related  benefits  for local ecosystems and natural resources. By disclosing information about their efforts to reduce  emissions, waste and water consumption, and mitigate pollution, SMEs  demonstrate their  commitment  to environmental stewardship and sustainability, contributing to the health and resilience of local environments.  Finally, ESG  reporting  promotes  social  inclusion  and  diversity within  SMEs  and  their surrounding communities.  By disclosing  information about  their efforts to promote  diversity,  equity,  and inclusion in the workplace,  SMEs demonstrate  their  commitment to  equity  and  inclusivity,  although it  is acknowledged  that family businesses have more constraints in this.  By disclosing information about their efforts  to  provide  safe  working  conditions,  promote  employee  wellness,  and  minimize  environmental
+hazards,  SMEs contribute  to healthier  and  more resilient  communities.  Table  10 below  summarises  the analysis of these benefits.
+Table 10. Voluntary preparers: benefits
+
+USER REQUEST:
+Which ESG practices are most important for a company like ours?
+
+Based on the COMPANY PROFILE and the INTERVIEW DATA provided above, provide a tailored answer.
+
+STRUCTURE:
+1. 🔍 DIAGNOSIS (Based on interview answers)
+2. 📊 METRICS TO MONITOR
+3. 📝 ACTION PLAN
+4. 📄 DOCUMENTATION NEEDED
+
+Be specific for the manufacturing sector.
+
+ANSWER:
+
+
+Prompt with 5 chunks
+============================================================
+You are a sustainability consultant for micro and SMEs.
+
+COMPANY PROFILE:
+- Sector: manufacturing
+- Size: 8 employees
+- Activity: Artisanal carpentry workshop producing custom-made furniture
+
+
+COMPANY DEEP-DIVE (INTERVIEW DATA):
+The user has provided specific details about their operations:
+- Q: What are the main raw materials or resources you use in your daily operations?
+  A: Oak wood, Vynil glue, paint, nails
+- Q: Do you currently track your energy or water consumption? If yes, how?
+  A: No, I only check water and energy bills
+- Q: Do you own your facilities/vehicles or do you lease them?
+  A: Our undertaking uses DHL courier to ship products to our clients
+- Q: Are you currently asked for ESG data by banks or clients? If so, which data?
+  A: No
+
+
+You are specialized in:
+- the EFRAG VSME standard
+- the domain of sustainability practices and ESG domain
+
+
+SECTOR TIP:
+Focus on the energy efficiency of machinery and the management of production waste
+
+RELEVANT VSME STANDARDS REFERENCES:
+[reference #1]
+EFRAG  developed  the  VSME  following  a  rigorous  due  process  which  included  a  public consultation  and  field-testing  of  the  draft  standard  by  SMEs.  SMEs  themselves  and  the intended users of the reported information have expressed support for the VSME standard as  a  simplified  reporting  tool  that  is  a  credible  replacement  for  a  substantial  portion  of information requests that banks and large undertakings often send to SMEs in their value chains. EFRAG delivered the VSME standard to the Commission in December 2024.
+5. Are there additional support materials available to SMEs who wish to report sustainability information voluntarily in accordance with the  VSME recommendation?
+Yes. EFRAG has established a dedicated VSME Ecosystem which groups various SME and financial  sector  stakeholders  together  to  discuss  the  implementation  of  the  VSME standard.  On  EFRAG's website, companies  can  find educational videos in various languages, as well as other support material, such as a digital XBRL template and links to external guidance and methodology materials.
+
+[reference #2]
+14   Examples  include initiatives  to  improve  working  conditions  and  equal  treatment  in  the  workplace,  sustainability training  for  the  undertaking's  workforce,  collaboration  with  universities  related  to  sustainability  projects,  efforts  to reduce the undertaking 's water and electricity consumption or to prevent pollution, and initiatives to improve product safety.
+15     The VSME requires location-based Scope 2 Emissions.  This approach  calculates  emissions based on the average emissions intensity of the electricity generated within the geographic location where the electricity is consumed. It takes into account the emissions associated  with the average electricity mix in the area where the energy is consumed and allows  for straightforward  reporting. It  differs from  market-based scope  2 in  that the  latter account  for the specific environmental  attributes  of  the  electricity  they  purchase  and  reflects  the  environmental  benefits  of  purchasing renewable energy and incentivizes companies to invest in clean energy sources.
+16   Application requirements simply note that SMEs active in manufacturing, construction and packaging are likely to have significant scope 3 emissions.
+17  GHG intensity is envisaged to be calculated automatically, in a future online tool version of VSME.
+18   This  is,  actually,  one  of  the few  remaining instances  of  a  synergy with  the  original  idea  of exploiting  SME ESG certification schemes as one of the bases for VSME reporting.
+in or near biodiversity  sensitive  areas must be reported.  In addition,  broader  details  can be  reported on the total use of land,  indicating the part in sealed areas 19 and in total  nature-oriented  areas on-site (roofs, façades, etc.) and off-site.
+
+[reference #3]
+The analysis used both primary and secondary sources, including :
+- Interview  programme .  The  study team conducted an interview  programme involving  preparers, service  and IT  providers,  and users to collect  primary data from stakeholders  directly  involved  in the adoption of the standards. The interview programme was divided  into heads-up exchanges and targeted  consultations aimed at gathering various forms of evidence  from stakeholders,  including data  and  parameters to  quantify costs  and  benefits, market  acceptance  of  the  standards, information on populations  covered  by the  disclosure  requirements,  as well  as feedback  on the most challenging  or costly aspects. The interview  programme was shared with the analysis of the LSME; some stakeholders  were asked questions on only one draft standard,  some questions (e.g small banks, consultants) were asked  questions on both draft standards.
+- Public consultation  and field test on  LSME and VSME  Exposure Drafts .  EFRAG carried  out a public consultation and field test  exercise  on the LSME and VSME Exposure Drafts. The field  test involved  SMEs and users evaluating  the Exposure Drafts, providing  information on their feasibility, costs, challenges,  benefits,  and usefulness.  This report  incorporates  the analysis  of the field  test results, as well as the findings from the public consultation.
+- Participation  into  EFRAG VSME  Consultation  Activities after  Public Consultation  and Field Test. To better  follow developments  and related  cost assessment  considerations  the study team attended  several  EFRAG  SRB and SR TEG online  meetings  in July,  September  and October.  The team  also specifically  attended  the  VSME Bank  Workshop on September  16 th , which specifically reviewed  DR relevance and usefulness from a user's perspective.
+- SME survey. In a recent  study for the  European Commission, the Study Team conducted a survey on SMEs regarding their ESG reporting practices, covering 13 Member States and more than 4,400 companies.  The  survey  includes  estimates  relevant  to  the  analysis  of  current  ESG  costs  and practices.
+- Literature review. Several  studies  have estimated  costs and benefits  related  to the scope of this study and have been used to validate  the estimates or fill data gaps.
+In the following sections, all the data collection processes will be described  in greater detail.
+
+[reference #4]
+Based  on the findings from the  targeted  consultation, it is assumed  a scenario where only a minority  (at most 10% of larger preparers) will carry out this process wholly or mostly internally, at least in the first year; only larger preparers that are already structured in terms of sustainability reporting requirements may be able to familiarise with the standard and set-up the internal  process required.
+Most of the smaller preparers will, at least in the first place, ask the support of their accountants; a minority of them will use online platforms, either spontaneously or based on the indications of banks and suppliers. Following the revision of the ED and the simplification and streamlining of the text, it is considered that the final version of the VSME is conducive to a wider usage of online solutions, which are typically  cheaper.
+As for larger  preparers,  they  may outsource to specialised  ESG consultants but most of them, especially small companies, may still resort to their accountants our use online platforms. The share of larger preparers which are expected  to prepare the VSME report internally is expected  to grow in the subsequent years. The parameters describing outsourcing and the modalities of compliance, based on the findings of the targeted consultation, are shown in Table  13 overleaf.
+76  These categories are not mentioned, used or referred in the VSME.
+The decision to outsource  the preparation  of the VSME  report is determined by two  main drivers . First,  stakeholders  concur that, especially  for micro enterprises  but not only, most SMEs would not have the expertise and resources to understand and manage the process internally irrespective  of the extent to which the language of the VSME standard is simplified  and made accessible. However,  this is not only a matter  of  simplification. SMEs  are  likely  to  hire  external  support  for  ESG  reporting  and  use  their resources for their core activities , as it is already  the case for financial accounts, labour consultants, safety managers, etc. It is important to note that in this context, outsourcing does not mean that  the SME needs not to spend  internal resources on this activity:  as a minimum, it  should collect data  for the accountant, consultant or online platform, and it should verify and review the analysis and the report.
+
+[reference #5]
+While the various activities  are the same for all SMEs using the VSME, the process is likely to be different for smaller and preparers. Based  on the qualitative  elements  emerging during the  targeted  consultation, two groups of companies can be distinguished 76 :
+- Smaller preparers : micro companies and small companies with up to 20 employees.  These entities often  lack  internal  people  dealing with  sustainability  matter  and  have  a  higher  tendency  to outsource the work to their accountant or may resort to platform solutions. They are more likely to use  the  basic  module  only  (about  70%)  and  tend  to  prefer  simpler  but  cheaper  compliance solutions, having a limited  budget available.
+- Larger preparers : small companies with 20 employees  or more and medium  companies. These entities  may already  have people  and functions which, at least on a part-time  basis, deal with ESG matters and related  certification issues, which means they are more likely to use internal resources. In terms of outsourcing, they may prefer to resort to more expensive  specialised  ESG consultants -as  opposed as to accountants  and platform solutions. They are more  likely to use  the comprehensive module too (about 70%).
+
+USER REQUEST:
+Create a comprehensive ESG action plan and VSME report structure based on the interview details provided.
+
+Based on the COMPANY PROFILE and the INTERVIEW DATA provided above, provide a tailored answer.
+
+STRUCTURE:
+1. 🔍 DIAGNOSIS (Based on interview answers)
+2. 📊 METRICS TO MONITOR
+3. 📝 ACTION PLAN
+4. 📄 DOCUMENTATION NEEDED
+
+Be specific for the manufacturing sector.
+
+ANSWER:
+
+
+Prompt with 5 chunks
+============================================================
+You are a sustainability consultant for micro and SMEs.
+
+COMPANY PROFILE:
+- Sector: High Impact Manufacturing (NACE C)
+- Size: 8 employees
+- Activity: Artisanal carpentry workshop producing custom-made furniture
+
+
+COMPANY DEEP-DIVE (INTERVIEW DATA):
+The user has provided specific details about their operations:
+- Q: What are the main raw materials or resources you use in your daily operations?
+  A: Oak, nails, paint, glue
+- Q: Do you currently track your energy or water consumption? If yes, how?
+  A: No, i only check bills
+- Q: Do you own your facilities/vehicles or do you lease them?
+  A: I ship products with DHL. The undertaking does not have any vehicle
+- Q: Are you currently asked for ESG data by banks or clients? If so, which data?
+  A: No
+
+
+You are specialized in:
+- the EFRAG VSME standard
+- the domain of sustainability practices and ESG domain
+
+
+SECTOR TIP:
+Critical focus on Pollution (B4) and Material Mass-Flow (B7). Transition plan (C3) is strongly recommended for high impact sectors.
+
+RELEVANT VSME STANDARDS REFERENCES:
+[reference #1]
+EFRAG  developed  the  VSME  following  a  rigorous  due  process  which  included  a  public consultation  and  field-testing  of  the  draft  standard  by  SMEs.  SMEs  themselves  and  the intended users of the reported information have expressed support for the VSME standard as  a  simplified  reporting  tool  that  is  a  credible  replacement  for  a  substantial  portion  of information requests that banks and large undertakings often send to SMEs in their value chains. EFRAG delivered the VSME standard to the Commission in December 2024.
+5. Are there additional support materials available to SMEs who wish to report sustainability information voluntarily in accordance with the  VSME recommendation?
+Yes. EFRAG has established a dedicated VSME Ecosystem which groups various SME and financial  sector  stakeholders  together  to  discuss  the  implementation  of  the  VSME standard.  On  EFRAG's website, companies  can  find educational videos in various languages, as well as other support material, such as a digital XBRL template and links to external guidance and methodology materials.
+
+[reference #2]
+The analysis used both primary and secondary sources, including :
+- Interview  programme .  The  study team conducted an interview  programme involving  preparers, service  and IT  providers,  and users to collect  primary data from stakeholders  directly  involved  in the adoption of the standards. The interview programme was divided  into heads-up exchanges and targeted  consultations aimed at gathering various forms of evidence  from stakeholders,  including data  and  parameters to  quantify costs  and  benefits, market  acceptance  of  the  standards, information on populations  covered  by the  disclosure  requirements,  as well  as feedback  on the most challenging  or costly aspects. The interview  programme was shared with the analysis of the LSME; some stakeholders  were asked questions on only one draft standard,  some questions (e.g small banks, consultants) were asked  questions on both draft standards.
+- Public consultation  and field test on  LSME and VSME  Exposure Drafts .  EFRAG carried  out a public consultation and field test  exercise  on the LSME and VSME Exposure Drafts. The field  test involved  SMEs and users evaluating  the Exposure Drafts, providing  information on their feasibility, costs, challenges,  benefits,  and usefulness.  This report  incorporates  the analysis  of the field  test results, as well as the findings from the public consultation.
+- Participation  into  EFRAG VSME  Consultation  Activities after  Public Consultation  and Field Test. To better  follow developments  and related  cost assessment  considerations  the study team attended  several  EFRAG  SRB and SR TEG online  meetings  in July,  September  and October.  The team  also specifically  attended  the  VSME Bank  Workshop on September  16 th , which specifically reviewed  DR relevance and usefulness from a user's perspective.
+- SME survey. In a recent  study for the  European Commission, the Study Team conducted a survey on SMEs regarding their ESG reporting practices, covering 13 Member States and more than 4,400 companies.  The  survey  includes  estimates  relevant  to  the  analysis  of  current  ESG  costs  and practices.
+- Literature review. Several  studies  have estimated  costs and benefits  related  to the scope of this study and have been used to validate  the estimates or fill data gaps.
+In the following sections, all the data collection processes will be described  in greater detail.
+
+[reference #3]
+14   Examples  include initiatives  to  improve  working  conditions  and  equal  treatment  in  the  workplace,  sustainability training  for  the  undertaking's  workforce,  collaboration  with  universities  related  to  sustainability  projects,  efforts  to reduce the undertaking 's water and electricity consumption or to prevent pollution, and initiatives to improve product safety.
+15     The VSME requires location-based Scope 2 Emissions.  This approach  calculates  emissions based on the average emissions intensity of the electricity generated within the geographic location where the electricity is consumed. It takes into account the emissions associated  with the average electricity mix in the area where the energy is consumed and allows  for straightforward  reporting. It  differs from  market-based scope  2 in  that the  latter account  for the specific environmental  attributes  of  the  electricity  they  purchase  and  reflects  the  environmental  benefits  of  purchasing renewable energy and incentivizes companies to invest in clean energy sources.
+16   Application requirements simply note that SMEs active in manufacturing, construction and packaging are likely to have significant scope 3 emissions.
+17  GHG intensity is envisaged to be calculated automatically, in a future online tool version of VSME.
+18   This  is,  actually,  one  of  the few  remaining instances  of  a  synergy with  the  original  idea  of exploiting  SME ESG certification schemes as one of the bases for VSME reporting.
+in or near biodiversity  sensitive  areas must be reported.  In addition,  broader  details  can be  reported on the total use of land,  indicating the part in sealed areas 19 and in total  nature-oriented  areas on-site (roofs, façades, etc.) and off-site.
+
+[reference #4]
+Based  on the findings from the  targeted  consultation, it is assumed  a scenario where only a minority  (at most 10% of larger preparers) will carry out this process wholly or mostly internally, at least in the first year; only larger preparers that are already structured in terms of sustainability reporting requirements may be able to familiarise with the standard and set-up the internal  process required.
+Most of the smaller preparers will, at least in the first place, ask the support of their accountants; a minority of them will use online platforms, either spontaneously or based on the indications of banks and suppliers. Following the revision of the ED and the simplification and streamlining of the text, it is considered that the final version of the VSME is conducive to a wider usage of online solutions, which are typically  cheaper.
+As for larger  preparers,  they  may outsource to specialised  ESG consultants but most of them, especially small companies, may still resort to their accountants our use online platforms. The share of larger preparers which are expected  to prepare the VSME report internally is expected  to grow in the subsequent years. The parameters describing outsourcing and the modalities of compliance, based on the findings of the targeted consultation, are shown in Table  13 overleaf.
+76  These categories are not mentioned, used or referred in the VSME.
+The decision to outsource  the preparation  of the VSME  report is determined by two  main drivers . First,  stakeholders  concur that, especially  for micro enterprises  but not only, most SMEs would not have the expertise and resources to understand and manage the process internally irrespective  of the extent to which the language of the VSME standard is simplified  and made accessible. However,  this is not only a matter  of  simplification. SMEs  are  likely  to  hire  external  support  for  ESG  reporting  and  use  their resources for their core activities , as it is already  the case for financial accounts, labour consultants, safety managers, etc. It is important to note that in this context, outsourcing does not mean that  the SME needs not to spend  internal resources on this activity:  as a minimum, it  should collect data  for the accountant, consultant or online platform, and it should verify and review the analysis and the report.
+
+[reference #5]
+The Comprehensive  Module provides  for  nine  additional  disclosures,  of  environmental  (2),  social  (3), governance  (2) and cross-cutting (2) nature. They  also include the  metrics that are required  by financial market  participants  (based  on  their  SFRD  Principal  Adverse  Impact -PAI,  Pillar  3  and  the  Benchmark regulation) and that may be relevant to other corporate clients. SMEs are expected  to use this module when they receive  ESG requests to assess their sustainability  risks from business partners, such as customers or financial institutions. The key assumption is that the Comprehensive Module, on top of the Basic module, can satisfy the data needs of both banks and corporate customers ,  as SFDR PAI are considered proxies to  manage  the sustainability  profile  of SMEs clients  (banks/investors)  and  customers (corporates).  Most metrics in this module should be reported,  for simplification purposes, under the 'if applicable' principle.
+19  A sealed area means any area where the original soil has been covered (such as roads) making it impermeable. This non-permeability can  create environmental  impacts.  The definition is  not  used for  ESRS  reporting purposes  and  is specific to the VSME only.
+20   The annual  mass-flow is a measurement that helps companies understand how much material they use, which ties into rules for being efficient. Companies must share information about the materials they use, whether they buy them from suppliers or generate them internally. To determine the annual mass-flow, businesses should first figure out which materials  are  essential  for their  work  (like how  efficiently they're using  wood). If  a  company uses  different types of materials, it needs to keep track of each one separately, showing how much of each material it uses (like how many tons of wood it buys). This tracking includes all kinds of materials they use in their production, like raw materials and partially finished products, but it doesn't include energy sources or water. This information should be expressed in common measurement units such as weight (like kilograms or tons) or volume (like cubic meters), so it is easy to understand and compare.
+The type  of disclosure requirements  is reported  in Table  2 below according to the same criteria used for Table  1.
+
+Table 2. Classification of VSME Comprehensive Module Disclosures by Nature
+
+USER REQUEST:
+Create a comprehensive ESG action plan and VSME report structure based on the interview details provided.
+
+Based on the COMPANY PROFILE and the INTERVIEW DATA provided above, provide a tailored answer.
+
+STRUCTURE:
+1. 🔍 DIAGNOSIS (Based on interview answers)
+2. 📝 ACTION PLAN
+3. 📊 METRICS TO MONITOR
+4. 📄 DOCUMENTATION NEEDED
+
+Be specific for the High Impact Manufacturing (NACE C) sector.
+
+ANSWER:
+
+
+Prompt with 5 chunks
+============================================================
+# ROLE
+You are a senior Sustainability Consultant specializing in Micro and SMEs. You have deep expertise in three key areas:
+1. The EFRAG VSME standard (Voluntary Standard for non-listed SMEs).
+2. General sustainability practices and operational ESG improvements.
+3. Financial-related ESG alignment and funding eligibility.
+
+Your tone is professional, encouraging, and highly specific to the user's industry.
+
+# INPUT DATA
+
+<company_profile>
+Sector: High Impact Manufacturing (NACE C)
+Size: 8 employees
+Activity: Artisanal carpentry workshop producing custom-made furniture
+</company_profile>
+
+<interview_context>
+
+</interview_context>
+
+<sector_hints>
+Critical focus on Pollution (B4) and Material Mass-Flow (B7). Transition plan (C3) is strongly recommended for high impact sectors.
+</sector_hints>
+
+<vsme_standards_context>
+[reference #1]
+Reporting  encourages  SMEs  to  assess  their  ESG  performance,  leading  to  better  management practices. ESG reporting provides the company's decision -makers with valuable data and insights that can inform  strategic  planning  and  decision-making  processes.  By  analysing  ESG  metrics  and  performance indicators,  companies  can  identify opportunities  to  optimize  resource  allocation,  mitigate  risks,  and capitalize  on emerging  trends  related  to sustainability  and social  responsibility. By  identifying  areas  for improvement  in  these  domains, SMEs  can  implement more  sustainable and  responsible business strategies.  This  includes  actions  such as  reducing  waste  and  energy  consumption,  improving  labour practices and enhancing corporate governance structures.
+One  of  the  most  relevant  benefits  from  engaging  in  ESG  reporting  on  which interviewees generally concurred is the increased awareness of ESG aspects, a better understanding of the related  risks and their incorporation into  the decision-making  process. By  disclosing  information about  potential  risks, such as supply chain disruptions, regulatory non-compliance or reputational damage, SMEs can demonstrate their understanding of the subject and a likely commitment to a proactive  ESG risk management. This result is enhanced  by  the  involvement  of the  SME owners/top  management  into  the  disclosure  process,  which translates  into  stronger engagement  and propensity  to act.  This is one of the reasons why stakeholders reported  that  in  France  banks  are  finding  increasingly  effective  to  accompany  their  requests  for  ESG information with face-to-face interviews  with the top SME decision-makers.
+Finally  in  terms  of  positive  impacts  on  internal  organisation,  smaller  preparers  are  often not sufficiently structured to benefit from them, but the larger can experience  better intra-company cooperation, as a result of the horizontal nature of some of these  disclosures,  forcing internal cooperation  in data  gathering and analysis.
+73 Breuer, M. (2021), 'How Does Financial -Reporting Regulation Affect IndustryWide Resource Allocation?', Journal of Accounting Research, 59(1), pp. 59 -110, https://doi.org/10.1111/1475- 679X.12345.
+74 Allen,  A.,  LewisWestern,  M. and Valentine,  K. (2022), 'The Innovation  and  Reporting Consequences  of Financial Regulation for Young LifeCycle Firms', Journal of Accounting Research, 60(1), 4595, https://doi.org/10.1111/1475679X.12398.
+
+[reference #2]
+Spontaneous  preparers  are those SMEs which decide  to use the VSME not upon request  of third parties (banks, larger  customers), but for their  own business  reasons.  Their  choice is 'purely' voluntary,  and this means that they expect  to receive  net benefits  from their decision. In any case, no incremental regulatory costs can be attributed to voluntary decisions. 68
+As mentioned above,  companies that are likely  to reap the largest  benefits from voluntary disclosures are those that operate in green markets (public or private),  that need to build a stronger brand with consumers, or that sell products centred on sustainability  (e.g. advanced manufacturing). In addition,  some companies pay special attention to sustainability  for business reasons (e.g.  B-Corps).  For these companies,  the VSME is likely  to represent  a net benefit.  Hence,  they  are likely  to be  among the early adopters.
+Metanalyses  have  been  carried  out on the benefits  of ESG  reporting,  with the  main quantifiable  effects being related to the capital markets, through greater liquidity,  lower costs and better resource allocation 69 . Concurrently, other positive effects have also been reported on  SME  preparers concerning  the transparency and acceptability  of their operations.  This enhances their reputation  and brand image,  and thereby  increases their competitiveness  in the business environment.  In general,  however,  research 70 on the specific effects of ESG reporting on SMEs is lacking for the very simple reason that SMEs have not often engaged  in ESG reporting yet 71 and this literature  is only slowly  emerging.  This section will summarize the main findings from the  targeted  consultation and the literature  review  as regards: (i) competitiveness;  (ii) management,  reputation and  improved internal  organisation; and  (iii) increased  transparency  and accountability.
+
+[reference #3]
+- The ESG information is relevant  (i) for the reporting  entity  itself,  (ii) for its  value  chain and (iii)  for financial institutions  was largely  converging; 4 this  would  allow  designing 'core SME' disclosures , limited in number and fit for purpose.
+- SME sustainability  reporting  requirements  should not  merely  be a simplified  version of those for large reporting  entities.  These  would likely  not be fit for purpose and prove difficult and costly to produce. Instead, SME-specific sustainability  reporting standards should be designed  for SMEs on a  standalone  basis  ('think small  first')  while  ensuring  that  sustainability  information  provided  by SMEs using such standards remains relevant  for larger stakeholders.
+- The new standard should address the lack of a dedicated  ESG standard for SMEs and the fact that prevailing  ones are considered as a potential administrative  burden for them. 5
+- Size  does not necessarily best reflect an SME's sustainability  footprint and profile either,  and so the business  activity/sector and  its  associated risk  profile should  also  be a  primary  driver for determining  sustainability  reporting requirements.  Therefore,  the report suggested  considering a sector-specific approach towards sustainability reporting requirements for SMEs, which would lead
+1  Communication from the Commission, SME Relief Package, COM/2023/535 final.
+2 'Consistent with the 'think small first' approach, the standard -setter would develop a simplified standard for voluntary use by SMEs who are not under the scope of the NFRD. The simplified nature of this standard would reflect the fact that SMEs often do not have the technical expertise nor resources necessary  to prepare reports in accordance with stateof-theart,  sophisticated  standards.'  Commission  Staff Working  Document  Impact  Assessment  Accompanying  the Proposal  for  a  Directive of  the European  Parliament  and  of the Council  amending Directive 2013/34/EU,  Directive 2004/109/EC, Directive 2006/43/EC and Regulation (EU) No 537/2014, as regards corporate sustainability reporting. 3 https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAssets%2FEFRAG%2520PTF-NFRS_MAIN_REPORT.pdf
+
+[reference #4]
+While the various activities  are the same for all SMEs using the VSME, the process is likely to be different for smaller and preparers. Based  on the qualitative  elements  emerging during the  targeted  consultation, two groups of companies can be distinguished 76 :
+- Smaller preparers : micro companies and small companies with up to 20 employees.  These entities often  lack  internal  people  dealing with  sustainability  matter  and  have  a  higher  tendency  to outsource the work to their accountant or may resort to platform solutions. They are more likely to use  the  basic  module  only  (about  70%)  and  tend  to  prefer  simpler  but  cheaper  compliance solutions, having a limited  budget available.
+- Larger preparers : small companies with 20 employees  or more and medium  companies. These entities  may already  have people  and functions which, at least on a part-time  basis, deal with ESG matters and related  certification issues, which means they are more likely to use internal resources. In terms of outsourcing, they may prefer to resort to more expensive  specialised  ESG consultants -as  opposed as to accountants  and platform solutions. They are more  likely to use  the comprehensive module too (about 70%).
+
+[reference #5]
+ESG reporting can demonstrate  SME commitment to supporting local communities, over and above  their more traditional contribution to economic growth and job creation or to sourcing goods and services from local  suppliers  and investing  in local  infrastructure and  facilities.  ESG  reporting  can better  frame  these contributions,  showcasing SMEs' role  in minimizing  their environmental  impact,  with related  benefits  for local ecosystems and natural resources. By disclosing information about their efforts to reduce  emissions, waste and water consumption, and mitigate pollution, SMEs  demonstrate their  commitment  to environmental stewardship and sustainability, contributing to the health and resilience of local environments.  Finally, ESG  reporting  promotes  social  inclusion  and  diversity within  SMEs  and  their surrounding communities.  By disclosing  information about  their efforts to promote  diversity,  equity,  and inclusion in the workplace,  SMEs demonstrate  their  commitment to  equity  and  inclusivity,  although it  is acknowledged  that family businesses have more constraints in this.  By disclosing information about their efforts  to  provide  safe  working  conditions,  promote  employee  wellness,  and  minimize  environmental
+hazards,  SMEs contribute  to healthier  and  more resilient  communities.  Table  10 below  summarises  the analysis of these benefits.
+Table 10. Voluntary preparers: benefits
+</vsme_standards_context>
+
+<current_objective>
+The user is specifically looking for help with: "Tell me how I can be more sustainable"
+</current_objective>
+
+<user_request>
+Which ESG practices are most important for a company like ours?
+</user_request>
+
+# INSTRUCTIONS
+Analyze the provided data to answer the user request. You must align your advice with the <current_objective>.
+
+1. **Grounding:** Use the <vsme_standards_context> as your primary source of truth for compliance or reporting questions. If the user asks about something not in the standards, use general best practices for the High Impact Manufacturing (NACE C).
+2. **personalization:** Do not give generic advice. Reference specific details from the <interview_context> to show you understand their business.
+3. **Gap Analysis:** Identify where their current activity (from the interview) fails to meet the standards or best practices.
+
+# OUTPUT FORMAT
+Provide your response in the following structure:
+
+### 1. 🔍 DIAGNOSIS
+*Briefly summarize their current status based on the interview. Highlight 1-2 critical gaps related to the High Impact Manufacturing (NACE C).*
+
+### 2. 📝 ACTION PLAN
+*Provide 3-5 concrete, step-by-step actions. Start each action with a verb. Mark actions that are specifically required by VSME standards with a [VSME] tag.*
+
+### 3. 📊 METRICS TO MONITOR
+*List 2-3 specific KPIs they should track. If available, cite the specific VSME metric ID/Name from the context.*
+
+### 4. 📄 DOCUMENTATION NEEDED
+*List the specific documents, policies, or data points they need to collect to achieve the goal.*
+
+---
+**Constraint:** Keep the response concise and strictly relevant to a company of 8 employees (avoid enterprise-level complexity).
+
+
+Prompt with 5 chunks
+============================================================
+# ROLE
+You are a senior Sustainability Consultant specializing in Micro and SMEs. You have deep expertise in three key areas:
+1. The EFRAG VSME standard (Voluntary Standard for non-listed SMEs).
+2. General sustainability practices and operational ESG improvements.
+3. Financial-related ESG alignment and funding eligibility.
+
+Your tone is professional, encouraging, and highly specific to the user's industry.
+
+# INPUT DATA
+
+<company_profile>
+Sector: Agriculture & Food (NACE A)
+Size: 9 employees
+Activity: Slaughterhouse with 50 pigs
+</company_profile>
+
+<interview_context>
+
+</interview_context>
+
+<sector_hints>
+Crucial reporting on Water (B6) and Pollution (B4 - Nitrogen/Phosphorus). Check if operations are near biodiversity sensitive areas (B5).
+</sector_hints>
+
+<vsme_standards_context>
+[reference #1]
+26. If the undertaking has put in place specific practices, policies or future initiatives for transitioning towards a more sustainable economy, it shall state so. The undertaking shall state whether it has:
+2. (a)  practices.  Practices  in  this  context  may  include,  for  instance,  efforts  to  reduce  the undertaking's water  and electricity  consumption, to reduce GHG emissions or  to prevent pollution, and initiatives to improve product safety as well as current initiatives to improve working  conditions  and  equal  treatment  in  the  workplace,  sustainability training for  the undertaking's workforce and partnerships related to sustainability projects;
+3. (b) policies on  sustainability  issues,  whether  they  are  publicly  available,  and  any  separate environmental, social or governance policies for addressing sustainability issues;
+4  The registered address is the official address of the undertaking.
+- (c)  any future initiatives or forward-looking plans that are being implemented on sustainability issues; and
+- (d) targets to  monitor the implementation of the policies and the progress achieved towards meeting such targets.
+27. Such  practices,  policies  and  future  initiatives  include  what  the  undertaking  does  to  reduce  its negative impacts and to enhance its positive impacts on people and the environment, in order to contribute to a more sustainable economy. Appendix B provides a list of possible sustainability issues that could be covered in this disclosure. The undertaking may use the template found in paragraph 78 to report this information.
+28. If the undertaking also reports on the Comprehensive module, it shall complement the information provided under B2 with the datapoints found in C2.
+
+[reference #2]
+78. Undertakings may use the following template to report on B2 datapoints.
+Climate Change, Do you have existing sustainability practices/ policies/ future initiatives that address any of the following sustainability issues? [YES/NO] = . Climate Change, Are they publicly available? [YES/NO] = . Climate Change, Do the policies have any targets? [YES/NO] = . Pollution, Do you have existing sustainability practices/ policies/ future initiatives that address any of the following sustainability issues? [YES/NO] = . Pollution, Are they publicly available? [YES/NO] = . Pollution, Do the policies have any targets? [YES/NO] = . Water and Marine Resources, Do you have existing sustainability practices/ policies/ future initiatives that address any of the following sustainability issues? [YES/NO] = . Water and Marine Resources, Are they publicly available? [YES/NO] = . Water and Marine Resources, Do the policies have any targets? [YES/NO] = 
+79. If the undertaking is a cooperative, it may disclose:
+2. (a)  the effective participation of workers, users or other interested parties or communities in governance;
+3. (b)  the financial investment in the capital or assets of social economy entities referred to in the Council Recommendation of 29 September 2023 (excluding donations and contributions); and
+4. (c)  any limits to the distribution of profits connected to the mutualistic nature or to the nature of the activities consisting in services of general economic interest (SGEI).
+Guidance for own workforce, workers in the value chain, affected communities and consumers and end/users
+80. In  order  to  understand the sustainability  issues that relate to social and human rights, refer to Appendix B for a list of possible sustainability issues. This list could help identify if the policies, practices  or  future  initiatives  are  aimed  at  addressing  negative  human  rights impacts in  a comprehensive way or if they are limited to certain groups of affected stakeholders (for example, workers in the upstream value chain ). As part of this disclosure undertakings may also disclose whether they have a process to address human rights related complaints.
+
+[reference #3]
+216. Emission reductions can prove to be both a challenge and opportunity for an undertaking, as it often requires changes to the strategic and operational reality of the business. The goal of reducing emissions may require a review of strategic and financial priorities. Decarbonisation may require important  initial  investment  in,  for  example,  electrifying  a  fleet  of  vehicles,  implementing  new technologies to reduce energy consumption or developing new product lines that are less reliant on carbon-intensive materials. On the other hand, implementing low-carbon solutions to achieve GHG emission reduction can significantly lessen the costs of purchased energy and materials. Undertakings embarking on their decarbonisation journey are often facing important adjustments to  their  business  models  or  daily  operations.  For  instance,  a  logistics  and  delivery  services undertaking may need to redesign its fleet management to minimise potential service disruptions due  to  the  need  of  regular  vehicle  charging.  A  consumer  goods  manufacturing  undertaking planning to replace a component of its product with a sustainable, low-carbon alternative may need to allocate time and resources to product innovation and to searching for new suppliers. These efforts can, in turn, result in reducing costs, accessing new markets, creating new workplaces and attracting additional financing, making GHG emission reduction not only a challenge, but also a strategic  business  opportunity.  In  this  context, targets for  GHG  reductions  are  an  important measure of responding to the  need  for  a sustainable transition, as  they  allow undertakings  to manage the change in a systematic, controlled and organised way.
+217. A GHG emission reduction target is a commitment to reduce the undertaking's GHG emissions in a future year compared to the GHG emissions measured during a chosen base year. Actions that may  lead  to  emission  reductions  include,  for  instance,  electrification,  renewable  electricity, sustainable  products  development,  etc.  Disclosure  C3  requires  that  the  undertaking  discloses GHG emission reduction targets for its Scope 1 and Scope 2 emissions.
+
+[reference #4]
+The appendix below is an integral part of this Standard and provides a list of possible sustainability issues.
+Climate change, Sustainability issue: Sub-topic = - Climate change adaptation - Climate change mitigation - Energy. Climate change, Sustainability issue: sub-sub topic = . Pollution, Sustainability issue: Sub-topic = - Pollution of air - Pollution of water - Pollution of soil - Pollution of living organisms and food resources - Substances of concern - Substances of very high concern - Microplastics. Pollution, Sustainability issue: sub-sub topic = . Water and marine resources, Sustainability issue: Sub-topic = - Water - Marine resources. Water and marine resources, Sustainability issue: sub-sub topic = - Water consumption - Water withdrawals - Water discharges - Water discharges in the oceans - Extraction and use of marine resources. Biodiversity and ecosystems, Sustainability issue: Sub-topic = - Direct impact drivers of biodiversity loss - -. Biodiversity and ecosystems, Sustainability issue: sub-sub topic = Climate Change Land-use change, fresh water-use change and sea-use change - Direct exploitation - Invasive alien species - Pollution - Others. Biodiversity and ecosystems, Sustainability issue: Sub-topic = - Impacts on the state of species - - -. Biodiversity and ecosystems, Sustainability issue: sub-sub topic = Examples: Species population size Species global extinction risk. Biodiversity and ecosystems, Sustainability issue: Sub-topic = - Impacts on the extent and condition of ecosystems - - -. Biodiversity and ecosystems, Sustainability issue: sub-sub topic = Examples: Land degradation Desertification Soil sealing. Biodiversity and ecosystems, Sustainability issue: Sub-topic = - Impacts and dependencies on ecosystem services. Biodiversity and ecosystems, Sustainability issue: sub-sub topic = -. Circular economy, Sustainability issue: Sub-topic = - Resources inflows, including resource use - Resource outflows related to products and services - Waste. Circular economy, Sustainability issue: sub-sub topic = . Own workforce, Sustainability issue: Sub-topic = - Working conditions - - - -. Own workforce, Sustainability issue: sub-sub topic = Secure employment Working time Adequate wages Social dialogue
+
+[reference #5]
+111. In general, this requirement is expected to apply to undertakings that are operators of an industrial installation or intensive livestock farm covered by the Industrial and Livestock Rearing Emissions Directive (IED 2.0), amending the Industrial Emissions Directive (IED). The IED 2.0 applies to some 75,000 installations in Europe, covering activities such as burning fuel in boilers with rated power of more than 50 MW, founding in metal foundries, processing of non-ferrous metals, production of lime,  manufacturing  of  ceramic  products  by  firing,  production  of  plant  protection  products  or biocides, rearing of any mix of pigs or poultry representing 380 livestock units or more, tanning of hides, slaughterhouses, etc. In these cases, the installation must already report to the competent authority the pollutants released to air, water and soil, and the data is publicly available at the Industrial  Emissions  Portal  Regulation  (IEPR),  replacing  the  European  Pollutant  Release  and Transfer Register (E-PRTR). Companies that operate in more than one facility do not have to report on their consolidated company-wide emissions under the EPRTR, as they report only at facility level.  This  Standard requires the reporting  of the total  amount  of pollutants of  all the facilities. Similarly, companies owning but not operating in a facility do not have to report to the E-PRTR but are expected to reflect their facility-owned emissions in their sustainability report.
+112. Likewise, if an undertaking has been identified as having to monitor and report on the pollutants listed in the E-PRTR under an Environmental Management System such as, for example, an EcoManagement and Audit Scheme (EMAS) or ISO 14001 certification. These are in principle relevant aspects for the undertaking to include in its sustainability report.
+113. If an undertaking has only one facility or operates in only one facility, and if its pollution data is already publicly available, the undertaking may refer to the document where such information is provided instead of reporting it once again. Likewise, if the undertaking publishes an organisationwide report such as, for example, an EMAS report that incorporates pollution data, it can include it in the sustainability report by reference.
+114. To report information on pollutants in the sustainability report, the undertaking should indicate the type of pollutant material being reported alongside the amount emitted to air, water and soil in a suitable mass unit (e.g. t or kg).
+</vsme_standards_context>
+
+<current_objective>
+The user is specifically looking for help with: "FINANCE_ALIGNMENT"
+</current_objective>
+
+<user_request>
+How can I obtain financing by introducing sustainable practices?
+</user_request>
+
+# INSTRUCTIONS
+Analyze the provided data to answer the user request. You must align your advice with the <current_objective>.
+
+1. **Grounding:** Use the <vsme_standards_context> as your primary source of truth for compliance or reporting questions. If the user asks about something not in the standards, use general best practices for the Agriculture & Food (NACE A).
+2. **personalization:** Do not give generic advice. Reference specific details from the <interview_context> to show you understand their business.
+3. **Gap Analysis:** Identify where their current activity (from the interview) fails to meet the standards or best practices.
+
+# OUTPUT FORMAT
+Provide your response in the following structure:
+
+### 1. 🔍 DIAGNOSIS
+*Briefly summarize their current status based on the interview. Highlight 1-2 critical gaps related to the Agriculture & Food (NACE A).*
+
+### 2. 📝 ACTION PLAN
+*Provide 3-5 concrete, step-by-step actions. Start each action with a verb. Mark actions that are specifically required by VSME standards with a [VSME] tag.*
+
+### 3. 📊 METRICS TO MONITOR
+*List 2-3 specific KPIs they should track. If available, cite the specific VSME metric ID/Name from the context.*
+
+### 4. 📄 DOCUMENTATION NEEDED
+*List the specific documents, policies, or data points they need to collect to achieve the goal.*
+
+---
+**Constraint:** Keep the response concise and strictly relevant to a company of 9 employees (avoid enterprise-level complexity).
