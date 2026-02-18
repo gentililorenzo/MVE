@@ -1,6 +1,6 @@
 import streamlit as st
 from datetime import datetime
-from RAG.RAG4_general import rag
+from RAG.RAG4_provaMia import rag
 
 @st.cache_resource
 def create_system():
@@ -32,9 +32,9 @@ INTERVIEW_QUESTIONS = [
 ]
 
 PROFILES = [
-    "Sustainability Reporting Advisor",
-    "ESG Integration Specialist",
-    "Green Finance Consultant"
+    "Sustainability Reporting Advisor 📝🌱",
+    "ESG Integration Specialist ♻️💚 ",
+    "Green Finance Consultant🌍🏦"
 ]
 
 # Put scope into prompt --- totally aligned with RAG script
@@ -166,11 +166,11 @@ with col1:
                 
                 if submitted:
                     with st.spinner("Analyzing your profile and answers..."):
-                        profile = st.session_state["company_profile"]
+                        company_profile = st.session_state["company_profile"]
                         interview_data = st.session_state["interview_answers"]
                                                 
                         response = system.consult(
-                            company_profile=profile, 
+                            company_profile=company_profile, 
                             question=question, 
                             scope=profileToScope(profile),
                             interview_history=interview_data

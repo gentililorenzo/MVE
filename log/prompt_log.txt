@@ -1300,3 +1300,433 @@ Provide your response in the following structure:
 
 ---
 **Constraint:** Keep the response concise and strictly relevant to a company of 9 employees (avoid enterprise-level complexity).
+
+
+Prompt with 5 chunks
+============================================================
+
+# ROLE
+You are an Operational Sustainability Consultant.
+        GOAL: Help the user improve their business efficiency and reduce impact.
+        1. Use <vsme_knowledge_base> ONLY as a background reference for definitions, but DO NOT obsess over reporting codes.
+        2. Focus on practical, low-cost operational changes for a Services & Offices (Generic).
+        3. Suggest tangible actions (e.g., machinery upgrades, waste reduction processes) rather than paperwork.
+Your tone is professional, encouraging, and highly specific to the user's industry.
+
+# INPUT DATA
+
+<company_profile>
+Sector: Services & Offices (Generic)
+Size: 1 employees
+Activity: I offer professional consulting services for all processes involving bonding and adhesive applications, including single-sided and double-sided adhesives. I support the customer throughout the process, from design to product realisation.
+
+</company_profile>
+
+<interview_context>
+
+</interview_context>
+
+<sector_hints_vsme>
+Pollution and mass-flow metrics typically not applicable; focus on social and governance.
+</sector_hints_vsme>
+
+<vsme_standards_context>
+[reference #1]
+26. If the undertaking has put in place specific practices, policies or future initiatives for transitioning towards a more sustainable economy, it shall state so. The undertaking shall state whether it has:
+2. (a)  practices.  Practices  in  this  context  may  include,  for  instance,  efforts  to  reduce  the undertaking's water  and electricity  consumption, to reduce GHG emissions or  to prevent pollution, and initiatives to improve product safety as well as current initiatives to improve working  conditions  and  equal  treatment  in  the  workplace,  sustainability training for  the undertaking's workforce and partnerships related to sustainability projects;
+3. (b) policies on  sustainability  issues,  whether  they  are  publicly  available,  and  any  separate environmental, social or governance policies for addressing sustainability issues;
+4  The registered address is the official address of the undertaking.
+- (c)  any future initiatives or forward-looking plans that are being implemented on sustainability issues; and
+- (d) targets to  monitor the implementation of the policies and the progress achieved towards meeting such targets.
+27. Such  practices,  policies  and  future  initiatives  include  what  the  undertaking  does  to  reduce  its negative impacts and to enhance its positive impacts on people and the environment, in order to contribute to a more sustainable economy. Appendix B provides a list of possible sustainability issues that could be covered in this disclosure. The undertaking may use the template found in paragraph 78 to report this information.
+28. If the undertaking also reports on the Comprehensive module, it shall complement the information provided under B2 with the datapoints found in C2.
+
+[reference #2]
+The appendix below is an integral part of this Standard and provides a list of possible sustainability issues.
+Climate change, Sustainability issue: Sub-topic = - Climate change adaptation - Climate change mitigation - Energy. Climate change, Sustainability issue: sub-sub topic = . Pollution, Sustainability issue: Sub-topic = - Pollution of air - Pollution of water - Pollution of soil - Pollution of living organisms and food resources - Substances of concern - Substances of very high concern - Microplastics. Pollution, Sustainability issue: sub-sub topic = . Water and marine resources, Sustainability issue: Sub-topic = - Water - Marine resources. Water and marine resources, Sustainability issue: sub-sub topic = - Water consumption - Water withdrawals - Water discharges - Water discharges in the oceans - Extraction and use of marine resources. Biodiversity and ecosystems, Sustainability issue: Sub-topic = - Direct impact drivers of biodiversity loss - -. Biodiversity and ecosystems, Sustainability issue: sub-sub topic = Climate Change Land-use change, fresh water-use change and sea-use change - Direct exploitation - Invasive alien species - Pollution - Others. Biodiversity and ecosystems, Sustainability issue: Sub-topic = - Impacts on the state of species - - -. Biodiversity and ecosystems, Sustainability issue: sub-sub topic = Examples: Species population size Species global extinction risk. Biodiversity and ecosystems, Sustainability issue: Sub-topic = - Impacts on the extent and condition of ecosystems - - -. Biodiversity and ecosystems, Sustainability issue: sub-sub topic = Examples: Land degradation Desertification Soil sealing. Biodiversity and ecosystems, Sustainability issue: Sub-topic = - Impacts and dependencies on ecosystem services. Biodiversity and ecosystems, Sustainability issue: sub-sub topic = -. Circular economy, Sustainability issue: Sub-topic = - Resources inflows, including resource use - Resource outflows related to products and services - Waste. Circular economy, Sustainability issue: sub-sub topic = . Own workforce, Sustainability issue: Sub-topic = - Working conditions - - - -. Own workforce, Sustainability issue: sub-sub topic = Secure employment Working time Adequate wages Social dialogue
+
+[reference #3]
+In  addition  to  the  costs  and  benefits  quantified  in  the  CBA,  the Study  Team's analysis  and the  various streams of consultation activities  touched upon several additional  topics:
+1. Market acceptance of the VSME from the viewpoint  of users ' needs.
+2. Market acceptance of the VSME from the viewpoint  of preparers' needs
+
+[reference #4]
+Adopting  the VSME standard -either spontaneously or upon request  - can trigger other indirect costs and benefits  in  three  areas  identified,  namely  (i)  competitiveness,  (ii)  management,  reputation  and improved internal organisation; and (iii) increased transparency and accountability.
+In terms of competitiveness ,  although there is no strict correlation, adherence  to the VSME standard can enhance a company's market position  by improving  the perceived  value of its products or services.  This can lead  to access to green  markets,  such as green  public  procurement and environmentally  conscious consumers. However,  there are also potential  downsides,  such as the risk of EU companies becoming less competitive  against  companies not reporting  voluntarily  on ESG matters,  thus avoiding  associated  costs and disclosing possibly  sensitive  information, especially  for that typically  operate on very thin competitive advantages.
+From a management  and organizational  perspective , sustainability  reporting can significantly influence how companies  manage their activities  and allocate  responsibilities.  By requiring  companies to disclose their  sustainability  performance,  the  importance  of ESG  policies  within  the  organization  is  heigh tened, reducing  operational  risks  and  the  likelihood  of defaults.  This  increased  awareness  can lead  to  better integration  of  ESG  considerations  into  daily  management,  ensuring  functions  and  responsibilities are aligned  accordingly.  Also,  by promoting  green  lending  and investment,  financial institutions  encourage companies  to  adopt  more  sustainable  practices  by  offering  loans  with  reduced  interest  rates  tied  to sustainability  criteria.
+Increased transparency and accountability are significant outcomes of adopting the VSME standards. By committing to open communication and providing  a clear understanding of their operations and impact, companies can align their practices with societal expectations  and values. This transparency not only fosters trust  among  investors,  customers,  employees, suppliers,  and  the  broader  community  but  also  holds companies accountable  for their environmental,  social,  and governance  impacts. The  ongoing  dialogue and collaboration  resulting  from ESG  reporting  can increase social capital,  as stakeholders  observe  and trust the company's commitment to sustainable practices.
+
+[reference #5]
+216. Emission reductions can prove to be both a challenge and opportunity for an undertaking, as it often requires changes to the strategic and operational reality of the business. The goal of reducing emissions may require a review of strategic and financial priorities. Decarbonisation may require important  initial  investment  in,  for  example,  electrifying  a  fleet  of  vehicles,  implementing  new technologies to reduce energy consumption or developing new product lines that are less reliant on carbon-intensive materials. On the other hand, implementing low-carbon solutions to achieve GHG emission reduction can significantly lessen the costs of purchased energy and materials. Undertakings embarking on their decarbonisation journey are often facing important adjustments to  their  business  models  or  daily  operations.  For  instance,  a  logistics  and  delivery  services undertaking may need to redesign its fleet management to minimise potential service disruptions due  to  the  need  of  regular  vehicle  charging.  A  consumer  goods  manufacturing  undertaking planning to replace a component of its product with a sustainable, low-carbon alternative may need to allocate time and resources to product innovation and to searching for new suppliers. These efforts can, in turn, result in reducing costs, accessing new markets, creating new workplaces and attracting additional financing, making GHG emission reduction not only a challenge, but also a strategic  business  opportunity.  In  this  context, targets for  GHG  reductions  are  an  important measure of responding to the  need  for  a sustainable transition, as  they  allow undertakings  to manage the change in a systematic, controlled and organised way.
+217. A GHG emission reduction target is a commitment to reduce the undertaking's GHG emissions in a future year compared to the GHG emissions measured during a chosen base year. Actions that may  lead  to  emission  reductions  include,  for  instance,  electrification,  renewable  electricity, sustainable  products  development,  etc.  Disclosure  C3  requires  that  the  undertaking  discloses GHG emission reduction targets for its Scope 1 and Scope 2 emissions.
+</vsme_standards_context>
+
+<current_objective>
+The user is specifically looking for: "SUSTAINABILITY PRACTICES SUGGESTIONS"
+</current_objective>
+
+<user_request>
+Which sustainable practices should I take into account in my business?
+</user_request>
+
+# INSTRUCTIONS
+Analyze the provided data to answer the user request. You must align your advice with the <current_objective>.
+
+1. **Grounding:** Use the <vsme_standards_context> as your primary source of truth for compliance or reporting questions. If the user asks about something not in the standards, use general best practices for the Services & Offices (Generic).
+2. **personalization:** Do not give generic advice. Reference specific details from the <interview_context> to show you understand their business.
+3. **Gap Analysis:** Identify where their current activity (from the interview) fails to meet the standards or best practices.
+
+# OUTPUT FORMAT
+Provide your response in the following structure:
+
+### 1. 🔍 DIAGNOSIS
+*Briefly summarize their current status based on the interview. Highlight 1-2 critical gaps related to the Services & Offices (Generic).*
+
+### 2. 📝 ACTION PLAN
+*Provide 3-5 concrete, step-by-step actions. Start each action with a verb. Mark actions that are specifically required by VSME standards with a [VSME] tag.*
+
+### 3. 📊 METRICS TO MONITOR
+*List 2-3 specific KPIs they should track. If available, cite the specific VSME metric ID/Name from the context.*
+
+### 4. 📄 DOCUMENTATION NEEDED
+*List the specific documents, policies, or data points they need to collect to achieve the goal.*
+
+---
+**Constraint:** Keep the response concise and strictly relevant to a company of 1 employees (avoid enterprise-level complexity).
+
+
+Prompt with 5 chunks
+============================================================
+
+# ROLE
+You are an Operational Sustainability Consultant.
+        GOAL: Help the user improve their business efficiency and reduce impact.
+        1. Use <vsme_knowledge_base> ONLY as a background reference for definitions, but DO NOT obsess over reporting codes.
+        2. Focus on practical, low-cost operational changes for a Services & Offices (Generic).
+        3. Suggest tangible actions (e.g., machinery upgrades, waste reduction processes) rather than paperwork.
+Your tone is professional, encouraging, and highly specific to the user's industry.
+
+# INPUT DATA
+
+<company_profile>
+Sector: Services & Offices (Generic)
+Size: 1 employees
+Activity: I offer professional consulting services for all processes involving bonding and adhesive applications, including single-sided and double-sided adhesives. I support the customer throughout the process, from design to product realisation.
+
+</company_profile>
+
+<interview_context>
+
+</interview_context>
+
+<sector_hints_vsme>
+Pollution and mass-flow metrics typically not applicable; focus on social and governance.
+</sector_hints_vsme>
+
+<vsme_standards_context>
+[reference #1]
+26. If the undertaking has put in place specific practices, policies or future initiatives for transitioning towards a more sustainable economy, it shall state so. The undertaking shall state whether it has:
+2. (a)  practices.  Practices  in  this  context  may  include,  for  instance,  efforts  to  reduce  the undertaking's water  and electricity  consumption, to reduce GHG emissions or  to prevent pollution, and initiatives to improve product safety as well as current initiatives to improve working  conditions  and  equal  treatment  in  the  workplace,  sustainability training for  the undertaking's workforce and partnerships related to sustainability projects;
+3. (b) policies on  sustainability  issues,  whether  they  are  publicly  available,  and  any  separate environmental, social or governance policies for addressing sustainability issues;
+4  The registered address is the official address of the undertaking.
+- (c)  any future initiatives or forward-looking plans that are being implemented on sustainability issues; and
+- (d) targets to  monitor the implementation of the policies and the progress achieved towards meeting such targets.
+27. Such  practices,  policies  and  future  initiatives  include  what  the  undertaking  does  to  reduce  its negative impacts and to enhance its positive impacts on people and the environment, in order to contribute to a more sustainable economy. Appendix B provides a list of possible sustainability issues that could be covered in this disclosure. The undertaking may use the template found in paragraph 78 to report this information.
+28. If the undertaking also reports on the Comprehensive module, it shall complement the information provided under B2 with the datapoints found in C2.
+
+[reference #2]
+The appendix below is an integral part of this Standard and provides a list of possible sustainability issues.
+Climate change, Sustainability issue: Sub-topic = - Climate change adaptation - Climate change mitigation - Energy. Climate change, Sustainability issue: sub-sub topic = . Pollution, Sustainability issue: Sub-topic = - Pollution of air - Pollution of water - Pollution of soil - Pollution of living organisms and food resources - Substances of concern - Substances of very high concern - Microplastics. Pollution, Sustainability issue: sub-sub topic = . Water and marine resources, Sustainability issue: Sub-topic = - Water - Marine resources. Water and marine resources, Sustainability issue: sub-sub topic = - Water consumption - Water withdrawals - Water discharges - Water discharges in the oceans - Extraction and use of marine resources. Biodiversity and ecosystems, Sustainability issue: Sub-topic = - Direct impact drivers of biodiversity loss - -. Biodiversity and ecosystems, Sustainability issue: sub-sub topic = Climate Change Land-use change, fresh water-use change and sea-use change - Direct exploitation - Invasive alien species - Pollution - Others. Biodiversity and ecosystems, Sustainability issue: Sub-topic = - Impacts on the state of species - - -. Biodiversity and ecosystems, Sustainability issue: sub-sub topic = Examples: Species population size Species global extinction risk. Biodiversity and ecosystems, Sustainability issue: Sub-topic = - Impacts on the extent and condition of ecosystems - - -. Biodiversity and ecosystems, Sustainability issue: sub-sub topic = Examples: Land degradation Desertification Soil sealing. Biodiversity and ecosystems, Sustainability issue: Sub-topic = - Impacts and dependencies on ecosystem services. Biodiversity and ecosystems, Sustainability issue: sub-sub topic = -. Circular economy, Sustainability issue: Sub-topic = - Resources inflows, including resource use - Resource outflows related to products and services - Waste. Circular economy, Sustainability issue: sub-sub topic = . Own workforce, Sustainability issue: Sub-topic = - Working conditions - - - -. Own workforce, Sustainability issue: sub-sub topic = Secure employment Working time Adequate wages Social dialogue
+
+[reference #3]
+216. Emission reductions can prove to be both a challenge and opportunity for an undertaking, as it often requires changes to the strategic and operational reality of the business. The goal of reducing emissions may require a review of strategic and financial priorities. Decarbonisation may require important  initial  investment  in,  for  example,  electrifying  a  fleet  of  vehicles,  implementing  new technologies to reduce energy consumption or developing new product lines that are less reliant on carbon-intensive materials. On the other hand, implementing low-carbon solutions to achieve GHG emission reduction can significantly lessen the costs of purchased energy and materials. Undertakings embarking on their decarbonisation journey are often facing important adjustments to  their  business  models  or  daily  operations.  For  instance,  a  logistics  and  delivery  services undertaking may need to redesign its fleet management to minimise potential service disruptions due  to  the  need  of  regular  vehicle  charging.  A  consumer  goods  manufacturing  undertaking planning to replace a component of its product with a sustainable, low-carbon alternative may need to allocate time and resources to product innovation and to searching for new suppliers. These efforts can, in turn, result in reducing costs, accessing new markets, creating new workplaces and attracting additional financing, making GHG emission reduction not only a challenge, but also a strategic  business  opportunity.  In  this  context, targets for  GHG  reductions  are  an  important measure of responding to the  need  for  a sustainable transition, as  they  allow undertakings  to manage the change in a systematic, controlled and organised way.
+217. A GHG emission reduction target is a commitment to reduce the undertaking's GHG emissions in a future year compared to the GHG emissions measured during a chosen base year. Actions that may  lead  to  emission  reductions  include,  for  instance,  electrification,  renewable  electricity, sustainable  products  development,  etc.  Disclosure  C3  requires  that  the  undertaking  discloses GHG emission reduction targets for its Scope 1 and Scope 2 emissions.
+
+[reference #4]
+210. The guidance below is intended as part of an ecosystem that will include also the development of further support guidance by EFRAG, further digital tools and implementation support (educational activities,  stakeholders'  engagement  and  so  forth),  aiming  to  facilitate  some  of  the  technical elements present in the guidance.
+211. This guidance is intended to support the preparation of metrics in the Comprehensive Module.
+
+[reference #5]
+66. The guidance below is intended as part of an ecosystem that will include also the development of further support guides by EFRAG, further digital tools and implementation support (educational activities,  stakeholders'  engagement)  that  aim  to  facilitate  the  understanding  of  some  of  the technical elements in the guidance.
+67. This guidance supports undertakings that wish to apply the Basic Module.
+</vsme_standards_context>
+
+<current_objective>
+The user is specifically looking for: "SUSTAINABILITY PRACTICES SUGGESTIONS"
+</current_objective>
+
+<user_request>
+Which sustainable practices should I include in my business? I would like to have a deep dive on the glue scope and adhesives scope sustainable practices
+</user_request>
+
+# INSTRUCTIONS
+Analyze the provided data to answer the user request. You must align your advice with the <current_objective>.
+
+1. **Grounding:** Use the <vsme_standards_context> as your primary source of truth for compliance or reporting questions. If the user asks about something not in the standards, use general best practices for the Services & Offices (Generic).
+2. **personalization:** Do not give generic advice. Reference specific details from the <interview_context> to show you understand their business.
+3. **Gap Analysis:** Identify where their current activity (from the interview) fails to meet the standards or best practices.
+
+# OUTPUT FORMAT
+Provide your response in the following structure:
+
+### 1. 🔍 DIAGNOSIS
+*Briefly summarize their current status based on the interview. Highlight 1-2 critical gaps related to the Services & Offices (Generic).*
+
+### 2. 📝 ACTION PLAN
+*Provide 3-5 concrete, step-by-step actions. Start each action with a verb. Mark actions that are specifically required by VSME standards with a [VSME] tag.*
+
+### 3. 📊 METRICS TO MONITOR
+*List 2-3 specific KPIs they should track. If available, cite the specific VSME metric ID/Name from the context.*
+
+### 4. 📄 DOCUMENTATION NEEDED
+*List the specific documents, policies, or data points they need to collect to achieve the goal.*
+
+---
+**Constraint:** Keep the response concise and strictly relevant to a company of 1 employees (avoid enterprise-level complexity).
+
+
+Prompt with 5 chunks
+============================================================
+
+# ROLE
+You are an Operational Sustainability Consultant.
+        GOAL: Help the user improve their business efficiency and reduce impact.
+        1. Use <vsme_knowledge_base> ONLY as a background reference for definitions, but DO NOT obsess over reporting codes.
+        2. Focus on practical, low-cost operational changes for a Services & Offices (Generic).
+        3. Suggest tangible actions (e.g., machinery upgrades, waste reduction processes) rather than paperwork.
+Your tone is professional, encouraging, and highly specific to the user's industry.
+
+# INPUT DATA
+<company_profile>
+Sector: Services & Offices (Generic)
+Size: 1 employees
+Activity: I offer professional consulting services for all processes involving bonding and adhesive applications, including single-sided and double-sided adhesives. I support the customer throughout the process, from design to product realisation.
+</company_profile>
+
+<interview_context>
+
+</interview_context>
+
+<sector_hints>
+Pollution and mass-flow metrics typically not applicable; focus on social and governance.
+</sector_hints>
+
+<vsme_context>
+[reference #1]
+26. If the undertaking has put in place specific practices, policies or future initiatives for transitioning towards a more sustainable economy, it shall state so. The undertaking shall state whether it has:
+2. (a)  practices.  Practices  in  this  context  may  include,  for  instance,  efforts  to  reduce  the undertaking's water  and electricity  consumption, to reduce GHG emissions or  to prevent pollution, and initiatives to improve product safety as well as current initiatives to improve working  conditions  and  equal  treatment  in  the  workplace,  sustainability training for  the undertaking's workforce and partnerships related to sustainability projects;
+3. (b) policies on  sustainability  issues,  whether  they  are  publicly  available,  and  any  separate environmental, social or governance policies for addressing sustainability issues;
+4  The registered address is the official address of the undertaking.
+- (c)  any future initiatives or forward-looking plans that are being implemented on sustainability issues; and
+- (d) targets to  monitor the implementation of the policies and the progress achieved towards meeting such targets.
+27. Such  practices,  policies  and  future  initiatives  include  what  the  undertaking  does  to  reduce  its negative impacts and to enhance its positive impacts on people and the environment, in order to contribute to a more sustainable economy. Appendix B provides a list of possible sustainability issues that could be covered in this disclosure. The undertaking may use the template found in paragraph 78 to report this information.
+28. If the undertaking also reports on the Comprehensive module, it shall complement the information provided under B2 with the datapoints found in C2.
+
+[reference #2]
+The appendix below is an integral part of this Standard and provides a list of possible sustainability issues.
+Climate change, Sustainability issue: Sub-topic = - Climate change adaptation - Climate change mitigation - Energy. Climate change, Sustainability issue: sub-sub topic = . Pollution, Sustainability issue: Sub-topic = - Pollution of air - Pollution of water - Pollution of soil - Pollution of living organisms and food resources - Substances of concern - Substances of very high concern - Microplastics. Pollution, Sustainability issue: sub-sub topic = . Water and marine resources, Sustainability issue: Sub-topic = - Water - Marine resources. Water and marine resources, Sustainability issue: sub-sub topic = - Water consumption - Water withdrawals - Water discharges - Water discharges in the oceans - Extraction and use of marine resources. Biodiversity and ecosystems, Sustainability issue: Sub-topic = - Direct impact drivers of biodiversity loss - -. Biodiversity and ecosystems, Sustainability issue: sub-sub topic = Climate Change Land-use change, fresh water-use change and sea-use change - Direct exploitation - Invasive alien species - Pollution - Others. Biodiversity and ecosystems, Sustainability issue: Sub-topic = - Impacts on the state of species - - -. Biodiversity and ecosystems, Sustainability issue: sub-sub topic = Examples: Species population size Species global extinction risk. Biodiversity and ecosystems, Sustainability issue: Sub-topic = - Impacts on the extent and condition of ecosystems - - -. Biodiversity and ecosystems, Sustainability issue: sub-sub topic = Examples: Land degradation Desertification Soil sealing. Biodiversity and ecosystems, Sustainability issue: Sub-topic = - Impacts and dependencies on ecosystem services. Biodiversity and ecosystems, Sustainability issue: sub-sub topic = -. Circular economy, Sustainability issue: Sub-topic = - Resources inflows, including resource use - Resource outflows related to products and services - Waste. Circular economy, Sustainability issue: sub-sub topic = . Own workforce, Sustainability issue: Sub-topic = - Working conditions - - - -. Own workforce, Sustainability issue: sub-sub topic = Secure employment Working time Adequate wages Social dialogue
+
+[reference #3]
+216. Emission reductions can prove to be both a challenge and opportunity for an undertaking, as it often requires changes to the strategic and operational reality of the business. The goal of reducing emissions may require a review of strategic and financial priorities. Decarbonisation may require important  initial  investment  in,  for  example,  electrifying  a  fleet  of  vehicles,  implementing  new technologies to reduce energy consumption or developing new product lines that are less reliant on carbon-intensive materials. On the other hand, implementing low-carbon solutions to achieve GHG emission reduction can significantly lessen the costs of purchased energy and materials. Undertakings embarking on their decarbonisation journey are often facing important adjustments to  their  business  models  or  daily  operations.  For  instance,  a  logistics  and  delivery  services undertaking may need to redesign its fleet management to minimise potential service disruptions due  to  the  need  of  regular  vehicle  charging.  A  consumer  goods  manufacturing  undertaking planning to replace a component of its product with a sustainable, low-carbon alternative may need to allocate time and resources to product innovation and to searching for new suppliers. These efforts can, in turn, result in reducing costs, accessing new markets, creating new workplaces and attracting additional financing, making GHG emission reduction not only a challenge, but also a strategic  business  opportunity.  In  this  context, targets for  GHG  reductions  are  an  important measure of responding to the  need  for  a sustainable transition, as  they  allow undertakings  to manage the change in a systematic, controlled and organised way.
+217. A GHG emission reduction target is a commitment to reduce the undertaking's GHG emissions in a future year compared to the GHG emissions measured during a chosen base year. Actions that may  lead  to  emission  reductions  include,  for  instance,  electrification,  renewable  electricity, sustainable  products  development,  etc.  Disclosure  C3  requires  that  the  undertaking  discloses GHG emission reduction targets for its Scope 1 and Scope 2 emissions.
+
+[reference #4]
+210. The guidance below is intended as part of an ecosystem that will include also the development of further support guidance by EFRAG, further digital tools and implementation support (educational activities,  stakeholders'  engagement  and  so  forth),  aiming  to  facilitate  some  of  the  technical elements present in the guidance.
+211. This guidance is intended to support the preparation of metrics in the Comprehensive Module.
+
+[reference #5]
+66. The guidance below is intended as part of an ecosystem that will include also the development of further support guides by EFRAG, further digital tools and implementation support (educational activities,  stakeholders'  engagement)  that  aim  to  facilitate  the  understanding  of  some  of  the technical elements in the guidance.
+67. This guidance supports undertakings that wish to apply the Basic Module.
+</vsme_context>
+
+<user_request>
+Which sustainable practices should I include in my business? I would like to have a deep dive on the glue scope and adhesives scope sustainable practices
+</user_request>
+
+# INSTRUCTIONS
+Analyze the provided data to answer the user request. You must align your advice with the <current_objective>.
+
+1. **Grounding:** Use the <vsme_standards_context> as your primary source of truth for compliance or reporting questions. If the user asks about something not in the standard, use general best practices for the Services & Offices (Generic).
+2. **Personalization:** Do not give generic advice. Reference specific details from the <interview_context> to show you understand their business.
+3. **Gap Analysis:** Identify where their current activity (from the interview) fails to meet the standards or best practices.
+
+# OUTPUT FORMAT
+Provide your response in the following structure:
+
+### 1. 🔍 DIAGNOSIS
+*Briefly summarize their current status based on the interview. Highlight 1-2 critical gaps related to the Services & Offices (Generic).*
+
+### 2. 📝 ACTION PLAN
+*Provide 3-5 concrete, step-by-step actions. Start each action with a verb. Mark actions that are specifically required by VSME standards with a [VSME] tag.*
+
+### 3. 📊 METRICS TO MONITOR
+*List 2-3 specific KPIs they should track. If available, cite the specific VSME metric ID/Name from the context.*
+
+### 4. 📄 DOCUMENTATION NEEDED
+*List the specific documents, policies, or data points they need to collect to achieve the goal.*
+
+---
+**Constraint:** Keep the response concise and strictly relevant to a company of 1 employees (avoid enterprise-level complexity).
+
+
+Prompt with 5 chunks
+============================================================
+
+
+# ROLE
+You are an expert Sustainability Consultant for SMEs. You specialize in translating EFRAG VSME requirements into profitable business actions.
+
+# CONTEXT & INPUT DATA
+You are provided with:
+1. **Company Profile:** Basic details.
+2. **Sector Strategy (Hard Rules):** A pre-calculated analysis of which VSME modules apply to this sector. You MUST respect these priorities.
+3. **Interview:** User's current reality.
+4. **VSME Standards:** Retrieved regulatory text.
+
+# DATA
+
+<company_profile>
+Sector: High Impact Manufacturing (NACE C)
+Size: 9 employees
+Activity: Artisanal carpentry workshop producing custom-made furniture
+</company_profile>
+
+<vsme_recommendations>
+{
+  "sector_label": "High Impact Manufacturing (NACE C)",
+  "recommended_modules": [
+    "B3"
+  ],
+  "apply_B3": true,
+  "apply_B4": false,
+  "apply_B5": false,
+  "apply_B6": false,
+  "apply_B7": false,
+  "apply_B8_to_B10": true,
+  "apply_B11": true,
+  "recommended_datapoints": {
+    "B1": [
+      "legal_form",
+      "nace_codes",
+      "balance_sheet_eur",
+      "turnover_eur",
+      "employees_headcount_or_FTE",
+      "primary_country",
+      "geolocations"
+    ],
+    "B2": [
+      "policies_public_url",
+      "practices_list",
+      "targets_list"
+    ],
+    "B3": [
+      "energy_total_MWh",
+      "electricity_renewable_MWh",
+      "fuel_MWh",
+      "scope1_tCO2e",
+      "scope2_location_tCO2e",
+      "ghg_intensity_tCO2e_per_eur"
+    ],
+    "B4": [
+      "pollutant_list_with_amounts_and_medium"
+    ],
+    "B5": [
+      "sites_in_biodiversity_sensitive_areas_count",
+      "area_hectares"
+    ],
+    "B6": [
+      "water_withdrawal_m3",
+      "water_withdrawal_in_high_stress_m3",
+      "water_consumption_m3"
+    ],
+    "B7": [
+      "waste_non_hazardous_t",
+      "waste_hazardous_t",
+      "waste_diverted_recycled_t",
+      "material_mass_flows_t"
+    ],
+    "B8": [
+      "contract_type_breakdown",
+      "gender_breakdown",
+      "country_of_contract"
+    ],
+    "B9": [
+      "recordable_accidents_number",
+      "accident_rate",
+      "work_related_fatalities"
+    ],
+    "B10": [
+      "minimum_wage_compliance_bool",
+      "gender_pay_gap_pct",
+      "collective_bargaining_coverage_pct",
+      "avg_training_hours_per_employee_by_gender"
+    ],
+    "B11": [
+      "convictions_number",
+      "total_fines_eur"
+    ]
+  }
+}
+</vsme_recommendations>
+
+<interview_context>
+
+</interview_context>
+
+<vsme_context>
+[reference #1]
+Reporting  encourages  SMEs  to  assess  their  ESG  performance,  leading  to  better  management practices. ESG reporting provides the company's decision -makers with valuable data and insights that can inform  strategic  planning  and  decision-making  processes.  By  analysing  ESG  metrics  and  performance indicators,  companies  can  identify opportunities  to  optimize  resource  allocation,  mitigate  risks,  and capitalize  on emerging  trends  related  to sustainability  and social  responsibility. By  identifying  areas  for improvement  in  these  domains, SMEs  can  implement more  sustainable and  responsible business strategies.  This  includes  actions  such as  reducing  waste  and  energy  consumption,  improving  labour practices and enhancing corporate governance structures.
+One  of  the  most  relevant  benefits  from  engaging  in  ESG  reporting  on  which interviewees generally concurred is the increased awareness of ESG aspects, a better understanding of the related  risks and their incorporation into  the decision-making  process. By  disclosing  information about  potential  risks, such as supply chain disruptions, regulatory non-compliance or reputational damage, SMEs can demonstrate their understanding of the subject and a likely commitment to a proactive  ESG risk management. This result is enhanced  by  the  involvement  of the  SME owners/top  management  into  the  disclosure  process,  which translates  into  stronger engagement  and propensity  to act.  This is one of the reasons why stakeholders reported  that  in  France  banks  are  finding  increasingly  effective  to  accompany  their  requests  for  ESG information with face-to-face interviews  with the top SME decision-makers.
+Finally  in  terms  of  positive  impacts  on  internal  organisation,  smaller  preparers  are  often not sufficiently structured to benefit from them, but the larger can experience  better intra-company cooperation, as a result of the horizontal nature of some of these  disclosures,  forcing internal cooperation  in data  gathering and analysis.
+73 Breuer, M. (2021), 'How Does Financial -Reporting Regulation Affect IndustryWide Resource Allocation?', Journal of Accounting Research, 59(1), pp. 59 -110, https://doi.org/10.1111/1475- 679X.12345.
+74 Allen,  A.,  LewisWestern,  M. and Valentine,  K. (2022), 'The Innovation  and  Reporting Consequences  of Financial Regulation for Young LifeCycle Firms', Journal of Accounting Research, 60(1), 4595, https://doi.org/10.1111/1475679X.12398.
+
+[reference #2]
+Spontaneous  preparers  are those SMEs which decide  to use the VSME not upon request  of third parties (banks, larger  customers), but for their  own business  reasons.  Their  choice is 'purely' voluntary,  and this means that they expect  to receive  net benefits  from their decision. In any case, no incremental regulatory costs can be attributed to voluntary decisions. 68
+As mentioned above,  companies that are likely  to reap the largest  benefits from voluntary disclosures are those that operate in green markets (public or private),  that need to build a stronger brand with consumers, or that sell products centred on sustainability  (e.g. advanced manufacturing). In addition,  some companies pay special attention to sustainability  for business reasons (e.g.  B-Corps).  For these companies,  the VSME is likely  to represent  a net benefit.  Hence,  they  are likely  to be  among the early adopters.
+Metanalyses  have  been  carried  out on the benefits  of ESG  reporting,  with the  main quantifiable  effects being related to the capital markets, through greater liquidity,  lower costs and better resource allocation 69 . Concurrently, other positive effects have also been reported on  SME  preparers concerning  the transparency and acceptability  of their operations.  This enhances their reputation  and brand image,  and thereby  increases their competitiveness  in the business environment.  In general,  however,  research 70 on the specific effects of ESG reporting on SMEs is lacking for the very simple reason that SMEs have not often engaged  in ESG reporting yet 71 and this literature  is only slowly  emerging.  This section will summarize the main findings from the  targeted  consultation and the literature  review  as regards: (i) competitiveness;  (ii) management,  reputation and  improved internal  organisation; and  (iii) increased  transparency  and accountability.
+
+[reference #3]
+- The ESG information is relevant  (i) for the reporting  entity  itself,  (ii) for its  value  chain and (iii)  for financial institutions  was largely  converging; 4 this  would  allow  designing 'core SME' disclosures , limited in number and fit for purpose.
+- SME sustainability  reporting  requirements  should not  merely  be a simplified  version of those for large reporting  entities.  These  would likely  not be fit for purpose and prove difficult and costly to produce. Instead, SME-specific sustainability  reporting standards should be designed  for SMEs on a  standalone  basis  ('think small  first')  while  ensuring  that  sustainability  information  provided  by SMEs using such standards remains relevant  for larger stakeholders.
+- The new standard should address the lack of a dedicated  ESG standard for SMEs and the fact that prevailing  ones are considered as a potential administrative  burden for them. 5
+- Size  does not necessarily best reflect an SME's sustainability  footprint and profile either,  and so the business  activity/sector and  its  associated risk  profile should  also  be a  primary  driver for determining  sustainability  reporting requirements.  Therefore,  the report suggested  considering a sector-specific approach towards sustainability reporting requirements for SMEs, which would lead
+1  Communication from the Commission, SME Relief Package, COM/2023/535 final.
+2 'Consistent with the 'think small first' approach, the standard -setter would develop a simplified standard for voluntary use by SMEs who are not under the scope of the NFRD. The simplified nature of this standard would reflect the fact that SMEs often do not have the technical expertise nor resources necessary  to prepare reports in accordance with stateof-theart,  sophisticated  standards.'  Commission  Staff Working  Document  Impact  Assessment  Accompanying  the Proposal  for  a  Directive of  the European  Parliament  and  of the Council  amending Directive 2013/34/EU,  Directive 2004/109/EC, Directive 2006/43/EC and Regulation (EU) No 537/2014, as regards corporate sustainability reporting. 3 https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAssets%2FEFRAG%2520PTF-NFRS_MAIN_REPORT.pdf
+
+[reference #4]
+While the various activities  are the same for all SMEs using the VSME, the process is likely to be different for smaller and preparers. Based  on the qualitative  elements  emerging during the  targeted  consultation, two groups of companies can be distinguished 76 :
+- Smaller preparers : micro companies and small companies with up to 20 employees.  These entities often  lack  internal  people  dealing with  sustainability  matter  and  have  a  higher  tendency  to outsource the work to their accountant or may resort to platform solutions. They are more likely to use  the  basic  module  only  (about  70%)  and  tend  to  prefer  simpler  but  cheaper  compliance solutions, having a limited  budget available.
+- Larger preparers : small companies with 20 employees  or more and medium  companies. These entities  may already  have people  and functions which, at least on a part-time  basis, deal with ESG matters and related  certification issues, which means they are more likely to use internal resources. In terms of outsourcing, they may prefer to resort to more expensive  specialised  ESG consultants -as  opposed as to accountants  and platform solutions. They are more  likely to use  the comprehensive module too (about 70%).
+
+[reference #5]
+ESG reporting can demonstrate  SME commitment to supporting local communities, over and above  their more traditional contribution to economic growth and job creation or to sourcing goods and services from local  suppliers  and investing  in local  infrastructure and  facilities.  ESG  reporting  can better  frame  these contributions,  showcasing SMEs' role  in minimizing  their environmental  impact,  with related  benefits  for local ecosystems and natural resources. By disclosing information about their efforts to reduce  emissions, waste and water consumption, and mitigate pollution, SMEs  demonstrate their  commitment  to environmental stewardship and sustainability, contributing to the health and resilience of local environments.  Finally, ESG  reporting  promotes  social  inclusion  and  diversity within  SMEs  and  their surrounding communities.  By disclosing  information about  their efforts to promote  diversity,  equity,  and inclusion in the workplace,  SMEs demonstrate  their  commitment to  equity  and  inclusivity,  although it  is acknowledged  that family businesses have more constraints in this.  By disclosing information about their efforts  to  provide  safe  working  conditions,  promote  employee  wellness,  and  minimize  environmental
+hazards,  SMEs contribute  to healthier  and  more resilient  communities.  Table  10 below  summarises  the analysis of these benefits.
+Table 10. Voluntary preparers: benefits
+</vsme_context>
+
+<user_request>
+{'VSME_Sector_Type': 'High Climate Impact (NACE C)', 'probable_nace_sections': ['C'], 'Priority_Modules': ['Basic (B1-B11)', 'Pollution (B4)', 'Resource Use (B7)', 'Scope 3 (C2)'], 'Key_Metrics': ['B3 (Energy & GHG)', 'B4 (Pollution to air/water/soil)', 'B7 (Mass-flow of materials)', 'B9 (Health & Safety)'], 'Hint': 'High likelihood to report B3, B4, B7 and consider C3 transition plan if available.'}
+</user_request>
+
+# INSTRUCTIONS
+1. **Review Strategy:** Look at `<vsme_recommendations>`. Note the "Priority_Modules" and "Key_Metrics". These are your focus areas.
+2. **Analyze Gaps:** Compare the `<interview_context>` against the `<vsme_context>`. 
+3. **Generate Action:** Create a response that solves the user's problem while satisfying the Sector Strategy priorities.
+
+# OUTPUT FORMAT
+
+### Executive Summary
+(One sentence matching the "Hint" found in the Sector Strategy).
+
+### Recommended Actions
+(Provide 3-5 numbered actions. Use this EXACT structure):
+
+**1. [Action Title - Active Verb]**
+* **The Business Case:** (Why this saves money/time).
+* **VSME Alignment:** (Cite the specific Module/Metric from <vsme_recommendations> or <vsme_context>).
+* **Do This Week:** (A concrete, immediate micro-step. E.g., "Install a meter," not "Plan a strategy").
+* **Strategic Upgrade:** (A deeper, mid-term project to professionalize this aspect. E.g., "Implement an ISO 14001-aligned monitoring process for waste streams").
+
+### Gap Alert
+(Identify one specific risk where the user's current interview answers directly violate the "Priority_Modules" listed in <vsme_recommendations>).
