@@ -1,10 +1,6 @@
 """
 Instruct LLM to imperson a senior sustainability expert
 """
-# TODO DA SPECIFICARE ?????
-# <sector_hints>
-# {hints['Hint'] if hints else 'No specific sector hints provided.'}
-# </sector_hints>
 @staticmethod
 def promptESG(sector, company_profile, interview_section, context, question, hints=None, vsme_recommendations=None ):
     return f"""

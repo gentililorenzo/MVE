@@ -15,7 +15,7 @@ from config import mve_config
 
 from RAG.sector_classifier3 import SectorClassifier
 
-from RAG.prompt_ESG3 import promptESG
+from RAG.prompt_ESG2 import promptESG
 from RAG.prompt_VSME import promptVSME
 from RAG.prompt_GreenFinance import promptGreenFinance
 
@@ -129,9 +129,11 @@ The user has provided specific details about their operations:
             # print("Profile:", profile)
             # print("Score:", score)
 
-            rec = self.classifier.recommend_reporting(sector_label=sector, employee_count=company_profile['num_employees'])
+            # rec = self.classifier.recommend_reporting(sector_label=sector, employee_count=company_profile['num_employees'])
             # print(clf.export_recommendation_json(rec))
-            prompt = promptESG(sector, company_profile, interview_section, context, hints, question, vsme_recommendations=self.classifier.export_recommendation_json(rec))
+            #promptESG3
+            # prompt = promptESG(sector, company_profile, interview_section, context, hints, question, vsme_recommendations=self.classifier.export_recommendation_json(rec))
+            prompt = promptESG(sector=sector, company_profile=company_profile, interview_section=interview_section, context=context, hints=hints, question=question)
         log_prompt(prompt)
         return prompt
          

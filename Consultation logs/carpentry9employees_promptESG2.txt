@@ -1,0 +1,23 @@
+[13:11 - 2026/02/18] Question: Which ESG practices are most important for a company like ours?
+Answer: ### Executive Summary
+The biggest sustainability leverage point for your artisanal carpentry workshop is reducing energy consumption and waste, which will save on costs while enhancing operational efficiency.
+
+### Recommended Actions
+
+**1. Optimize Energy Usage**
+* **The Business Case:** Reducing energy usage directly lowers operating costs by decreasing heating, cooling, and lighting expenses.
+* **VSME Alignment:** Addresses VSME Basic Module B2 Energy.
+* **Do This Week:** Schedule a site visit with your local utility provider to identify any potential energy-saving opportunities and request an audit of current energy consumption patterns.
+* **Strategic Upgrade:** Implement smart LED lighting systems and programmable thermostats throughout the workshop, aiming for at least 50% energy savings in the first year.
+
+**2. Streamline Waste Management**
+* **The Business Case:** Proper waste management not only reduces disposal costs but also improves working conditions by minimizing clutter and hazards.
+* **VSME Alignment:** Addresses VSME Basic Module C1 Resource Efficiency.
+* **Do This Week:** Set up clear recycling bins for paper, plastic, and wood waste in the workshop. Conduct a waste audit to understand current waste streams and identify recyclable materials that can be separated.
+* **Strategic Upgrade:** Develop a comprehensive waste management plan with specific goals for reducing landfill waste by 30% within one year.
+
+### Gap Alert
+- The company's tendency to outsource sustainability-related tasks may result in fragmented data collection and analysis, potentially missing critical insights into operational improvements. This contradicts the VSME principle of integrating ESG considerations into core business operations.
+
+By focusing on these actions, your workshop can enhance its efficiency while aligning with the principles of sustainable management as outlined by the VSME standards.
+

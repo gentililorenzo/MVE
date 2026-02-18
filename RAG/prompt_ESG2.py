@@ -64,7 +64,7 @@ Your goal is to answer the <user_request> by identifying gaps between the compan
 * **The Business Case:** (One sentence explaining why this saves money or improves efficiency, based on the VSME principle).
 * **VSME Alignment:** (Briefly mention which part of the standard this addresses, e.g., "Addresses VSME Basic Module B2 Energy").
 * **Do This Week:** (A concrete, non-administrative first step. E.g., "Check the thermostat settings," not "Draft a policy").
-* **Implementable:** (A deeper and more precise planning of further sustainabile practices)
+* **Strategic Upgrade:** (A deeper, mid-term project to professionalize this aspect. E.g., "Implement an ISO 14001-aligned monitoring process for waste streams").
 
 ### Gap Alert
 (One bullet point highlighting a risk identified in the <interview_context> that directly contradicts the <vsme_context>)."""
