@@ -124,15 +124,10 @@ The user has provided specific details about their operations:
         if scope == "FINANCE_ALIGNMENT":
             prompt = promptGreenFinance(sector, company_profile, interview_section, context, hints, question)
         if scope == "GENERAL_ADVICE":
-            # sector, profile, score = clf.classify(desc, nace_codes=["C10", "G47"])
-            # print("Sector:", sector)
-            # print("Profile:", profile)
-            # print("Score:", score)
-
-            # rec = self.classifier.recommend_reporting(sector_label=sector, employee_count=company_profile['num_employees'])
-            # print(clf.export_recommendation_json(rec))
             #promptESG3
-            # prompt = promptESG(sector, company_profile, interview_section, context, hints, question, vsme_recommendations=self.classifier.export_recommendation_json(rec))
+            # rec = self.classifier.recommend_reporting(sector_label=sector, employee_count=company_profile['num_employees'])
+            # prompt = promptESG(sector, company_profile, interview_section, context, hints, question, vsme_recommendations=rec)
+            #promptESG2
             prompt = promptESG(sector=sector, company_profile=company_profile, interview_section=interview_section, context=context, hints=hints, question=question)
         log_prompt(prompt)
         return prompt

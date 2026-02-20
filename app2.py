@@ -1,12 +1,17 @@
 import streamlit as st
 from datetime import datetime
 from RAG.RAG4_provaMia import rag
+import streamlit.components.v1 as components
 
 @st.cache_resource
 def create_system():
     return rag()
 
 system = create_system()
+
+# Mode selection
+if "mode" not in st.session_state:
+    st.session_state["mode"] = "Quick Question"
 
 if "company_profile" not in st.session_state:
     st.session_state["company_profile"] = {"num_employees": None, "activity": ""}
@@ -89,12 +94,29 @@ st.title("🟢 Sustainability Assistant")
 
 col1, col2 = st.columns([3, 1])
 
-with col1:
-    # Mode selection
-    mode = st.radio("Select Mode:", ["Quick Question", "Guided Consultation"], horizontal=True)
+with col1:    
+    st.write("**Select Mode:**")
+    # Creiamo due colonne piccole per affiancare i bottoni e una vuota per lo spazio rimanente
+    btn_col1, btn_col2, _ = st.columns([1, 1, 2])
     
+    with btn_col1:
+        if st.button("Quick Question", 
+                     use_container_width=True, 
+                     type="primary" if st.session_state["mode"] == "Quick Question" else "secondary"):
+            st.session_state["mode"] = "Quick Question"
+            st.rerun()
+            
+    with btn_col2:
+        if st.button("Guided Consultation", 
+                     use_container_width=True, 
+                     type="primary" if st.session_state["mode"] == "Guided Consultation" else "secondary"):
+            st.session_state["mode"] = "Guided Consultation"
+            st.rerun()
+            
+    st.markdown("---")
+
     # --- Single answer, oriented through checkbox (one-shot) ---
-    if mode == "Quick Question":
+    if st.session_state["mode"] == "Quick Question":
         st.session_state["interview_mode"] = False
         
         profile = st.radio("Select Profile:", PROFILES, horizontal=False)

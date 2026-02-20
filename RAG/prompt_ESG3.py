@@ -1,5 +1,6 @@
 """
-Instruct LLM to imperson a senior sustainability expert
+Instruct LLM to imperson a senior sustainability expert TODO usare hints --> ma è ESG quindi con cautela --> dalla risposta
+forse si intuisce che è meglio dare un peso (priority) ai chunks/spunti VSME --> Risposta è da certificare da un esperto di sostenibilità
 """
 @staticmethod
 def promptESG(sector, company_profile, interview_section, context, question, hints=None, vsme_recommendations=None ):

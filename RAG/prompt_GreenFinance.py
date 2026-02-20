@@ -1,16 +1,14 @@
 """
 Instruct LLM to imperson a green finance expert
 """
-# TODO DA SPECIFICARE 
-# <sector_hints>
-# {hints['Hint'] if hints else 'No specific sector hints provided.'}
-# </sector_hints>
 @staticmethod
 def promptGreenFinance(sector, company_profile, interview_section, context, hints, question):
     return f"""
 
 # ROLE
-You are an senior Operational Sustainability Consultant.
+You are a Sustainable Finance Consultant helping an SME access green loans/credit.
+
+# TARGET: An SME in the {sector} sector engaging with a bank.
 
 # GOAL
 Help the user reduce environmental impact and improve operational efficiency 

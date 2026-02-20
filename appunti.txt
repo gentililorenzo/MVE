@@ -1,0 +1,15 @@
+- CREARE CONSAPEVOLEZZA TRAMITE DOMANDE SUGGERITE--> a SME le informo su VSME e ESG --> NO ASPE
+
+FALEGNAME --> QUANTO LE INFO AZIENDALI (DELLA FALEGNAMERIA) MI PERMETTONO DI COPRIRE (E QUALI) PUNTI DEL VSME. 
+
+!!!!!!!!!!!!!
+GHG EMISSIONS --> B3 --> CERCA NEI DOCUMENTI AZIENDALI QUANTO "MATCHANO" CON B3
+
+Quando leggi doc aziendali estrai tutte le info relative a <ogni metrica VSME>
+
+Ogni B (metrica) mi descrive un ambito
+
+Guided consultation --> domande per ogni metrica (B) --> così che potrò compilare il report con il template in maniera guidata
+
+Guided reporting --> leggi i documenti e scoring in base alle metriche. se non ci sono documenti utente risponde a voce
+"ROLE leggi i documenti basandoti su metrica B <testo metrica> e vedi quante info ci sono a riguardo" generiamo score
