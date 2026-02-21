@@ -1973,3 +1973,115 @@ if the user asks about compliance, reporting or disclosures give an explanatory 
 using the retrieved context from the VSME standard <vsme_context> as source of truth.
 
 
+
+
+
+Prompt with 5 chunks
+============================================================
+
+# ROLE
+You are a senior Sustainability Expert.
+
+<user_question>
+What is VSME?
+</user_question>
+
+
+
+Prompt with 5 chunks
+============================================================
+
+# ROLE
+You are a senior Sustainability Expert.
+
+<user_question>
+What is VSME?
+</user_question>
+
+
+
+Prompt with 5 chunks
+============================================================
+
+# ROLE
+You are a senior Sustainability Expert.
+
+<user_question>
+What is VSME?
+</user_question>
+
+
+
+Prompt with 5 chunks
+============================================================
+
+# ROLE
+You are an expert Sustainability Auditer expertise in the VSME standard (Voluntary Sustainability Reporting Standard for non-listed SMEs) by EFRAG.
+
+# CONTEXT & INPUT DATA
+You are provided with:
+1. **User question:** What the user asks to understand better.
+3. **VSME snippet:**  Which VSME (Voluntary Sustainability Reporting Standard for non-listed SMEs) snippet is shown to the user for whom the user has doubts. 
+2. **VSME context:** Retrieved regulatory text based on the VSME standard (Voluntary Sustainability Reporting Standard for non-listed SMEs) by EFRAG.
+
+
+# DATA
+<user_question>
+What is VSME?
+</user_question>
+
+<vsme_snippet>
+The VSME is a simple and standardised framework for SMEs to report on ESG issues, creating better opportunities to obtain green financing and thus facilitating the transition to a sustainable economy.
+
+ **I will help you better understand what is needed to create voluntary reporting based on VSME. You can ask me for more information on any question at any time. At the end, you will receive a descriptive report based on what you asked or not.**
+</vsme_snippet>
+
+<vsme_context>
+[vsme reference #1]
+The  VSME  pursues multiple  objectives . It  is  designed to  enable non-listed SMEs  to  respond  to sustainability  information  requests  from customers, banks,  investors  or other  stakeholders,  and  thereby enabling  synergies  and cost savings. The  VSME is also expected  to make these users converge and limit data requests to SMEs to those included in the VSME standard. Finally,  the Commission, in its September 2023 SME Relief  Package,  specifically  refers to the VSME as a tool to support SME access to sustainable financing.
+This presupposes that:
+- a minimum common denominator is found among the information needs of users,
+- the resulting standard is authoritative  enough to set a boundary for most of these requests ,
+- the information contained therein is a sufficient tool to help SMEs apply for green financing .
+The main users of the VSME will  be,  on the one  hand, banks, which represent  by far the most important source of financing for EU SMEs, and, on the other, large corporate customers. Their needs, however, may not be fully aligned.
+- Banks' ESG requests to SMEs are mainly dictated  by their own reporting requirements under Pillar 3,  and  this  is  even  more  so  after  the  Capital  Requirements  Regulation  (CRR#3) 82 was eventually released. These  information  needs  only  partly  overlap  with  those  of investment  funds that  are regulated  by the  SFDR PAI. If the purpose of the VSME  is to help SME apply  for green financing, Pillar  3 reporting requirements  should  remain prominent, as the  importance of bank lending far outweighs that of SME access to the capital market across the EU.
+- However,  the VSME is also to ensure some degree  of vertical  coherence with the ESRS,  because ESG requests  along  the value  chain will  be largely  triggered  by the need  of large  companies to comply with the CSRD. Similarly, the VSME may have to include some of the requirements trickling down from the SFDR PAI, as part of the information may be requested  to invested  companies, and hence to their suppliers.
+The two objectives  may be conflicting and the VSME could run two risks:
+
+[vsme reference #2]
+The VSME is articulated into two 12 different  modules:
+1. the Basic Module, which provides  the 'target' reporting standard for micro undertakings, and
+2. the Comprehensive  Module, summarising the likely  requests  from business partners  within the value chain and the sustainable finance datapoints for lenders and investors.
+6 As regards the reporting structure it was noted that not all SMEs are required to prepare a management report. Finally, the ESS may also encourage the implementation of easy to communicate reporting means, e.g. through certifications evidenced by seals  and logos  (subject to  appropriate verification  processes),  that  indicate compliance with certain sustainability requirements and criteria. Moreover, the use of existing data and certifications to automatise the reporting process and decrease the administrative efforts required should be explored.
+7   The sector-specific  sustainability  reporting  requirements for  highly critical  sectors  should  be  based on  EU  policy priorities and legislative definitions (e.g. EU Taxonomy).
+8  The document discussed in November 2022 was part of the initial stages in the development of the VSME standard. It was identified as an Issue Paper by the former EFRAG Project Task Force ESRS (PTF-ESRS), specifically within cluster
+8. This document served as a preliminary draft prepared by the EFRAG Secretariat  and was  presented during the SR TEG meeting on 17 November 2022. It marked the first  discussion  of  VSME by SR  TEG,  setting  the stage  for  the subsequent development and refinement of the VSME Exposure Draft through a series of versions and consultations, leading to the creation of a more structured and detailed Exposure Draft for further evaluation and feedback
+9   The building block approach, as  discussed in the development of the VSME standard, is a methodological element designed to maintain consistency  between the VSME standard and the European Sustainability Reporting Standards (ESRS).
+10   European  Commission  (2023),  Questions  and  Answers  on  the  Adoption  of  European  Sustainability  Reporting Standards, Brussels, 31 July 2023.
+11  Communication from the Commission to the European Parliament, the Council, the European Economic and Social Committee and the Committee of the Regions SME Relief Package, COM/2023/535 final.
+
+[vsme reference #3]
+EFRAG  developed  the  VSME  following  a  rigorous  due  process  which  included  a  public consultation  and  field-testing  of  the  draft  standard  by  SMEs.  SMEs  themselves  and  the intended users of the reported information have expressed support for the VSME standard as  a  simplified  reporting  tool  that  is  a  credible  replacement  for  a  substantial  portion  of information requests that banks and large undertakings often send to SMEs in their value chains. EFRAG delivered the VSME standard to the Commission in December 2024.
+5. Are there additional support materials available to SMEs who wish to report sustainability information voluntarily in accordance with the  VSME recommendation?
+Yes. EFRAG has established a dedicated VSME Ecosystem which groups various SME and financial  sector  stakeholders  together  to  discuss  the  implementation  of  the  VSME standard.  On  EFRAG's website, companies  can  find educational videos in various languages, as well as other support material, such as a digital XBRL template and links to external guidance and methodology materials.
+
+[vsme reference #4]
+The VSME is considered  as a relatively  simple tool by most  users ,  striking  a positive  balance  between complexity,  comprehensiveness  and most of the needs of the stakeholders.  However, most SMEs will still be likely to need or prefer to get external support for preparation .  This is for various reasons:
+- Most SMEs have very little familiarity  with ESG topics. This means that they would need to spend a significant amount of time to familiarise with the standard;
+- Albeit  very  simplified  compared to the ESRS, the standard is considered complex and technical by some  stakeholders,  as not all  disclosures  are  immediately  understandable  in their  technicalities (e.g.  the disclosures on biodiversity  and water).
+- Few disclosures remain open-ended.  SMEs are typically  used to structured questionnaires,  mostly consisting  of closed  numerical questions.  Open-ended  questions  may  also  be  more  difficult  to process by users. This aspect was thoroughly addressed  by the final revision of the VSME.
+- Even when SMEs can prepare  the report internally,  they may prefer to focus on their core activities and hire to this purpose a third party (e.g. their accountant), who is already  familiar with company
+data.  Also,  small  SMEs may lack internal  resources for this job  and  could need  external  support regardless of the complexity  of the standard.
+The targeted consultation confirmed that propensity to delegate  ESG reporting preparation is already quite widespread. No further simplification of the VSME is likely to change this situation .  The above implies that any massive and rapid uptake of the VSME as an ESG reporting standard will face major bottlenecks in the availability of supporting expertise in the market. Given the difficulties which most SMEs are likely to experience  in preparing  the statement  internally,  the availability  of a sufficiently  large number of trained accountants - as consultants appear likely  to cater to the more lucrative market of larger corporations - will be a key adoption factor. Therefore,  a major element influencing the VSME uptake and market acceptance will also be the amount of training provided  to SME accountants, the majority of whom reportedly  still lack familiarity  with ESG concepts and reporting frameworks. In this regard, comments on the readiness to cope with the likely  future demand  were very diverse  depending  on the different national or regional contexts.
+
+[vsme reference #5]
+The idea of having the VSME standard does not come from a legal requirement included in the Corporate Sustainability  Reporting  Directive  (CSRD) The need  for a voluntary  ESG reporting  standard for non-listed SMEs has been  recently  reaffirmed  by the Commission in its SME Relief Package 1 , and namely in action 14,  which calls  for  the  rapid  adoption  of  such standard.  The  rationale  behind  its  development  was to prioritize  the identification of a proportionate set of indicators as a credible harmonised replacement for the different  Environmental,  Social and Governance  (ESG) questionnaires  currently received  by SMEs. This approach aimed to provide  a framework that would allow SMEs to report on their ESG impacts  with the same document in a manner that is manageable  and relevant  to their scale and capabilities.  Therefore, the  focus  was  on  providing  tool  for  reporting  the  impacts  relevant  to  the  SME  counterparts,  in particular  large  customers  and  financial  institutions,  in  a  proportionate  manner, rather  than  a complete picture to inform all possible  stakeholders.
+The need  to develop  voluntary reporting  standards  for SMEs was first mentioned  in the EU Commission Impact Assessment accompanying the CSRD in 2021 2  and then reiterated  by several  stakeholders  during the work of EFRAG. The principles for a European Sustainability  Reporting Standard  (ESRS) Setting Process developed  by  EFRAG  in the  same year 3 further elaborated  on the subject.  After  reaffirming the  need  to develop  an SME-dedicated  standard focused on the expectations  of value chain counterparts and financial institutions,  and  coherent  with  related  ESRS  reporting  requirements,  the  document  made  several  key statements informing the subsequent VSME drafting process, and namely:
+</vsme_context>
+
+# GOAL
+Your goal is to answer the <user_question> and to clarify doubts and uncertainties the user has.
+
+# INSTRUCTIONS
+Try to understand the user doubts by contextualizing that he/she sees what's inside <vsme_snippet>.
+Use the retrieved context from the VSME standard <vsme_context> as your PRIMARY AND ONLY SOURCE OF TRUTH.

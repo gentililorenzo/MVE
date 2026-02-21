@@ -17,6 +17,7 @@ from RAG.sector_classifier3 import SectorClassifier
 
 from RAG.prompt_General import promptGeneral
 from RAG.prompt_Customized import promptCustomized
+from RAG.prompt_VSME import promptVSME
 
 # Embedding model offline usage
 os.environ['HF_HUB_OFFLINE'] = '1'
@@ -76,39 +77,40 @@ class rag:
         
         return results['documents'][0], results['metadatas'][0]
     
-    def consult(self, company_profile, question, interview_history=None, customized_response=False):
+    def consult(self, user_question, company_profile=None, vsme_question=None, customized_response=False):
         """ 
-        Chat with prompted LLM. 
-        If interview_history is present, it enriches the context.
+        Chat with prompted LLM.
         """
-        
-        interview_text = "" # TODO cambiare profondamente
-        if interview_history:
-            interview_text = " ".join([f"Q: {q} A: {a}" for q, a in interview_history])
-        
+        user_q = user_question or ""
+        vsme_q = vsme_question or ""
+        activity = ""
+        if company_profile and isinstance(company_profile, dict):
+            activity = company_profile.get('activity') or ""
+    
         # Enrich prompt with interview's questions&answers if present 
-        query_enriched = f"{company_profile['activity']} {question} {interview_text}"
+        query_enriched = f"{activity} {user_q} {vsme_q}"
         
-        # TODO sviluppare anche una query non enriched?????
+        prompt = promptGeneral(user_question=user_q)
         
-        prompt = promptGeneral(user_question=question)
-        
-        # Personalize response based on user's company details
-        if customized_response:
+        # Personalize response based on user's company details TODO non ci interessa quando trattiamo le metriche del VSME, giusto?
+        if customized_response or vsme_q != "":
             # 1. Retrieval
             chunks, _ = self.retrieve(query_enriched, n_results=CHUNKS_IN_PROMPT)
-            
-            # sector = self.classifier.classify(company_profile['activity']) TODO omit --> the advices would not always be geared toward reporting
-                     
+                                 
             vsme_context = "\n\n".join([f"[vsme reference #{i+1}]\n{chunk}" for i, chunk in enumerate(chunks)])
             
-            # 2. LLM Augmentation
-            prompt = promptCustomized(user_question=question, companyProfile=company_profile,
+            # 2. Augmentation
+            
+            # vsme context used or in sustainability awareness or in the guided reporting
+            if vsme_question is not None:
+                # sector = self.classifier.classify(company_profile['activity']) TODO omit????
+                prompt = promptVSME(user_question=user_q, vsme_chunks=vsme_context, vsme_question=vsme_q)
+            else:
+                prompt = promptCustomized(user_question=user_q, companyProfile=company_profile,
                                       vsme_chunks=vsme_context)
             
-        
         log_prompt(prompt=prompt)
-        # Otherwise, simply behave as a chatbot
+        
         # 3. Generation
         response = ollama.chat(
             model=LLM_MODEL,

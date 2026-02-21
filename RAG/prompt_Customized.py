@@ -29,6 +29,6 @@ Size: {companyProfile['num_employees']} employees
 Your goal is to answer the <user_question>.
 
 Suggest the best sustainable practices for the company based on the company's activity and company' size from <company_profile>.
-if the user asks about compliance, reporting or disclosures give an explanatory answer by introducing the VSME standard and 
+if the user asks about compliance, reporting, or disclosures, give an explanatory answer by introducing the VSME standard and 
 using the retrieved context from the VSME standard <vsme_context> as source of truth.
 """
