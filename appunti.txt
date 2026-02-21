@@ -13,3 +13,16 @@ Guided consultation --> domande per ogni metrica (B) --> così che potrò compil
 
 Guided reporting --> leggi i documenti e scoring in base alle metriche. se non ci sono documenti utente risponde a voce
 "ROLE leggi i documenti basandoti su metrica B <testo metrica> e vedi quante info ci sono a riguardo" generiamo score
+
+
+
+
+        interview_section = ""
+        if interview_history:
+            interview_str = "\n".join([f"- Q: {item[0]}\n  A: {item[1]}" for item in interview_history])
+            interview_section = f"""
+COMPANY DEEP-DIVE (INTERVIEW DATA):
+The user has provided specific details about their operations:
+{interview_str}
+"""
+

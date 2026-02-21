@@ -1,4 +1,3 @@
-import json
 import logging
 import os
 from pathlib import Path
@@ -13,7 +12,11 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.append(str(ROOT))
 
 from config import mve_config
-from RAG.sector_classifier import SectorClassifier
+
+from RAG.sector_classifier3 import SectorClassifier
+
+from RAG.prompt_General import promptGeneral
+from RAG.prompt_Customized import promptCustomized
 
 # Embedding model offline usage
 os.environ['HF_HUB_OFFLINE'] = '1'
@@ -46,7 +49,6 @@ class rag:
         )
         
         # Load vectorial database
-        # Nota: CONFIG['DB_PATH'] è ora un oggetto Path corretto grazie a load_config()
         logger.info(f"Connecting at DB in: {DB_PATH}")
         self.client = chromadb.PersistentClient(path=str(DB_PATH))
         
@@ -57,7 +59,7 @@ class rag:
             raise e
         
         self.llm_model = LLM_MODEL
-        self.classifier = SectorClassifier()
+        self.classifier = SectorClassifier(self.embedding_model)
     
     def retrieve(self, query, n_results=5):
         """
@@ -74,84 +76,47 @@ class rag:
         
         return results['documents'][0], results['metadatas'][0]
     
-    def consult(self, company_profile, question, scope):
-        """ Chat with prompted LLM to obtain a complete consultation """
+    def consult(self, company_profile, question, interview_history=None, customized_response=False):
+        """ 
+        Chat with prompted LLM. 
+        If interview_history is present, it enriches the context.
+        """
         
-        # 1. Retrieval
-        query_enriched = f"{company_profile['activity']} {question}"
-        chunks, _ = self.retrieve(query_enriched, n_results=CHUNKS_IN_PROMPT)  # 5 chunks as default
+        interview_text = "" # TODO cambiare profondamente
+        if interview_history:
+            interview_text = " ".join([f"Q: {q} A: {a}" for q, a in interview_history])
         
-        # 2. Augmentation (prompting)
-        prompt = self.generate_prompt(company_profile, question, chunks, scope)
+        # Enrich prompt with interview's questions&answers if present 
+        query_enriched = f"{company_profile['activity']} {question} {interview_text}"
         
-        # 3. Generation - LLM response
+        # TODO sviluppare anche una query non enriched?????
+        
+        prompt = promptGeneral(user_question=question)
+        
+        # Personalize response based on user's company details
+        if customized_response:
+            # 1. Retrieval
+            chunks, _ = self.retrieve(query_enriched, n_results=CHUNKS_IN_PROMPT)
+            
+            # sector = self.classifier.classify(company_profile['activity']) TODO omit --> the advices would not always be geared toward reporting
+                     
+            vsme_context = "\n\n".join([f"[vsme reference #{i+1}]\n{chunk}" for i, chunk in enumerate(chunks)])
+            
+            # 2. LLM Augmentation
+            prompt = promptCustomized(user_question=question, companyProfile=company_profile,
+                                      vsme_chunks=vsme_context)
+            
+        
+        log_prompt(prompt=prompt)
+        # Otherwise, simply behave as a chatbot
+        # 3. Generation
         response = ollama.chat(
             model=LLM_MODEL,
-            messages=[{'role': 'user', 'content': prompt}]
+            messages=[{'role': 'user', 'content': prompt}] # TODO streaming?    
         )
         
         return response['message']['content']
-    
-    def generate_prompt(self, company_profile, question, context_chunks, scope):
-        """
-        Specialize LLM in answering the request of the user 
-        :param company_profile: Description of the undertaking
-        :param question: Question asked by the user
-        :param context_chunks: Chunks retrieved from the DB by the embedding model
-        :param scope: Scope of the answer (ESG-, FINANCIAL-, REPORTING- oriented)
-        """
-        # TODO se utente non seleziona nessuna checkbox (scope) noi comunque facciamo retrieval dal DB vettorizzato su VSME (?)
-                
-        # Classify the sector based on the keywords encountered
-        sector, hints = self.classifier.classify(
-            company_profile['activity']
-        )
-        
-        # Construct the context TODO qui aggiornare pesantemente se implementiamo procedura di Q&A (consulenza completa con più domande e risposte) 
-        context = "\n\n".join([
-            f"[reference #{i+1}]\n{chunk}"
-            for i, chunk in enumerate(context_chunks)
-        ])
-        
-        # Prompt with secotral hint
-        prompt = f"""You are a sustainability consultant for micro and SMEs.
-
-COMPANY PROFILE:
-- Sector: {sector}
-- Size: {company_profile['num_employees']} employees
-- Activity: {company_profile['activity']}
-
-{'You are specialized in:' if scope else ''}
-{'- the EFRAG VSME standard' if 'VSME oriented' in scope else ''}
-{'- the domain of sustainability practices and ESG domain' if 'ESG oriented' in scope else ''}
-{'- the financial-related ESG domain' if 'SFDR oriented' in scope else ''}
-
-{'SECTOR TIP:' if hints else ''}
-{hints['hint'] if hints else ''}
-
-{'PRIORITY METRICS FOR THIS SECTOR:' if hints else ''}
-{', '.join(hints['VSME_metrics']) if hints else ''}
-
-RELEVANT VSME STANDARDS REFERENCES:
-{context}
-
-QUESTION:
-{question}
-
-Provide a PRACTICAL and CONCRETE answer based on the VSME standard.
-
-STRUCTURE:
-1. 🎯 IMMEDIATE PRIORITIES (Quick wins)
-2. 📊 VSME METRICS TO MONITOR (with codes, e.g., B3, B7)
-3. 📝 CONCRETE ACTIONS (step by step)
-4. 📄 NECESSARY DOCUMENTS
-
-Be specific for the {sector} sector. Do not be generic.
-
-ANSWER:"""
-        log_prompt(prompt)
-        return prompt
-    
+         
 def log_prompt(prompt):
     try:
         LOG_PATH.mkdir(exist_ok=True, parents=True)
@@ -162,35 +127,3 @@ def log_prompt(prompt):
                 
     except IOError as e:
         logger.error(f"❌ Error saving the .txt log file: {e}")
-
-# Test
-if __name__ == "__main__":
-    system = rag()
-    
-    # different use cases
-    test_cases = [
-        {
-            'company': {
-                'num_employees': 15,
-                'activity': 'Artisanal carpentry workshop producing custom-made furniture'
-            },
-            'question': 'How can I make my production more sustainable?'
-        },
-        {
-            'company': {
-                'num_employees': 20,
-                'activity': 'Bakery with direct sales'
-            },
-            'question': 'What environmental KPIs should I monitor??'
-        }
-    ]
-    
-    for i, test in enumerate(test_cases, 1):
-        print(f"\n\n{'#'*60}")
-        print(f"TEST {i}")
-        print(f"{'#'*60}")
-        
-        response = system.consult(test['company'], test['question'])
-        
-        print("\n📋 Answer:")
-        print(response)

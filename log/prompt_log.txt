@@ -1910,3 +1910,66 @@ Your goal is to answer the <user_request> by identifying gaps between the compan
 
 ### Gap Alert
 (One bullet point highlighting a risk identified in the <interview_context> that directly contradicts the <vsme_context>).
+
+
+Prompt with 5 chunks
+============================================================
+
+# ROLE
+You are an expert Sustainability Consultant for micro, small, and medium enterprises.
+
+# CONTEXT & INPUT DATA
+You are provided with:
+1. **Company Profile:** Basic details of the company, including the company's activity and the number of employees.
+2. **VSME context:** Retrieved regulatory text based on the VSME standard by EFRAG.
+
+# DATA
+<company_profile>
+Activity: Artisanal carpentry workshop producing custom-made furniture
+Size: 11 employees
+</company_profile>
+
+<vsme_context>
+[vsme reference #1]
+Reporting  encourages  SMEs  to  assess  their  ESG  performance,  leading  to  better  management practices. ESG reporting provides the company's decision -makers with valuable data and insights that can inform  strategic  planning  and  decision-making  processes.  By  analysing  ESG  metrics  and  performance indicators,  companies  can  identify opportunities  to  optimize  resource  allocation,  mitigate  risks,  and capitalize  on emerging  trends  related  to sustainability  and social  responsibility. By  identifying  areas  for improvement  in  these  domains, SMEs  can  implement more  sustainable and  responsible business strategies.  This  includes  actions  such as  reducing  waste  and  energy  consumption,  improving  labour practices and enhancing corporate governance structures.
+One  of  the  most  relevant  benefits  from  engaging  in  ESG  reporting  on  which interviewees generally concurred is the increased awareness of ESG aspects, a better understanding of the related  risks and their incorporation into  the decision-making  process. By  disclosing  information about  potential  risks, such as supply chain disruptions, regulatory non-compliance or reputational damage, SMEs can demonstrate their understanding of the subject and a likely commitment to a proactive  ESG risk management. This result is enhanced  by  the  involvement  of the  SME owners/top  management  into  the  disclosure  process,  which translates  into  stronger engagement  and propensity  to act.  This is one of the reasons why stakeholders reported  that  in  France  banks  are  finding  increasingly  effective  to  accompany  their  requests  for  ESG information with face-to-face interviews  with the top SME decision-makers.
+Finally  in  terms  of  positive  impacts  on  internal  organisation,  smaller  preparers  are  often not sufficiently structured to benefit from them, but the larger can experience  better intra-company cooperation, as a result of the horizontal nature of some of these  disclosures,  forcing internal cooperation  in data  gathering and analysis.
+73 Breuer, M. (2021), 'How Does Financial -Reporting Regulation Affect IndustryWide Resource Allocation?', Journal of Accounting Research, 59(1), pp. 59 -110, https://doi.org/10.1111/1475- 679X.12345.
+74 Allen,  A.,  LewisWestern,  M. and Valentine,  K. (2022), 'The Innovation  and  Reporting Consequences  of Financial Regulation for Young LifeCycle Firms', Journal of Accounting Research, 60(1), 4595, https://doi.org/10.1111/1475679X.12398.
+
+[vsme reference #2]
+Spontaneous  preparers  are those SMEs which decide  to use the VSME not upon request  of third parties (banks, larger  customers), but for their  own business  reasons.  Their  choice is 'purely' voluntary,  and this means that they expect  to receive  net benefits  from their decision. In any case, no incremental regulatory costs can be attributed to voluntary decisions. 68
+As mentioned above,  companies that are likely  to reap the largest  benefits from voluntary disclosures are those that operate in green markets (public or private),  that need to build a stronger brand with consumers, or that sell products centred on sustainability  (e.g. advanced manufacturing). In addition,  some companies pay special attention to sustainability  for business reasons (e.g.  B-Corps).  For these companies,  the VSME is likely  to represent  a net benefit.  Hence,  they  are likely  to be  among the early adopters.
+Metanalyses  have  been  carried  out on the benefits  of ESG  reporting,  with the  main quantifiable  effects being related to the capital markets, through greater liquidity,  lower costs and better resource allocation 69 . Concurrently, other positive effects have also been reported on  SME  preparers concerning  the transparency and acceptability  of their operations.  This enhances their reputation  and brand image,  and thereby  increases their competitiveness  in the business environment.  In general,  however,  research 70 on the specific effects of ESG reporting on SMEs is lacking for the very simple reason that SMEs have not often engaged  in ESG reporting yet 71 and this literature  is only slowly  emerging.  This section will summarize the main findings from the  targeted  consultation and the literature  review  as regards: (i) competitiveness;  (ii) management,  reputation and  improved internal  organisation; and  (iii) increased  transparency  and accountability.
+
+[vsme reference #3]
+- The ESG information is relevant  (i) for the reporting  entity  itself,  (ii) for its  value  chain and (iii)  for financial institutions  was largely  converging; 4 this  would  allow  designing 'core SME' disclosures , limited in number and fit for purpose.
+- SME sustainability  reporting  requirements  should not  merely  be a simplified  version of those for large reporting  entities.  These  would likely  not be fit for purpose and prove difficult and costly to produce. Instead, SME-specific sustainability  reporting standards should be designed  for SMEs on a  standalone  basis  ('think small  first')  while  ensuring  that  sustainability  information  provided  by SMEs using such standards remains relevant  for larger stakeholders.
+- The new standard should address the lack of a dedicated  ESG standard for SMEs and the fact that prevailing  ones are considered as a potential administrative  burden for them. 5
+- Size  does not necessarily best reflect an SME's sustainability  footprint and profile either,  and so the business  activity/sector and  its  associated risk  profile should  also  be a  primary  driver for determining  sustainability  reporting requirements.  Therefore,  the report suggested  considering a sector-specific approach towards sustainability reporting requirements for SMEs, which would lead
+1  Communication from the Commission, SME Relief Package, COM/2023/535 final.
+2 'Consistent with the 'think small first' approach, the standard -setter would develop a simplified standard for voluntary use by SMEs who are not under the scope of the NFRD. The simplified nature of this standard would reflect the fact that SMEs often do not have the technical expertise nor resources necessary  to prepare reports in accordance with stateof-theart,  sophisticated  standards.'  Commission  Staff Working  Document  Impact  Assessment  Accompanying  the Proposal  for  a  Directive of  the European  Parliament  and  of the Council  amending Directive 2013/34/EU,  Directive 2004/109/EC, Directive 2006/43/EC and Regulation (EU) No 537/2014, as regards corporate sustainability reporting. 3 https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAssets%2FEFRAG%2520PTF-NFRS_MAIN_REPORT.pdf
+
+[vsme reference #4]
+While the various activities  are the same for all SMEs using the VSME, the process is likely to be different for smaller and preparers. Based  on the qualitative  elements  emerging during the  targeted  consultation, two groups of companies can be distinguished 76 :
+- Smaller preparers : micro companies and small companies with up to 20 employees.  These entities often  lack  internal  people  dealing with  sustainability  matter  and  have  a  higher  tendency  to outsource the work to their accountant or may resort to platform solutions. They are more likely to use  the  basic  module  only  (about  70%)  and  tend  to  prefer  simpler  but  cheaper  compliance solutions, having a limited  budget available.
+- Larger preparers : small companies with 20 employees  or more and medium  companies. These entities  may already  have people  and functions which, at least on a part-time  basis, deal with ESG matters and related  certification issues, which means they are more likely to use internal resources. In terms of outsourcing, they may prefer to resort to more expensive  specialised  ESG consultants -as  opposed as to accountants  and platform solutions. They are more  likely to use  the comprehensive module too (about 70%).
+
+[vsme reference #5]
+ESG reporting can demonstrate  SME commitment to supporting local communities, over and above  their more traditional contribution to economic growth and job creation or to sourcing goods and services from local  suppliers  and investing  in local  infrastructure and  facilities.  ESG  reporting  can better  frame  these contributions,  showcasing SMEs' role  in minimizing  their environmental  impact,  with related  benefits  for local ecosystems and natural resources. By disclosing information about their efforts to reduce  emissions, waste and water consumption, and mitigate pollution, SMEs  demonstrate their  commitment  to environmental stewardship and sustainability, contributing to the health and resilience of local environments.  Finally, ESG  reporting  promotes  social  inclusion  and  diversity within  SMEs  and  their surrounding communities.  By disclosing  information about  their efforts to promote  diversity,  equity,  and inclusion in the workplace,  SMEs demonstrate  their  commitment to  equity  and  inclusivity,  although it  is acknowledged  that family businesses have more constraints in this.  By disclosing information about their efforts  to  provide  safe  working  conditions,  promote  employee  wellness,  and  minimize  environmental
+hazards,  SMEs contribute  to healthier  and  more resilient  communities.  Table  10 below  summarises  the analysis of these benefits.
+Table 10. Voluntary preparers: benefits
+</vsme_context>
+
+<user_question>
+Which ESG practices are most important for a company like ours?
+</user_question>
+
+# GOAL
+Your goal is to answer the <user_question>.
+
+Suggest the best sustainable practices for the company based on the company's activity and company' size from <company_profile>.
+if the user asks about compliance, reporting or disclosures give an explanatory answer by introducing the VSME standard and 
+using the retrieved context from the VSME standard <vsme_context> as source of truth.
+
+

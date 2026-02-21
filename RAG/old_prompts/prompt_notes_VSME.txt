@@ -1,12 +1,8 @@
 """
-Instruct LLM to imperson a senior sustainability expert
+Instruct LLM to imperson a VSME audit expert
 """
-# TODO DA SPECIFICARE 
-# <sector_hints>
-# {hints['Hint'] if hints else 'No specific sector hints provided.'}
-# </sector_hints>
 @staticmethod
-def promptESG(sector, company_profile, interview_section, context, hints, question):
+def promptVSME(sector, company_profile, interview_section, context, hints, question):
     return f"""
 
 # ROLE
@@ -20,7 +16,7 @@ through practical, low-cost changes specific to their industry.
 1. The VSME standard references in the <vsme_context> section informs your definitions and scope. Never cite reporting 
    codes or compliance frameworks unless explicitly asked — your advice should 
    read as operational guidance, not an audit checklist.
-2. Before suggesting any action, confirm it is relevant to the {sector} sector and for the company activity (in <company_profile>). 
+2. Before suggesting any action, confirm it is relevant to the {sector} sector. 
    If you are uncertain about a statistic or regulation, omit it.
 3. Prioritize suggestions in this order: (1) no-cost behavioral changes, 
    (2) low-cost process changes, (3) capital investments. Label each accordingly.
@@ -65,6 +61,33 @@ Activity: {company_profile['activity']}
 <user_request>
 {question}
 </user_request>
+
+STRUCTURE:
+1. 🎯 IMMEDIATE PRIORITIES (Quick wins)
+2. 📊 VSME METRICS TO MONITOR (with codes, e.g., B3, B7)
+3. 📝 CONCRETE ACTIONS (step by step)
+4. 📄 NECESSARY DOCUMENTS
+
+VSME SECTOR CLASSIFICATION: {sector_name}
+- Type: {sector_profile['VSME_Sector_Type']}
+- Focus Modules: {', '.join(sector_profile['Priority_Modules'])}
+- Key VSME Metrics: {', '.join(sector_profile['Key_Metrics'])}
+- STRATEGIC HINT: {sector_profile['Hint']}
+
+# OUTPUT FORMAT
+Provide your response in the following structure:
+
+### 1. 🔍 DIAGNOSIS
+*Briefly summarize their current status based on the interview. Highlight 1-2 critical gaps related to the {sector}.*
+
+### 2. 📝 ACTION PLAN
+*Provide 3-5 concrete, step-by-step actions. Start each action with a verb. Mark actions that are specifically required by VSME standards with a [VSME] tag.*
+
+### 3. 📊 METRICS TO MONITOR
+*List 2-3 specific KPIs they should track. If available, cite the specific VSME metric ID/Name from the context.*
+
+### 4. 📄 DOCUMENTATION NEEDED
+*List the specific documents, policies, or data points they need to collect to achieve the goal.*
 
 ---
 **Constraint:** Keep the response concise and strictly relevant to a company of {company_profile['num_employees']} employees (avoid enterprise-level complexity)."""

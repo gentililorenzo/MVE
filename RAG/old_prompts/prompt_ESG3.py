@@ -17,7 +17,6 @@ You are provided with:
 4. **VSME Standards:** Retrieved regulatory text.
 
 # DATA
-
 <company_profile>
 Sector: {sector}
 Size: {company_profile['num_employees']} employees
