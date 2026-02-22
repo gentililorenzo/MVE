@@ -29,87 +29,79 @@ VSME_STEPS = [
 # TODO implementare Comprehensive module 
 
 from fpdf import FPDF
-import re
 
-
-def _insert_soft_breaks(text, maxlen=45):
-    def repl(m):
-        s = m.group(0)
-        parts = [s[i:i+maxlen] for i in range(0, len(s), maxlen)]
-        return "\u200b".join(parts)
-    return re.sub(r'(\S{%d,})' % maxlen, repl, text)
-
-def generate_vsme_pdf(company_profile, history, titles, out_filename="vsme_report_safe.pdf"):
+def generate_vsme_pdf(company_profile, history, titles):
     pdf = FPDF()
     pdf.set_auto_page_break(auto=True, margin=20)
     pdf.set_margins(20, 20, 20)
     pdf.add_page()
+    
+    pdf.add_font("AlbertSans", "", "fonts/AlbertSans-Regular.ttf", uni=True)
+    pdf.add_font("AlbertSans", "B", "fonts/AlbertSans-Bold.ttf", uni=True)
+    pdf.add_font("AlbertSans", "I", "fonts/AlbertSans-Italic.ttf", uni=True)
+    font_name = "AlbertSans"
+    
+    # epw (Effective Page Width) is the printable width of the sheet 
+    # (e.g., 210 mm total - 40 mm margins = 170 mm).
+    epw = pdf.epw 
 
-    # carica font TTF con uni=True se li usi
-    try:
-        pdf.add_font("AlbertSans", "", "fonts/AlbertSans-Regular.ttf", uni=True)
-        pdf.add_font("AlbertSans", "B", "fonts/AlbertSans-Bold.ttf", uni=True)
-        pdf.add_font("AlbertSans", "I", "fonts/AlbertSans-Italic.ttf", uni=True)
-        font_name = "AlbertSans"
-    except Exception:
-        font_name = "Helvetica"  # fallback
-
-    usable_w = pdf.w - pdf.l_margin - pdf.r_margin
-    left = pdf.l_margin
-
-    # --- titolo ---
-    pdf.set_xy(left, pdf.get_y())           # ASSICURIAMO di partire dal margine sinistro
+    # --- Title ---
     pdf.set_font(font_name, "B", 16)
-    pdf.multi_cell(usable_w, 10, "VSME Knowledge Report", align="C")
+    pdf.set_x(20)
+    pdf.multi_cell(epw, 10, "VSME Knowledge Report", align="C")
     pdf.ln(6)
 
-    # --- company profile ---
-    pdf.set_x(left)
+    # --- Company Profile ---
     pdf.set_font(font_name, "B", 14)
-    pdf.multi_cell(usable_w, 8, "Company Profile", align="L")
+    pdf.set_x(20) # Always return the cursor to the left margin.
+    pdf.multi_cell(epw, 8, "Company Profile", align="L")
+    
     pdf.set_font(font_name, "", 12)
     emp = company_profile.get("num_employees", "N/A")
     act = company_profile.get("activity", "N/A")
 
-    pdf.set_x(left)
-    pdf.multi_cell(usable_w, 7, f"Number of employees: {emp}")
-    pdf.set_x(left)
-    pdf.multi_cell(usable_w, 7, f"Activity: {act}")
+    pdf.set_x(20)
+    pdf.multi_cell(epw, 7, f"Number of employees: {emp}", align="L")
+    
+    pdf.set_x(20)
+    pdf.multi_cell(epw, 7, f"Activity: {act}", align="L")
+    
     pdf.ln(6)
 
     # --- Q&A ---
-    pdf.set_x(left)
     pdf.set_font(font_name, "B", 14)
-    pdf.multi_cell(usable_w, 8, "Q&A about VSME (knowledge inspection)")
+    pdf.set_x(20)
+    pdf.multi_cell(epw, 8, "Q&A about VSME (knowledge inspection)", align="L")
     pdf.ln(4)
 
     for title in titles:
-        pdf.set_x(left)
+        # Section TITLE
         pdf.set_font(font_name, "B", 12)
-        pdf.multi_cell(usable_w, 7, title)
+        pdf.set_x(20)
+        pdf.multi_cell(epw, 7, title, align="L")
 
-        pdf.set_x(left)
-        pdf.set_font(font_name, "", 11)
         topic_questions = [it for it in history if it.get("topic") == title]
+        
         if topic_questions:
             for it in topic_questions:
-                domanda = "- Domanda: " + it.get("question", "")
-                risposta = "  Risposta: " + it.get("response", "")
+                domanda = "- Question: " + it.get("question", "")
+                risposta = "  Answer: " + it.get("response", "")
 
-                domanda = _insert_soft_breaks(domanda, maxlen=45)
-                risposta = _insert_soft_breaks(risposta, maxlen=45)
-
-                pdf.set_x(left)
-                pdf.multi_cell(usable_w, 6, domanda, align="L")
-                pdf.set_x(left)
-                pdf.set_font(font_name, "I", 10)
-                pdf.multi_cell(usable_w, 6, risposta, align="L")
                 pdf.set_font(font_name, "", 11)
+                pdf.set_x(20)
+                pdf.multi_cell(epw, 6, domanda, align="L")
+                
+                pdf.set_font(font_name, "I", 10)
+                pdf.set_x(20)
+                pdf.multi_cell(epw, 6, risposta, align="L")
+                
+                pdf.ln(2)
         else:
-            pdf.set_x(left)
             pdf.set_font(font_name, "I", 11)
-            pdf.multi_cell(usable_w, 6, "- Nessuna domanda effettuata.", align="L")
+            pdf.set_x(20)
+            pdf.multi_cell(epw, 6, "- No question asked.", align="L")
+        
         pdf.ln(4)
 
-    pdf.output(out_filename)
-    return out_filename
+    # download is done from app.py
+    return bytes(pdf.output())
