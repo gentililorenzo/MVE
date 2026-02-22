@@ -1,7 +1,7 @@
 import streamlit as st
 from datetime import datetime
 from RAG.RAG import rag
-from utilities import TITLES, VSME_STEPS
+from utilities import TITLES, VSME_STEPS, generate_vsme_pdf
 
 @st.cache_resource
 def create_system():
@@ -28,8 +28,6 @@ if "guided_reporting" not in st.session_state:
     st.session_state["guided_reporting"] = False
 if "vsme_step" not in st.session_state:
     st.session_state["vsme_step"] = 0
-if "guided_reporting_answers" not in st.session_state:
-    st.session_state["guided_reporting_answers"] = [] # Q -> A list
     
 # Customized response --> prompt LLM with the data of the company
 if "customized_response" not in st.session_state: 
@@ -62,7 +60,6 @@ with st.sidebar:
     if st.button("Reset Consultation"):
         st.session_state["guided_reporting"] = False
         st.session_state["vsme_step"] = 0
-        st.session_state["guided_reporting_answers"] = []
         st.session_state["history"] = []
         st.rerun()
         
@@ -126,11 +123,8 @@ with col1:
     
     # --- Guided reporting through the analysis of the VSME standard ---
     else:
-        st.session_state["guided_reporting"] = True # TODO no interview ma reporting guidato
-        
-        # if not st.session_state["profile_saved"]:
-        #     st.warning("Please fill and save the Company Profile in the sidebar to start the interview.")
-        # else:
+        st.session_state["guided_reporting"] = True
+
         current_step = st.session_state["vsme_step"]
         
         # Check guided reporting state
@@ -141,64 +135,83 @@ with col1:
             question_text = VSME_STEPS[current_step]
             st.markdown(f"{question_text}")
             
-            # User answer
+            # User question
             with st.form(key=f"guided_reporting_form_{current_step}"):
                 user_question = st.text_area("Any question?", height=100)
-                ask_button = st.form_submit_button("Ask me anything that is unclear to you")
+                ask_button = st.form_submit_button("Ask me")
                 if ask_button:
                     if not user_question.strip():
-                        st.error("Please provide an answer.")
+                        st.error("Please provide a question.")
                     else:
-                        # Ask LLM for clarifications TODO matchare volta per volta fare un prompt diverso???
+                        # Ask LLM for clarifications TODO matchare metrica per metrica con un prompt specifico??? proviamo "generale"
                         response = system.consult(user_question=user_question, vsme_question=question_text)
                         st.session_state["history"].append({
                             "question": user_question,
                             "response": response,
+                            "topic": TITLES[current_step],
                             "ts": datetime.now().strftime("%H:%M - %Y/%m/%d")
                         })
             
-            next_btn = st.button("All clear, go on")    
-            if next_btn:
-                # TODO lasciare così per il report finalest.session_state["guided_reporting_answers"].append((question_text, user_question))
-                st.session_state["vsme_step"] += 1
-                st.rerun()
-        else:
-            # TODO qui avrà la possibilità di scaricare un PDF con le Q&A di tutte le metriche
-            # --- INTERVIEW COMPLETED: Generating action plan ---
-            st.success("Interview completed! This will help me better understand your context.") 
+            # TODO controllo max e min steps (non fargli fare over/under range)
             
-            # Answers review
-            with st.expander("Review your answers"):
-                for q, a in st.session_state["guided_reporting_answers"]:
-                    st.write(f"**Q:** {q}")
-                    st.write(f"**A:** {a}")
-                    st.write("---")
-                            
-            with st.form("ask_form"):
-                question = st.text_area("Your question", height=100)
-                submitted = st.form_submit_button("Submit")
-            
-            if submitted:
-                with st.spinner("Analyzing your profile and answers..."):
-                    company_profile = st.session_state["company_profile"]
-                    guided_reporting_data = st.session_state["guided_reporting_answers"]
-                                            
-                    response = system.consult(
-                        company_profile=company_profile, 
-                        question=question,
-                        guided_reporting_history=guided_reporting_data
-                    )
-                    
-                    st.session_state["history"].append({
-                        "question": "Guided reporting result",
-                        "response": response,
-                        "ts": datetime.now().strftime("%H:%M - %Y/%m/%d")
-                    })
-                    
-                    st.session_state["vsme_step"] = 0
-                    st.session_state["guided_reporting_answers"] = []
-                    st.session_state["guided_reporting"] = False
+            prev_col, next_col, _ = st.columns([1, 1, 3])
+            with prev_col:
+                back_btn = st.button("Previous", use_container_width=True) 
+                if back_btn:
+                    st.session_state["vsme_step"] -= 1
                     st.rerun()
+            with next_col:
+                next_btn = st.button("Next", use_container_width=True)    
+                if next_btn:
+                    st.session_state["vsme_step"] += 1
+                    st.rerun()
+
+        else:
+            # --- Guided Reporting end ---
+            # Generating a prototype report simply with what the user asked to demonstrate how much the 
+            # user is up to date with sustainability and VSME 
+            st.success("Guided reporting ended! Thank you!")
+            st.markdown(":small[I hope you now have a better understanding of what VSME is!]")
+            
+            # Questions review
+            with st.expander("Review your questions"):
+                for title in TITLES:
+                    st.markdown(f"#### {title}")
+                    topic_questions = [item for item in st.session_state["history"] if item.get("topic") == title]
+                    
+                    if topic_questions:
+                        for item in topic_questions:
+                            st.markdown(f"- **Question:** *{item['question']}*")
+                            st.markdown(f"**Response:** {item['response']}") # response not used --> question is the information the user lacks of
+                    else:
+                        st.markdown("- *No question asked.*")
+                        
+                    st.markdown("---")
+                                        
+            st.markdown("---")
+            st.markdown("### Download your VSME Knowledge Report")
+            
+            # PDF bytes generation
+            pdf_bytes = generate_vsme_pdf(
+                company_profile=st.session_state["company_profile"],
+                history=st.session_state["history"],
+                titles=TITLES
+            )
+            # Download report
+            st.download_button(
+                label="Download VSME Knowledge Report (PDF)",
+                data=pdf_bytes,
+                file_name="VSME_Knowledge_Report.pdf",
+                mime="application/pdf"
+            )
+
+            # Home - for now do not reset everything (company profile)
+            if st.button("Back to home"):
+                st.session_state["vsme_step"] = 0
+                st.session_state["guided_reporting"] = False
+                st.session_state["mode"] = "Sustainability awareness"
+                st.session_state["history"] = []
+                st.rerun()
 
     # --- History ---
     st.markdown("### History")
@@ -216,9 +229,9 @@ with col2:
     st.write(f"- **Employees:** {prof.get('num_employees')}")
     st.write(f"- **Activity:** {prof.get('activity')}")
     
-    if st.session_state["guided_reporting_answers"]:
-        st.markdown("**Guided reporting progress:**")
-        st.progress(len(st.session_state["guided_reporting_answers"]) / len(VSME_STEPS))
+    if st.session_state["guided_reporting"]:
+        st.markdown("Guided reporting progress:")
+        st.progress(st.session_state["vsme_step"] / len(VSME_STEPS))
         
     st.markdown("---")
     # Download history as text

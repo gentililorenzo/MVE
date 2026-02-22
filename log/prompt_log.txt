@@ -2085,3 +2085,241 @@ Your goal is to answer the <user_question> and to clarify doubts and uncertainti
 # INSTRUCTIONS
 Try to understand the user doubts by contextualizing that he/she sees what's inside <vsme_snippet>.
 Use the retrieved context from the VSME standard <vsme_context> as your PRIMARY AND ONLY SOURCE OF TRUTH.
+
+
+
+Prompt with 5 chunks
+============================================================
+
+# ROLE
+You are an expert Sustainability Auditer expertise in the VSME standard (Voluntary Sustainability Reporting Standard for non-listed SMEs) by EFRAG.
+
+# CONTEXT & INPUT DATA
+You are provided with:
+1. **User question:** What the user asks to understand better.
+3. **VSME snippet:**  Which VSME (Voluntary Sustainability Reporting Standard for non-listed SMEs) snippet is shown to the user for whom the user has doubts. 
+2. **VSME context:** Retrieved regulatory text based on the VSME standard (Voluntary Sustainability Reporting Standard for non-listed SMEs) by EFRAG.
+
+
+# DATA
+<user_question>
+What can I obtain from VSME reporting?
+</user_question>
+
+<vsme_snippet>
+The VSME is a simple and standardised framework for SMEs to report on ESG issues, creating better opportunities to obtain green financing and thus facilitating the transition to a sustainable economy.
+
+ **I will help you better understand what is needed to create voluntary reporting based on VSME. You can ask me for more information on any question at any time. At the end, you will receive a descriptive report based on what you asked or not.**
+</vsme_snippet>
+
+<vsme_context>
+[vsme reference #1]
+EFRAG  developed  the  VSME  following  a  rigorous  due  process  which  included  a  public consultation  and  field-testing  of  the  draft  standard  by  SMEs.  SMEs  themselves  and  the intended users of the reported information have expressed support for the VSME standard as  a  simplified  reporting  tool  that  is  a  credible  replacement  for  a  substantial  portion  of information requests that banks and large undertakings often send to SMEs in their value chains. EFRAG delivered the VSME standard to the Commission in December 2024.
+5. Are there additional support materials available to SMEs who wish to report sustainability information voluntarily in accordance with the  VSME recommendation?
+Yes. EFRAG has established a dedicated VSME Ecosystem which groups various SME and financial  sector  stakeholders  together  to  discuss  the  implementation  of  the  VSME standard.  On  EFRAG's website, companies  can  find educational videos in various languages, as well as other support material, such as a digital XBRL template and links to external guidance and methodology materials.
+
+[vsme reference #2]
+The VSME is articulated into two 12 different  modules:
+1. the Basic Module, which provides  the 'target' reporting standard for micro undertakings, and
+2. the Comprehensive  Module, summarising the likely  requests  from business partners  within the value chain and the sustainable finance datapoints for lenders and investors.
+6 As regards the reporting structure it was noted that not all SMEs are required to prepare a management report. Finally, the ESS may also encourage the implementation of easy to communicate reporting means, e.g. through certifications evidenced by seals  and logos  (subject to  appropriate verification  processes),  that  indicate compliance with certain sustainability requirements and criteria. Moreover, the use of existing data and certifications to automatise the reporting process and decrease the administrative efforts required should be explored.
+7   The sector-specific  sustainability  reporting  requirements for  highly critical  sectors  should  be  based on  EU  policy priorities and legislative definitions (e.g. EU Taxonomy).
+8  The document discussed in November 2022 was part of the initial stages in the development of the VSME standard. It was identified as an Issue Paper by the former EFRAG Project Task Force ESRS (PTF-ESRS), specifically within cluster
+8. This document served as a preliminary draft prepared by the EFRAG Secretariat  and was  presented during the SR TEG meeting on 17 November 2022. It marked the first  discussion  of  VSME by SR  TEG,  setting  the stage  for  the subsequent development and refinement of the VSME Exposure Draft through a series of versions and consultations, leading to the creation of a more structured and detailed Exposure Draft for further evaluation and feedback
+9   The building block approach, as  discussed in the development of the VSME standard, is a methodological element designed to maintain consistency  between the VSME standard and the European Sustainability Reporting Standards (ESRS).
+10   European  Commission  (2023),  Questions  and  Answers  on  the  Adoption  of  European  Sustainability  Reporting Standards, Brussels, 31 July 2023.
+11  Communication from the Commission to the European Parliament, the Council, the European Economic and Social Committee and the Committee of the Regions SME Relief Package, COM/2023/535 final.
+
+[vsme reference #3]
+The  VSME  pursues multiple  objectives . It  is  designed to  enable non-listed SMEs  to  respond  to sustainability  information  requests  from customers, banks,  investors  or other  stakeholders,  and  thereby enabling  synergies  and cost savings. The  VSME is also expected  to make these users converge and limit data requests to SMEs to those included in the VSME standard. Finally,  the Commission, in its September 2023 SME Relief  Package,  specifically  refers to the VSME as a tool to support SME access to sustainable financing.
+This presupposes that:
+- a minimum common denominator is found among the information needs of users,
+- the resulting standard is authoritative  enough to set a boundary for most of these requests ,
+- the information contained therein is a sufficient tool to help SMEs apply for green financing .
+The main users of the VSME will  be,  on the one  hand, banks, which represent  by far the most important source of financing for EU SMEs, and, on the other, large corporate customers. Their needs, however, may not be fully aligned.
+- Banks' ESG requests to SMEs are mainly dictated  by their own reporting requirements under Pillar 3,  and  this  is  even  more  so  after  the  Capital  Requirements  Regulation  (CRR#3) 82 was eventually released. These  information  needs  only  partly  overlap  with  those  of investment  funds that  are regulated  by the  SFDR PAI. If the purpose of the VSME  is to help SME apply  for green financing, Pillar  3 reporting requirements  should  remain prominent, as the  importance of bank lending far outweighs that of SME access to the capital market across the EU.
+- However,  the VSME is also to ensure some degree  of vertical  coherence with the ESRS,  because ESG requests  along  the value  chain will  be largely  triggered  by the need  of large  companies to comply with the CSRD. Similarly, the VSME may have to include some of the requirements trickling down from the SFDR PAI, as part of the information may be requested  to invested  companies, and hence to their suppliers.
+The two objectives  may be conflicting and the VSME could run two risks:
+
+[vsme reference #4]
+Adopting  the VSME standard -either spontaneously or upon request  - can trigger other indirect costs and benefits  in  three  areas  identified,  namely  (i)  competitiveness,  (ii)  management,  reputation  and improved internal organisation; and (iii) increased transparency and accountability.
+In terms of competitiveness ,  although there is no strict correlation, adherence  to the VSME standard can enhance a company's market position  by improving  the perceived  value of its products or services.  This can lead  to access to green  markets,  such as green  public  procurement and environmentally  conscious consumers. However,  there are also potential  downsides,  such as the risk of EU companies becoming less competitive  against  companies not reporting  voluntarily  on ESG matters,  thus avoiding  associated  costs and disclosing possibly  sensitive  information, especially  for that typically  operate on very thin competitive advantages.
+From a management  and organizational  perspective , sustainability  reporting can significantly influence how companies  manage their activities  and allocate  responsibilities.  By requiring  companies to disclose their  sustainability  performance,  the  importance  of ESG  policies  within  the  organization  is  heigh tened, reducing  operational  risks  and  the  likelihood  of defaults.  This  increased  awareness  can lead  to  better integration  of  ESG  considerations  into  daily  management,  ensuring  functions  and  responsibilities are aligned  accordingly.  Also,  by promoting  green  lending  and investment,  financial institutions  encourage companies  to  adopt  more  sustainable  practices  by  offering  loans  with  reduced  interest  rates  tied  to sustainability  criteria.
+Increased transparency and accountability are significant outcomes of adopting the VSME standards. By committing to open communication and providing  a clear understanding of their operations and impact, companies can align their practices with societal expectations  and values. This transparency not only fosters trust  among  investors,  customers,  employees, suppliers,  and  the  broader  community  but  also  holds companies accountable  for their environmental,  social,  and governance  impacts. The  ongoing  dialogue and collaboration  resulting  from ESG  reporting  can increase social capital,  as stakeholders  observe  and trust the company's commitment to sustainable practices.
+
+[vsme reference #5]
+The VSME is considered  as a relatively  simple tool by most  users ,  striking  a positive  balance  between complexity,  comprehensiveness  and most of the needs of the stakeholders.  However, most SMEs will still be likely to need or prefer to get external support for preparation .  This is for various reasons:
+- Most SMEs have very little familiarity  with ESG topics. This means that they would need to spend a significant amount of time to familiarise with the standard;
+- Albeit  very  simplified  compared to the ESRS, the standard is considered complex and technical by some  stakeholders,  as not all  disclosures  are  immediately  understandable  in their  technicalities (e.g.  the disclosures on biodiversity  and water).
+- Few disclosures remain open-ended.  SMEs are typically  used to structured questionnaires,  mostly consisting  of closed  numerical questions.  Open-ended  questions  may  also  be  more  difficult  to process by users. This aspect was thoroughly addressed  by the final revision of the VSME.
+- Even when SMEs can prepare  the report internally,  they may prefer to focus on their core activities and hire to this purpose a third party (e.g. their accountant), who is already  familiar with company
+data.  Also,  small  SMEs may lack internal  resources for this job  and  could need  external  support regardless of the complexity  of the standard.
+The targeted consultation confirmed that propensity to delegate  ESG reporting preparation is already quite widespread. No further simplification of the VSME is likely to change this situation .  The above implies that any massive and rapid uptake of the VSME as an ESG reporting standard will face major bottlenecks in the availability of supporting expertise in the market. Given the difficulties which most SMEs are likely to experience  in preparing  the statement  internally,  the availability  of a sufficiently  large number of trained accountants - as consultants appear likely  to cater to the more lucrative market of larger corporations - will be a key adoption factor. Therefore,  a major element influencing the VSME uptake and market acceptance will also be the amount of training provided  to SME accountants, the majority of whom reportedly  still lack familiarity  with ESG concepts and reporting frameworks. In this regard, comments on the readiness to cope with the likely  future demand  were very diverse  depending  on the different national or regional contexts.
+</vsme_context>
+
+# GOAL
+Your goal is to answer the <user_question> and to clarify doubts and uncertainties the user has.
+
+# INSTRUCTIONS
+Try to understand the user doubts by contextualizing that he/she sees what's inside <vsme_snippet>.
+Use the retrieved context from the VSME standard <vsme_context> as source of truth.
+
+
+
+Prompt with 5 chunks
+============================================================
+
+# ROLE
+You are an expert Sustainability Auditer expertise in the VSME standard (Voluntary Sustainability Reporting Standard for non-listed SMEs) by EFRAG.
+
+# CONTEXT & INPUT DATA
+You are provided with:
+1. **User question:** What the user asks to understand better.
+3. **VSME snippet:**  Which VSME (Voluntary Sustainability Reporting Standard for non-listed SMEs) snippet is shown to the user for whom the user has doubts. 
+2. **VSME context:** Retrieved regulatory text based on the VSME standard (Voluntary Sustainability Reporting Standard for non-listed SMEs) by EFRAG.
+
+
+# DATA
+<user_question>
+What are the Scope 1 GHG emissions? It is not enough for me to track how many fuel do I use?
+</user_question>
+
+<vsme_snippet>
+29. The undertaking shall disclose its total energy consumption in MWh, with a breakdown as per the table below, if it can obtain the necessary information to provide such a breakdown:
+
+| | Renewable | Non-renewable | Total |
+|---|---|---|---|
+| **Electricity** (as reflected in utility billings) | | | |
+| **Fuels** | | | |
+| **Total** | | | |
+
+30. The undertaking shall disclose its estimated _**gross greenhouse gas (GHG) emissions**_ in tons of CO₂ equivalent (tCO₂eq) considering the content of the GHG Protocol Corporate Standard (version 2004), including:
+
+    (a) the Scope 1 GHG emissions in tCO₂eq (from owned or controlled sources); and
+
+    (b) the _**location-based Scope 2 emissions**_ in tCO₂eq (i.e. emissions from the generation of purchased energy, such as electricity, heat, steam or cooling).
+
+31. The undertaking shall disclose its GHG intensity calculated by dividing '_**gross greenhouse gas (GHG) emissions**_' disclosed under paragraph 30 by 'turnover (in Euro)' disclosed under paragraph
+24(e)(iv)^5
+
+</vsme_snippet>
+
+<vsme_context>
+[vsme reference #1]
+29. The undertaking shall disclose its total energy consumption in MWh, with a breakdown as per the table below, if it can obtain the necessary information to provide such a breakdown:
+30. The undertaking shall disclose its estimated gross greenhouse gas (GHG) emissions in tons of CO2 equivalent (tCO2eq) considering the content of the GHG Protocol Corporate Standard (version 2004), including:
+3. (a)  the Scope 1 GHG emissions in tCO2eq (from owned or controlled sources); and
+4. (b)  the location-based Scope 2 emissions in tCO2eq (i.e. emissions from the generation of purchased energy, such as electricity, heat, steam or cooling).
+31. The undertaking shall disclose its GHG intensity calculated by dividing ' gross greenhouse gas (GHG) emissions ' disclosed under paragraph 30 by 'turnover (in Euro)' disclosed under paragraph 24(e)(iv) 5 .
+Electricity (as reflected in utility billings), Renewable = . Electricity (as reflected in utility billings), Non-renewable = . Electricity (as reflected in utility billings), Total = . Fuels, Renewable = . Fuels, Non-renewable = . Fuels, Total = . Total, Renewable = . Total, Non-renewable = . Total, Total =
+
+[vsme reference #2]
+90. As for  gross greenhouse gas emissions (GHG)  arising  from  the  undertaking's  activities,  the requirement in paragraph 30 builds on the definitions and rules of the GHG Protocol, the leading accounting standard for GHG emissions. Under paragraph 30, undertakings are to report on their Scope 1 and Scope 2 emissions. Scope 1 GHG emissions cover direct emissions from owned or controlled sources. Scope 2 emissions are indirect GHG emissions resulting from the activities of  the  reporting  company  (as  they  derive  from  the  undertaking's  consumed  energy)  which, however, occur at sources owned or controlled by another company. Further guidance is provided in the sections below on how to calculate Scope 1 and 2 emissions.
+
+[vsme reference #3]
+Impacts on climate: energy usage and greenhouse gas emissions
+81. Under paragraphs 29 and 30, the undertaking reports on its climate impacts , providing information about its energy use and greenhouse gas emissions . This guidance for disclosure B3 does not constitute  an  additional  datapoint  to  the  disclosures  described  in  paragraphs  29  (on  energy consumption)  and  30  (on  GHG  emissions)  but  rather  reinstates  an  overarching  objective  and provides context for the Basic disclosure B3.
+
+[vsme reference #4]
+54. If the undertaking has established GHG emission reduction targets , it shall disclose its targets in absolute values for Scope 1 and Scope 2 emissions. In line with paragraphs 50 to 53 above and if it has set Scope 3 reduction targets, the undertaking shall also provide targets for significant Scope 3 emissions. In particular, it shall provide:
+2. (a)  the target year and target year value;
+3. (b)  the base year and base year value;
+4. (c)  the units used for targets ;
+5. (d)  the share of Scope 1, Scope 2 and, if disclosed, Scope 3 that the target concerns; and
+6. (e)  a list of main actions it seeks to implement to achieve its targets .
+55. If the undertaking that operates in high climate impact sectors 6  has adopted a transition plan for climate change mitigation, it may provide information about it, including an explanation of how it is contributing to reduce GHG emissions.
+56. In case the undertaking operates in high-climate impact sectors and does not have a transition plan for climate change mitigation in place, it shall indicate whether and, if so, when it will adopt such a transition plan.
+
+[vsme reference #5]
+50. Depending on the type of activities carried out by the undertaking, disclosing a quantification of its Scope 3 GHG emissions can be appropriate (see paragraph 10 of this Standard) to yield relevant information on the undertaking's value chain impacts on climate change.
+51. Scope  3  emissions  are indirect  GHG  emissions (other  than  Scope  2)  that  derive  from  an undertaking's value  chain .  They  include  the  activities  that  are  upstream  of  the  undertaking's operations  (e.g.  purchased  goods  and  services,  purchased  capital  goods,  transportation  of purchased goods, etc.) and activities that are downstream of the undertaking's operations (e.g. transport and distribution of the undertaking's products, use of sold products, investments, etc.).
+52. If the undertaking decides to provide this metric, it should refer to the 15 types of Scope 3 GHG emissions identified by the GHG Protocol Corporate Standard and detailed by the GHG Protocol Corporate Value Chain (Scope 3) Accounting and Reporting Standard. When it reports on Scope 3  GHG  emissions,  the  undertaking  shall  include  significant  Scope  3  categories  (as  per  the Corporate  Value  Chain  (Scope  3)  Accounting  and  Reporting  Standard)  based  on  its  own assessment of relevant Scope 3 categories. Undertakings can find further guidance on specific calculation methods for each category in the GHG Protocol's Technical guidance for Calculating Scope 3 Emissions .
+53. When reporting its Scope 1 and Scope 2 emissions, if the undertaking discloses entity-specific information on its Scope 3 emissions, it shall present it together with the information required under B3 - Energy and greenhouse gas emissions.
+</vsme_context>
+
+# GOAL
+Your goal is to answer the <user_question> and to clarify doubts and uncertainties the user has.
+
+# INSTRUCTIONS
+Try to understand the user doubts by contextualizing that he/she sees what's inside <vsme_snippet>.
+Use the retrieved context from the VSME standard <vsme_context> as source of truth.
+
+
+
+Prompt with 5 chunks
+============================================================
+
+# ROLE
+You are an expert Sustainability Auditer expertise in the VSME standard (Voluntary Sustainability Reporting Standard for non-listed SMEs) by EFRAG.
+
+# CONTEXT & INPUT DATA
+You are provided with:
+1. **User question:** What the user asks to understand better.
+3. **VSME snippet:**  Which VSME (Voluntary Sustainability Reporting Standard for non-listed SMEs) snippet is shown to the user for whom the user has doubts. 
+2. **VSME context:** Retrieved regulatory text based on the VSME standard (Voluntary Sustainability Reporting Standard for non-listed SMEs) by EFRAG.
+
+
+# DATA
+<user_question>
+What are the GHG scope 1  emissions?
+</user_question>
+
+<vsme_snippet>
+29. The undertaking shall disclose its total energy consumption in MWh, with a breakdown as per the table below, if it can obtain the necessary information to provide such a breakdown:
+
+    | | Renewable | Non-renewable | Total |
+    |---|---|---|---|
+    | **Electricity** (as reflected in utility billings) | | | |
+    | **Fuels** | | | |
+    | **Total** | | | |
+
+30. The undertaking shall disclose its estimated _**gross greenhouse gas (GHG) emissions**_ in tons of CO₂ equivalent (tCO₂eq) considering the content of the GHG Protocol Corporate Standard (version 2004), including:
+
+    (a) the Scope 1 GHG emissions in tCO₂eq (from owned or controlled sources); and
+
+    (b) the _**location-based Scope 2 emissions**_ in tCO₂eq (i.e. emissions from the generation of purchased energy, such as electricity, heat, steam or cooling).
+
+31. The undertaking shall disclose its GHG intensity calculated by dividing '_**gross greenhouse gas (GHG) emissions**_' disclosed under paragraph 30 by 'turnover (in Euro)' disclosed under paragraph
+24(e)(iv)^5
+
+</vsme_snippet>
+
+<vsme_context>
+[vsme reference #1]
+29. The undertaking shall disclose its total energy consumption in MWh, with a breakdown as per the table below, if it can obtain the necessary information to provide such a breakdown:
+30. The undertaking shall disclose its estimated gross greenhouse gas (GHG) emissions in tons of CO2 equivalent (tCO2eq) considering the content of the GHG Protocol Corporate Standard (version 2004), including:
+3. (a)  the Scope 1 GHG emissions in tCO2eq (from owned or controlled sources); and
+4. (b)  the location-based Scope 2 emissions in tCO2eq (i.e. emissions from the generation of purchased energy, such as electricity, heat, steam or cooling).
+31. The undertaking shall disclose its GHG intensity calculated by dividing ' gross greenhouse gas (GHG) emissions ' disclosed under paragraph 30 by 'turnover (in Euro)' disclosed under paragraph 24(e)(iv) 5 .
+Electricity (as reflected in utility billings), Renewable = . Electricity (as reflected in utility billings), Non-renewable = . Electricity (as reflected in utility billings), Total = . Fuels, Renewable = . Fuels, Non-renewable = . Fuels, Total = . Total, Renewable = . Total, Non-renewable = . Total, Total =
+
+[vsme reference #2]
+90. As for  gross greenhouse gas emissions (GHG)  arising  from  the  undertaking's  activities,  the requirement in paragraph 30 builds on the definitions and rules of the GHG Protocol, the leading accounting standard for GHG emissions. Under paragraph 30, undertakings are to report on their Scope 1 and Scope 2 emissions. Scope 1 GHG emissions cover direct emissions from owned or controlled sources. Scope 2 emissions are indirect GHG emissions resulting from the activities of  the  reporting  company  (as  they  derive  from  the  undertaking's  consumed  energy)  which, however, occur at sources owned or controlled by another company. Further guidance is provided in the sections below on how to calculate Scope 1 and 2 emissions.
+
+[vsme reference #3]
+Impacts on climate: energy usage and greenhouse gas emissions
+81. Under paragraphs 29 and 30, the undertaking reports on its climate impacts , providing information about its energy use and greenhouse gas emissions . This guidance for disclosure B3 does not constitute  an  additional  datapoint  to  the  disclosures  described  in  paragraphs  29  (on  energy consumption)  and  30  (on  GHG  emissions)  but  rather  reinstates  an  overarching  objective  and provides context for the Basic disclosure B3.
+
+[vsme reference #4]
+54. If the undertaking has established GHG emission reduction targets , it shall disclose its targets in absolute values for Scope 1 and Scope 2 emissions. In line with paragraphs 50 to 53 above and if it has set Scope 3 reduction targets, the undertaking shall also provide targets for significant Scope 3 emissions. In particular, it shall provide:
+2. (a)  the target year and target year value;
+3. (b)  the base year and base year value;
+4. (c)  the units used for targets ;
+5. (d)  the share of Scope 1, Scope 2 and, if disclosed, Scope 3 that the target concerns; and
+6. (e)  a list of main actions it seeks to implement to achieve its targets .
+55. If the undertaking that operates in high climate impact sectors 6  has adopted a transition plan for climate change mitigation, it may provide information about it, including an explanation of how it is contributing to reduce GHG emissions.
+56. In case the undertaking operates in high-climate impact sectors and does not have a transition plan for climate change mitigation in place, it shall indicate whether and, if so, when it will adopt such a transition plan.
+
+[vsme reference #5]
+50. Depending on the type of activities carried out by the undertaking, disclosing a quantification of its Scope 3 GHG emissions can be appropriate (see paragraph 10 of this Standard) to yield relevant information on the undertaking's value chain impacts on climate change.
+51. Scope  3  emissions  are indirect  GHG  emissions (other  than  Scope  2)  that  derive  from  an undertaking's value  chain .  They  include  the  activities  that  are  upstream  of  the  undertaking's operations  (e.g.  purchased  goods  and  services,  purchased  capital  goods,  transportation  of purchased goods, etc.) and activities that are downstream of the undertaking's operations (e.g. transport and distribution of the undertaking's products, use of sold products, investments, etc.).
+52. If the undertaking decides to provide this metric, it should refer to the 15 types of Scope 3 GHG emissions identified by the GHG Protocol Corporate Standard and detailed by the GHG Protocol Corporate Value Chain (Scope 3) Accounting and Reporting Standard. When it reports on Scope 3  GHG  emissions,  the  undertaking  shall  include  significant  Scope  3  categories  (as  per  the Corporate  Value  Chain  (Scope  3)  Accounting  and  Reporting  Standard)  based  on  its  own assessment of relevant Scope 3 categories. Undertakings can find further guidance on specific calculation methods for each category in the GHG Protocol's Technical guidance for Calculating Scope 3 Emissions .
+53. When reporting its Scope 1 and Scope 2 emissions, if the undertaking discloses entity-specific information on its Scope 3 emissions, it shall present it together with the information required under B3 - Energy and greenhouse gas emissions.
+</vsme_context>
+
+# GOAL
+Your goal is to answer the <user_question> and to clarify doubts and uncertainties the user has.
+
+# INSTRUCTIONS
+Try to understand the user doubts by contextualizing that he/she sees what's inside <vsme_snippet>.
+Use the retrieved context from the VSME standard <vsme_context> as source of truth.

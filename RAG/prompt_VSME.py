@@ -33,3 +33,4 @@ Your goal is to answer the <user_question> and to clarify doubts and uncertainti
 Try to understand the user doubts by contextualizing that he/she sees what's inside <vsme_snippet>.
 Use the retrieved context from the VSME standard <vsme_context> as source of truth.
 """ # TODO forse as your PRIMARY AND ONLY SOURCE OF TRUTH. finché non mettiamo llm moderna (post 2025, cioè release del VSME ufficiale)?
+    # COsi va bene prende solo VSME come verità, però sarebbe utile (e.g. risposta GHG emissions) che usasse di piu la sua conoscenza generale
