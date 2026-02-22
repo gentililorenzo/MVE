@@ -1,7 +1,7 @@
 import json
 import logging
 from pathlib import Path
-from typing import List, Dict, Any, Union, Optional
+from typing import List, Dict, Any, Optional
 
 from docling.document_converter import DocumentConverter, ConversionResult
 from docling.chunking import HybridChunker

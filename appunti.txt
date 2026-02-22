@@ -13,3 +13,6 @@ Guided consultation --> domande per ogni metrica (B) --> così che potrò compil
 
 Guided reporting --> leggi i documenti e scoring in base alle metriche. se non ci sono documenti utente risponde a voce
 "ROLE leggi i documenti basandoti su metrica B <testo metrica> e vedi quante info ci sono a riguardo" generiamo score
+
+Path root
+C:/Users/39389/Desktop/Tesi/provaTesiLLM

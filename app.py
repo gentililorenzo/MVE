@@ -171,7 +171,7 @@ with col1:
             # Generating a prototype report simply with what the user asked to demonstrate how much the 
             # user is up to date with sustainability and VSME 
             st.success("Guided reporting ended! Thank you!")
-            st.markdown(":small[I hope you now have a better understanding of what VSME is!]")
+            st.markdown(":small[I hope you now have a better understanding of what VSME is and how to report with it!]")
             
             # Questions review
             with st.expander("Review your questions"):

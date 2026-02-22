@@ -2323,3 +2323,156 @@ Your goal is to answer the <user_question> and to clarify doubts and uncertainti
 # INSTRUCTIONS
 Try to understand the user doubts by contextualizing that he/she sees what's inside <vsme_snippet>.
 Use the retrieved context from the VSME standard <vsme_context> as source of truth.
+
+
+
+Prompt with 5 chunks
+============================================================
+
+# ROLE
+You are an expert Sustainability Auditer expertise in the VSME standard (Voluntary Sustainability Reporting Standard for non-listed SMEs) by EFRAG.
+
+# CONTEXT & INPUT DATA
+You are provided with:
+1. **User question:** What the user asks to understand better.
+3. **VSME snippet:**  Which VSME (Voluntary Sustainability Reporting Standard for non-listed SMEs) snippet is shown to the user for whom the user has doubts. 
+2. **VSME context:** Retrieved regulatory text based on the VSME standard (Voluntary Sustainability Reporting Standard for non-listed SMEs) by EFRAG.
+
+
+# DATA
+<user_question>
+How can I report GHG emissions?
+</user_question>
+
+<vsme_snippet>
+29. The undertaking shall disclose its total energy consumption in MWh, with a breakdown as per the table below, if it can obtain the necessary information to provide such a breakdown:
+
+    | | Renewable | Non-renewable | Total |
+    |---|---|---|---|
+    | **Electricity** (as reflected in utility billings) | | | |
+    | **Fuels** | | | |
+    | **Total** | | | |
+
+30. The undertaking shall disclose its estimated _**gross greenhouse gas (GHG) emissions**_ in tons of CO₂ equivalent (tCO₂eq) considering the content of the GHG Protocol Corporate Standard (version 2004), including:
+
+    (a) the Scope 1 GHG emissions in tCO₂eq (from owned or controlled sources); and
+
+    (b) the _**location-based Scope 2 emissions**_ in tCO₂eq (i.e. emissions from the generation of purchased energy, such as electricity, heat, steam or cooling).
+
+31. The undertaking shall disclose its GHG intensity calculated by dividing '_**gross greenhouse gas (GHG) emissions**_' disclosed under paragraph 30 by 'turnover (in Euro)' disclosed under paragraph
+24(e)(iv)^5
+
+</vsme_snippet>
+
+<vsme_context>
+[vsme reference #1]
+29. The undertaking shall disclose its total energy consumption in MWh, with a breakdown as per the table below, if it can obtain the necessary information to provide such a breakdown:
+30. The undertaking shall disclose its estimated gross greenhouse gas (GHG) emissions in tons of CO2 equivalent (tCO2eq) considering the content of the GHG Protocol Corporate Standard (version 2004), including:
+3. (a)  the Scope 1 GHG emissions in tCO2eq (from owned or controlled sources); and
+4. (b)  the location-based Scope 2 emissions in tCO2eq (i.e. emissions from the generation of purchased energy, such as electricity, heat, steam or cooling).
+31. The undertaking shall disclose its GHG intensity calculated by dividing ' gross greenhouse gas (GHG) emissions ' disclosed under paragraph 30 by 'turnover (in Euro)' disclosed under paragraph 24(e)(iv) 5 .
+Electricity (as reflected in utility billings), Renewable = . Electricity (as reflected in utility billings), Non-renewable = . Electricity (as reflected in utility billings), Total = . Fuels, Renewable = . Fuels, Non-renewable = . Fuels, Total = . Total, Renewable = . Total, Non-renewable = . Total, Total =
+
+[vsme reference #2]
+90. As for  gross greenhouse gas emissions (GHG)  arising  from  the  undertaking's  activities,  the requirement in paragraph 30 builds on the definitions and rules of the GHG Protocol, the leading accounting standard for GHG emissions. Under paragraph 30, undertakings are to report on their Scope 1 and Scope 2 emissions. Scope 1 GHG emissions cover direct emissions from owned or controlled sources. Scope 2 emissions are indirect GHG emissions resulting from the activities of  the  reporting  company  (as  they  derive  from  the  undertaking's  consumed  energy)  which, however, occur at sources owned or controlled by another company. Further guidance is provided in the sections below on how to calculate Scope 1 and 2 emissions.
+
+[vsme reference #3]
+Impacts on climate: energy usage and greenhouse gas emissions
+81. Under paragraphs 29 and 30, the undertaking reports on its climate impacts , providing information about its energy use and greenhouse gas emissions . This guidance for disclosure B3 does not constitute  an  additional  datapoint  to  the  disclosures  described  in  paragraphs  29  (on  energy consumption)  and  30  (on  GHG  emissions)  but  rather  reinstates  an  overarching  objective  and provides context for the Basic disclosure B3.
+
+[vsme reference #4]
+= . Environment, 2 = Electricity (as reflected in utility billings). Environment, 3 = . Environment, 4 = . Environment, 5 = SFDR 20. Environment, 1 = . Environment, 2 = Fuels. Environment, 3 = . Environment, 4 = . Environment, 5 = SFDR 20. Environment, 1 = . Environment, 2 = Total. Environment, 3 = . Environment, 4 = . Environment, 5 = SFDR 20
+Environment, B3 - Energy and greenhouse gas emissions The undertaking shall disclose its estimated gross = B3 - Energy and greenhouse gas emissions The undertaking shall disclose itsGHG intensity calculated by dividing 'total GHG emissions' disclosed under paragraph 30 by 'turnover (in Euros)' disclosed under paragraph 24(e)(iv).. Environment, SFDR 21 Benchmark 22 = SFDR 23 Benchmark 24. Environment, B3 - Energy and greenhouse gas emissions The undertaking shall disclose its estimated gross = B4 - Pollution of air, water and soil If the undertaking is already required by law or other national regulations to report to competent authorities its emissions of pollutants, or if it voluntarily reports on them according to an Environmental Management System, it shall disclose the pollutants it emits to air, water and soil in its own operations, with the respective amount for each pollutant. If this information is already publicly available, the undertaking may alternatively refer to the document where it is reported, for example, by providing the relevant URL link or embedding a hyperlink.. Environment, SFDR 21 Benchmark 22 = SFDR 25. Environment, B3 - Energy and greenhouse gas emissions The undertaking shall disclose its estimated gross = B5 - Biodiversity The undertaking shall disclose the number and area (in hectares) of sites that it owns, has leased, or manages in or near a biodiversity sensitive area.. Environment, SFDR 21 Benchmark 22 = SFDR 26
+
+[vsme reference #5]
+91. Scope 1 and 2 emissions may be reported in the following format.
+92.  The GHG Protocol is a global standard for measuring, reporting and managing GHG emissions while ensuring consistency and transparency. The corporate standard covers Scope 1, Scope 2 and Scope 3 emissions guidance for companies and other organisations (NGOs, government, etc.).
+93. To ensure a fair account of the undertaking's emissions, the GHG Protocol has set a list of reporting principles:
+4. (a)  relevance: ensuring that the GHG inventory reflects the GHG emissions of the organisation.
+5. (b)  completeness: ensuring that the GHG inventory account for all GHG emission sources and activities within the chosen boundary;
+6. (c)  consistency: ensuring the consistency of the methodology used to allow  for comparisons over time;
+7. (d)  transparency: disclosing  the  assumptions,  references  and  methodology  used  when computing GHG emissions; and
+8. (e)  accuracy: ensuring that GHG emissions data is sufficiently precise to allow users to make decisions.
+94. In alternative to the GHG Protocol, undertakings may resort to ISO 14064-1, should it be better suited to their reporting needs.
+95. When reporting on GHG emissions, it is important to set the appropriate boundaries to ensure that the GHG inventory is correct and to avoid double counting emissions. The GHG Protocol defines two main types of boundaries - organisational or operational boundaries.
+11. (a)  Organisational boundary: the GHG Protocol defines it as the boundaries that determine the operations owned or controlled by the reporting undertaking depending on the consolidation approach taken. There are two approaches to consolidation of emissions - the equity or control approach. The undertaking will choose the approach that reflects its circumstances.
+12. (b)  The  equity share approach relates  to  accounting  for  GHG  emissions  from  operations according to its shares of equity in the operation.
+13. (c)  When  using  the  control approach,  the  undertaking  accounts  for  GHG  emissions  from operations over which it has either financial or operational control. Companies will use either the operational control or financial control criteria when using this approach to consolidate and capture its emissions in the report.
+- i. Financial control means that the undertaking has financial control over the operation  if  the  former  has  the  ability  to  direct  the  financial  and  operating policies of the latter with a view to gaining economic benefits from its activities.
+</vsme_context>
+
+# GOAL
+Your goal is to answer the <user_question> and to clarify doubts and uncertainties the user has.
+
+# INSTRUCTIONS
+Try to understand the user doubts by contextualizing that he/she sees what's inside <vsme_snippet>.
+Use the retrieved context from the VSME standard <vsme_context> as source of truth.
+
+
+
+Prompt with 5 chunks
+============================================================
+
+# ROLE
+You are an expert Sustainability Consultant for micro, small, and medium enterprises.
+
+# CONTEXT & INPUT DATA
+You are provided with:
+1. **Company Profile:** Basic details of the company, including the company's activity and the number of employees.
+2. **VSME context:** Retrieved regulatory text based on the VSME standard (Voluntary Sustainability Reporting Standard for non-listed SMEs) by EFRAG.
+
+# DATA
+<company_profile>
+Activity: Software house producing websites for a big tech company
+Size: 23 employees
+</company_profile>
+
+<vsme_context>
+[vsme reference #1]
+It is more and more likely that large corporations  demand their supplies ESG data and disclosure, for their own business or marketing reasons,  or to comply with the CSRD. Now, these requests concern a minority of SMEs, but the situation is evolving,  mostly in respect to the implementation  of the CSRD, which has just started. So far, most large companies have been focused on the DMA; when it comes to value chain data, these have been  often estimated  by means of secondary data and sector averages.  However,  in the future,  they  will  have  to  resort  more  and more to primary information provided  by  suppliers.  Hence,  the provision of this information may become a criterion to direct purchase decisions.
+At the moment, there is limited evidence  that suppliers that do not provide ESG information face negative impacts, such as decrease in orders or expiration  of contracts. One stakeholder mentioned that one larger retailer  announced that, for its largest suppliers,  the provision of certain ESG information may become  a pre-requisite  for supplies,  but this is one of the few instances of actual negative  impacts occurring so far. Also,  suppliers  are not all the  same. Those  providing  standards or commoditised  products and services may  face  a  risk  of  downsizing  or  cutting  commercial  relationships. For  key  suppliers,  those  providing tailored  or  specialised inputs,  or  those  operating  in  sectors  at  full  capacity  or  with  limited  alternative suppliers, it remains unlikely that the threat of lower sales can materialise,  at least in the medium term. This is particularly  so also where alternative  suppliers  were not established  in the EU, as this would likely  cause additional  difficulties  in accessing ESG reporting data.
+At the same time, it is reasonable to assume that the increasing pressure on SMEs to disclose their ESG performance may benefit those that voluntarily  decide to do so. This effect is largely  redistributive,  with disclosing SMEs gaining some of the revenue lost by other businesses, and possibly,  from the re-shoring of activities  linked  to  the  complexity  of  measuring  impacts  on an extended  value  chain. The  analysis  thus considers three scenarios: a central one in which sales by VSME preparers  to large companies increase by 20%, with sensitivity  analysis at 10% and 30%.
+Based on this framework, the benefits from the value chain are calculated as follows:
+
+[vsme reference #2]
+- The ESG information is relevant  (i) for the reporting  entity  itself,  (ii) for its  value  chain and (iii)  for financial institutions  was largely  converging; 4 this  would  allow  designing 'core SME' disclosures , limited in number and fit for purpose.
+- SME sustainability  reporting  requirements  should not  merely  be a simplified  version of those for large reporting  entities.  These  would likely  not be fit for purpose and prove difficult and costly to produce. Instead, SME-specific sustainability  reporting standards should be designed  for SMEs on a  standalone  basis  ('think small  first')  while  ensuring  that  sustainability  information  provided  by SMEs using such standards remains relevant  for larger stakeholders.
+- The new standard should address the lack of a dedicated  ESG standard for SMEs and the fact that prevailing  ones are considered as a potential administrative  burden for them. 5
+- Size  does not necessarily best reflect an SME's sustainability  footprint and profile either,  and so the business  activity/sector and  its  associated risk  profile should  also  be a  primary  driver for determining  sustainability  reporting requirements.  Therefore,  the report suggested  considering a sector-specific approach towards sustainability reporting requirements for SMEs, which would lead
+1  Communication from the Commission, SME Relief Package, COM/2023/535 final.
+2 'Consistent with the 'think small first' approach, the standard -setter would develop a simplified standard for voluntary use by SMEs who are not under the scope of the NFRD. The simplified nature of this standard would reflect the fact that SMEs often do not have the technical expertise nor resources necessary  to prepare reports in accordance with stateof-theart,  sophisticated  standards.'  Commission  Staff Working  Document  Impact  Assessment  Accompanying  the Proposal  for  a  Directive of  the European  Parliament  and  of the Council  amending Directive 2013/34/EU,  Directive 2004/109/EC, Directive 2006/43/EC and Regulation (EU) No 537/2014, as regards corporate sustainability reporting. 3 https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAssets%2FEFRAG%2520PTF-NFRS_MAIN_REPORT.pdf
+
+[vsme reference #3]
+Reporting  encourages  SMEs  to  assess  their  ESG  performance,  leading  to  better  management practices. ESG reporting provides the company's decision -makers with valuable data and insights that can inform  strategic  planning  and  decision-making  processes.  By  analysing  ESG  metrics  and  performance indicators,  companies  can  identify opportunities  to  optimize  resource  allocation,  mitigate  risks,  and capitalize  on emerging  trends  related  to sustainability  and social  responsibility. By  identifying  areas  for improvement  in  these  domains, SMEs  can  implement more  sustainable and  responsible business strategies.  This  includes  actions  such as  reducing  waste  and  energy  consumption,  improving  labour practices and enhancing corporate governance structures.
+One  of  the  most  relevant  benefits  from  engaging  in  ESG  reporting  on  which interviewees generally concurred is the increased awareness of ESG aspects, a better understanding of the related  risks and their incorporation into  the decision-making  process. By  disclosing  information about  potential  risks, such as supply chain disruptions, regulatory non-compliance or reputational damage, SMEs can demonstrate their understanding of the subject and a likely commitment to a proactive  ESG risk management. This result is enhanced  by  the  involvement  of the  SME owners/top  management  into  the  disclosure  process,  which translates  into  stronger engagement  and propensity  to act.  This is one of the reasons why stakeholders reported  that  in  France  banks  are  finding  increasingly  effective  to  accompany  their  requests  for  ESG information with face-to-face interviews  with the top SME decision-makers.
+Finally  in  terms  of  positive  impacts  on  internal  organisation,  smaller  preparers  are  often not sufficiently structured to benefit from them, but the larger can experience  better intra-company cooperation, as a result of the horizontal nature of some of these  disclosures,  forcing internal cooperation  in data  gathering and analysis.
+73 Breuer, M. (2021), 'How Does Financial -Reporting Regulation Affect IndustryWide Resource Allocation?', Journal of Accounting Research, 59(1), pp. 59 -110, https://doi.org/10.1111/1475- 679X.12345.
+74 Allen,  A.,  LewisWestern,  M. and Valentine,  K. (2022), 'The Innovation  and  Reporting Consequences  of Financial Regulation for Young LifeCycle Firms', Journal of Accounting Research, 60(1), 4595, https://doi.org/10.1111/1475679X.12398.
+
+[vsme reference #4]
+Based  on the findings from the  targeted  consultation, it is assumed  a scenario where only a minority  (at most 10% of larger preparers) will carry out this process wholly or mostly internally, at least in the first year; only larger preparers that are already structured in terms of sustainability reporting requirements may be able to familiarise with the standard and set-up the internal  process required.
+Most of the smaller preparers will, at least in the first place, ask the support of their accountants; a minority of them will use online platforms, either spontaneously or based on the indications of banks and suppliers. Following the revision of the ED and the simplification and streamlining of the text, it is considered that the final version of the VSME is conducive to a wider usage of online solutions, which are typically  cheaper.
+As for larger  preparers,  they  may outsource to specialised  ESG consultants but most of them, especially small companies, may still resort to their accountants our use online platforms. The share of larger preparers which are expected  to prepare the VSME report internally is expected  to grow in the subsequent years. The parameters describing outsourcing and the modalities of compliance, based on the findings of the targeted consultation, are shown in Table  13 overleaf.
+76  These categories are not mentioned, used or referred in the VSME.
+The decision to outsource  the preparation  of the VSME  report is determined by two  main drivers . First,  stakeholders  concur that, especially  for micro enterprises  but not only, most SMEs would not have the expertise and resources to understand and manage the process internally irrespective  of the extent to which the language of the VSME standard is simplified  and made accessible. However,  this is not only a matter  of  simplification. SMEs  are  likely  to  hire  external  support  for  ESG  reporting  and  use  their resources for their core activities , as it is already  the case for financial accounts, labour consultants, safety managers, etc. It is important to note that in this context, outsourcing does not mean that  the SME needs not to spend  internal resources on this activity:  as a minimum, it  should collect data  for the accountant, consultant or online platform, and it should verify and review the analysis and the report.
+
+[vsme reference #5]
+A company's  financial results  and competitive  position are  influenced  by  manifold  factors. Neither  ESG reporting nor a better  ESG performance possibly  triggered  by reporting will per se translate into stronger financial  outcomes  and  a  better  competitive position.  Nonetheless, empirical  evidence is  gradually emerging of a correlation between  ESG disclosure and competitiveness,  at least with reference to specific ESG factors 72 .
+Various stakeholders  agreed  that  SMEs that will start engaging  in ESG reporting  might also reap various benefits  for their  businesses. These  benefits  include a stronger competitive position and an enhanced reputation among consumers, which can be conducive to higher sales. These benefits  are more likely to occur  in  B2C  industries  and  for  companies  with  a  well-established brand,  because  by  transparently reporting  on their  sustainability  efforts and  social impact  SMEs can differentiate  from competitors.  ESG reporting  is  then  considered  a  necessary  condition  to  access  green  procurement  and  increasingly perceived  as a requirement to apply for Government grants particularly in the field  of manufacturing.
+68  Cf. Better Regulation Toolbox, Tool#58 EU Standard Cost Model. It remains possible to estimate the costs associated to voluntary actions linked to the regulatory framework, such as a voluntary standards, but those cannot be considered administrative or regulatory costs.
+69   Christensen,  H. B., Hail,  L., &  Leuz, C. (2021).  Mandatory CSR and sustainability  reporting: economic analysis  and literature review. Review of Accounting Studies, 26(3), 1176 1248
+70   Trautwein, C. (2021). Sustainability impact assessment of start-ups -Key insights on relevant assessment challenges and approaches based on an inclusive, systematic literature review. Journal of Cleaner Production, 281, 125330.
+71    Shields, J., & Shelleman, J. M. (2015). Integrating sustainability into SME strategy. Journal of Small Business Strategy, 25(2), 59-78.
+72   For instance Ecovadis  has recently investigated together with Bain the correlation between  certain disclosures and value creation  at least in a  sample of their reporting companies. Bain  - EcoVadis Joint Study: Do ESG Efforts Create Value?, 2024.
+</vsme_context>
+
+<user_question>
+Which ESG practices are most important for a company like ours?
+</user_question>
+
+# GOAL
+Your goal is to answer the <user_question>.
+
+Suggest the best sustainable practices for the company based on the company's activity and company' size from <company_profile>.
+if the user asks about compliance, reporting, or disclosures, give an explanatory answer by introducing the VSME standard and 
+using the retrieved context from the VSME standard <vsme_context> as source of truth.

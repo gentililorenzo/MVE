@@ -4,7 +4,7 @@ from sentence_transformers import SentenceTransformer
 model = SentenceTransformer("BAAI/bge-m3", device="cpu")
 
 # 1. Connect to the DB
-client = chromadb.PersistentClient(path="../database/chromadb")
+client = chromadb.PersistentClient(path="./database/chromadb")
 collection = client.get_collection("docling_docs")
 
 # Test query

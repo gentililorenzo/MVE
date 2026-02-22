@@ -2,11 +2,7 @@
 *.sqlite3
 *.bin
 /src/__pycache__/
-/database
-/scripts/models
 /venv
-/ingestion/models
-/database
 /RAG/__pycache__
-/database/chroma_db
 /database
+/models

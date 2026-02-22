@@ -13,18 +13,18 @@ class MVEConfigs():
     # return directly the "Path" object
     @staticmethod
     def data_path():
-        return Path("C:/Users/39389/Desktop/Tesi/provaTesiLLM/data/")
+        return Path("./data/")
     
     @staticmethod
     def embedding_model_path():
-        return "C:/Users/39389/Desktop/Tesi/provaTesiLLM/ingestion/models/bge-m3"
+        return "./models/bge-m3"
 
     @staticmethod
     def db_path():
-        return Path("C:/Users/39389/Desktop/Tesi/provaTesiLLM/database/chromadb")
+        return Path("./database/chromadb")
     
     @staticmethod
     def log_path():
-        return Path("C:/Users/39389/Desktop/Tesi/provaTesiLLM/log/")
+        return Path("./log/")
     
 mve_config = MVEConfigs()
